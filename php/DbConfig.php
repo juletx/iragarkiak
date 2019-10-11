@@ -1,5 +1,5 @@
 <?php
-$lokal = 1; //0 hodeirako
+$lokal = 0; //0 hodeirako
 if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
@@ -7,8 +7,8 @@ if ($lokal) {
     $db = "quiz";
 } else {
     $zerbitzaria = "localhost";
-    $erabiltzailea = "";
-    $gakoa = "";
-    $db = "";
+    $erabiltzailea = "id11105782_wst03";
+    $gakoa = "Zubetx03";
+    $db = "id11105782_quiz";
 }
 ?>
