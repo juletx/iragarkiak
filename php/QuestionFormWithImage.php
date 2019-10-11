@@ -12,7 +12,7 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="AddQuestionWithImage.php" onsubmit="return validateFields()">
+            <form id="galderenF" name="galderenF" action="AddQuestion.php" onsubmit="return validateFields()">
                 <label for="eposta">Ehuko eposta(*):</label>
                 <input type="text" id="eposta" name="eposta">
                 <br><br>
@@ -20,16 +20,16 @@
                 <input type="text" id="galdera" name="galdera">
                 <br><br>
                 <label for="erantzun-zuzena">Erantzun zuzena(*):</label>
-                <input type="text" id="erantzun-zuzena" name="erantzun-zuzena">
+                <input type="text" id="erantzun_zuzena" name="erantzun_zuzena">
                 <br><br>
                 <label for="erantzun-okerra1">Erantzun okerra 1(*):</label>
-                <input type="text" id="erantzun-okerra1" name="erantzun-okerra1">
+                <input type="text" id="erantzun_okerra1" name="erantzun_okerra1">
                 <br><br>
                 <label for="erantzun-okerra2">Erantzun okerra 2(*):</label>
-                <input type="text" id="erantzun-okerra2" name="erantzun-okerra2">
+                <input type="text" id="erantzun_okerra2" name="erantzun_okerra2">
                 <br><br>
                 <label for="erantzun-okerra3">Erantzun okerra 3(*):</label>
-                <input type="text" id="erantzun-okerra3" name="erantzun-okerra3">
+                <input type="text" id="erantzun_okerra3" name="erantzun_okerra3">
                 <br><br>
                 <label>Zailtasuna(*):
                     <input type="radio" id="txikia" name="zailtasuna" value="1">

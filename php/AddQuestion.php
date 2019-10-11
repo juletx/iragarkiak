@@ -9,28 +9,27 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div>
-        	<?php include '../php/DbConfig.php'?>
+            <?php include '../php/DbConfig.php'?>
             <?php
             $esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db);
 			if (!$esteka) {
-				echo "Hutsegitea DBra konetatzerakoan: (".
-				mysqli_connect_errno() . ") " .
-				mysqli_connect_error() .PHP_EOL;
+				// echo "Hutsegitea DBra konetatzerakoan: (".mysqli_connect_errno().") ".mysqli_connect_error().PHP_EOL;
 				exit;
 			}
 
-			echo "Konexioa egin da:" . mysqli_get_host_info();
+			// echo "Konexioa egin da DBra: ".mysqli_get_host_info($esteka).PHP_EOL;
 
-			$sql = "INSERT INTO Questions VALUES ('$_GET[eposta]' , '$_GET[galdera]' ,'$_GET[erantzun-zuzena]' ,'$_GET[erantzun-okerra1]' ,'$_GET[erantzun-okerra2]' ,'$_GET[erantzun-okerra3]' ,'$_GET[zailtasuna]' ,'$_GET[gaia]')"
+			$sql = "INSERT INTO Questions VALUES ('NULL', '$_GET[eposta]', '$_GET[galdera]' , '$_GET[erantzun_zuzena]', 
+            '$_GET[erantzun_okerra1]', '$_GET[erantzun_okerra2]', '$_GET[erantzun_okerra3]', '$_GET[zailtasuna]', '$_GET[gaia]')";
 			$emaitza = mysqli_query($esteka, $sql);
 			if (!$emaitza) {
-				die('Galdera ez da ondo gorde: '.mysqli_error($esteka));
-				echo "<p> <a href='QuestionForm.php'> Saiatu berriz galdera gehitzen";
-			}
-
-			echo "Galdera ondo gorde da";
-			echo "<p> <a href='QuestionForm.php'> Galdera berri bat gehitu";
-			echo "<p> <a href='ShowQuestions.php'> Irudirik gabeko galderak ikusi</a>";
+				echo "<p>Galdera ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."</p>";
+				echo "<p><a href='QuestionForm.php'>Saiatu berriz galdera gehitzen</a></p>";
+			} else {
+                echo "<p>Galdera ondo gorde da</p>";
+                echo "<p><a href='QuestionForm.php'>Galdera berri bat gehitu</a></p>";
+                echo "<p><a href='ShowQuestions.php'>Irudirik gabeko galderak ikusi</a></p>";
+            }
 
 			mysqli_close($esteka);
 			?>
