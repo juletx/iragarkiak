@@ -13,15 +13,13 @@
             <?php
             $esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db);
 			if (!$esteka) {
-				// echo "Hutsegitea DBra konetatzerakoan: (".mysqli_connect_errno().") ".mysqli_connect_error().PHP_EOL;
 				exit;
 			}
 
-			// echo "Konexioa egin da DBra: ".mysqli_get_host_info($esteka).PHP_EOL;
-
-			$sql = "INSERT INTO Questions VALUES ('NULL', '$_GET[eposta]', '$_GET[galdera]' , '$_GET[erantzun_zuzena]', 
-            '$_GET[erantzun_okerra1]', '$_GET[erantzun_okerra2]', '$_GET[erantzun_okerra3]', '$_GET[zailtasuna]', '$_GET[gaia]')";
-			$emaitza = mysqli_query($esteka, $sql);
+			$sql = "INSERT INTO questions VALUES (NULL, '$_GET[eposta]', '$_GET[galdera]' , '$_GET[erantzun_zuzena]', 
+            '$_GET[erantzun_okerra1]', '$_GET[erantzun_okerra2]', '$_GET[erantzun_okerra3]', $_GET[zailtasuna], '$_GET[gaia]')";
+            $emaitza = mysqli_query($esteka, $sql);
+            
 			if (!$emaitza) {
 				echo "<p>Galdera ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."</p>";
 				echo "<p><a href='QuestionForm.php'>Saiatu berriz galdera gehitzen</a></p>";
