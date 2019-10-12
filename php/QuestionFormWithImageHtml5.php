@@ -43,7 +43,7 @@
                 <input type="text" id="gaia" name="gaia" required>
                 <br><br>
                 <label for="argazki">Argazkia:</label>
-                <img id="argazki" alt="Aukeratu zure argazkia" height="100" src="#" />
+                <img id="argazki" alt="Aukeratu galderarekin zerikusia duen argazkia" height="100" src="#" />
                 <br><br>
                 <input type="file" id="argazkia" name="argazkia" accept="image/*" onchange="showImage(this)">
                 <br><br>

@@ -22,12 +22,12 @@
             
 			if (!$emaitza) {
 				echo "<p>Galdera ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."</p>";
-				echo "<p><a href='QuestionForm.php'>Saiatu berriz galdera gehitzen</a></p>";
 			} else {
                 echo "<p>Galdera ondo gorde da</p>";
-                echo "<p><a href='QuestionForm.php'>Galdera berri bat gehitu</a></p>";
-                echo "<p><a href='ShowQuestions.php'>Irudirik gabeko galderak ikusi</a></p>";
             }
+
+            echo "<p><a href='QuestionForm.php'>Galdera berri bat gehitu</a></p>";
+            echo "<p><a href='ShowQuestions.php'>Irudirik gabeko galderak ikusi</a></p>";
 
 			mysqli_close($esteka);
 			?>

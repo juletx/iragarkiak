@@ -20,8 +20,8 @@
             $emaitza = mysqli_query($esteka, $sql);
 
             echo '<table border=1> <tr> <th> ID </th> <th> EPOSTA </th> 
-            <th> GALDERA </th> <th> ZUZENA </th> 
-            <th colspan="3"> OKERRAK </th> <th> ZAILTASUNA </th> 
+            <th> GALDERA </th> <th> ERANTZUNA </th> 
+            <th colspan="3"> ERANTZUN OKERRAK </th> <th> ZAILTASUNA </th> 
             <th> GAIA </th> </tr>';
 
             while ($row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC)) {

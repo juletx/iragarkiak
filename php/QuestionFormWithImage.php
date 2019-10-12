@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <?php include '../php/Menus.php' ?>
+    <?php include '../php/Menus.php'?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="AddQuestion.php" onsubmit="return validateFields()">
+            <form id="galderenF" name="galderenF" action="AddQuestionWithImage.php" onsubmit="return validateFields()" method="post" enctype="multipart/form-data">
                 <label for="eposta">Ehuko eposta(*):</label>
                 <input type="text" id="eposta" name="eposta">
                 <br><br>
@@ -43,7 +43,7 @@
                 <input type="text" id="gaia" name="gaia">
                 <br><br>
                 <label for="argazki">Argazkia:</label>
-                <img id="argazki" alt="Aukeratu zure argazkia" height="100" src="#" />
+                <img id="argazki" alt="Aukeratu galderarekin zerikusia duen argazkia" height="100" src="#" />
                 <br><br>
                 <input type="file" id="argazkia" name="argazkia" accept="image/*" onchange="showImage(this)">
                 <br><br>
