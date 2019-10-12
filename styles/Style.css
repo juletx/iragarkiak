@@ -50,5 +50,14 @@ nav span {
 
 #ErrorMsgs {
     color: #f61;
-    font-size: smaler
+    font-size: smaller;
 }
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+  }
