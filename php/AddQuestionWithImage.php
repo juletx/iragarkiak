@@ -16,27 +16,18 @@
 				exit;
             }
             
-            //errorea: argazkirik ez bada aukeratzen ere baldintza betetzen da
-            //datubasean ../images/ gordetzen da kasu horretan
-            if (isset ($_FILES['argazkia'])) {
+            if ($_FILES['argazkia']['size'] != 0) {
                 $direktorioa = '../images/';
-                $argazkia = $direktorioa . basename($_FILES['argazkia']['name']);
+                $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
 
                 if (file_exists($argazkia)) {
-                    echo "Sorry, file already exists.";
+                    $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
+                    '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
+                } else if (move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia)) {
                     $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
                     '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
                 } else {
-                    if (move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia)) {
-                        echo "File is valid, and was successfully uploaded.\n";
-                        $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
-                        '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
-                    } else {
-                        echo "Possible file upload attack!\n";
-                    }
-
-                    echo 'Here is some more debugging info: ';
-                    print_r($_FILES);
+                    echo "Arazoren bat egon da argazkiarekin";
                 }
             } else {
                 $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
@@ -52,8 +43,8 @@
             }
 
             echo "<p><a href='QuestionFormWithImage.php'>Galdera berri bat gehitu</a></p>";
-            echo "<p><a href='ShowQuestions.php'>Irudirik gabeko galderak ikusi</a></p>";
-            echo "<p><a href='ShowQuestionsWithImage.php'>Irudidun galderak ikusi</a></p>";
+            echo "<p><a href='ShowQuestions.php'>Argazkirik gabeko galderak ikusi</a></p>";
+            echo "<p><a href='ShowQuestionsWithImage.php'>Argazkidun galderak ikusi</a></p>";
 
 			mysqli_close($esteka);
 			?>

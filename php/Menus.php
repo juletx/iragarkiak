@@ -8,7 +8,7 @@
     <nav class='main' id='n1' role='navigation'>
         <span><a href='Layout.php'>Hasiera</a></span>
         <span><a href='QuestionFormWithImage.php'>Galdera gehitu</a></span>
-        <span><a href='ShowQuestions.php'>Irudirik gabeko galderak ikusi</a></span>
-        <span><a href='ShowQuestionsWithImage.php'>Irudidun galderak ikusi</a></span>
+        <span><a href='ShowQuestions.php'>Argazkirik gabeko galderak ikusi</a></span>
+        <span><a href='ShowQuestionsWithImage.php'>Argazkidun galderak ikusi</a></span>
         <span><a href='Credits.php'>Kredituak</a></span>
     </nav>

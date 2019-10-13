@@ -11,7 +11,7 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="AddQuestionWithImage.php">
+            <form id="galderenF" name="galderenF" action="AddQuestionWithImage.php" method="post" enctype="multipart/form-data">
                 <label for="eposta">Ehuko eposta(*):</label>
                 <input type="email" id="eposta" name="eposta"
                     pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu.eu?s)" required>
@@ -19,16 +19,16 @@
                 <label for="galdera">Galdera(*):</label>
                 <input type="text" id="galdera" name="galdera" minlength="10" required>
                 <br><br>
-                <label for="erantzun-zuzena">Erantzun zuzena(*):</label>
+                <label for="erantzun_zuzena">Erantzun zuzena(*):</label>
                 <input type="text" id="erantzun_zuzena" name="erantzun_zuzena" required>
                 <br><br>
-                <label for="erantzun-okerra1">Erantzun okerra 1(*):</label>
+                <label for="erantzun_okerra1">Erantzun okerra 1(*):</label>
                 <input type="text" id="erantzun_okerra1" name="erantzun_okerra1" required>
                 <br><br>
-                <label for="erantzun-okerra2">Erantzun okerra 2(*):</label>
+                <label for="erantzun_okerra2">Erantzun okerra 2(*):</label>
                 <input type="text" id="erantzun_okerra2" name="erantzun_okerra2" required>
                 <br><br>
-                <label for="erantzun-okerra3">Erantzun okerra 3(*):</label>
+                <label for="erantzun_okerra3">Erantzun okerra 3(*):</label>
                 <input type="text" id="erantzun_okerra3" name="erantzun_okerra3" required>
                 <br><br>
                 <label>Zailtasuna(*):

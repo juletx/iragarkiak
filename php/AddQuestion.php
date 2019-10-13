@@ -27,7 +27,7 @@
             }
 
             echo "<p><a href='QuestionForm.php'>Galdera berri bat gehitu</a></p>";
-            echo "<p><a href='ShowQuestions.php'>Irudirik gabeko galderak ikusi</a></p>";
+            echo "<p><a href='ShowQuestions.php'>Argazkirik gabeko galderak ikusi</a></p>";
 
 			mysqli_close($esteka);
 			?>

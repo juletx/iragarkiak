@@ -25,7 +25,7 @@ section>div {
     padding: 5px;
 }
 
-#form {
+div#form {
     text-align: left;
     border: 2px solid #999;
 }
@@ -60,4 +60,15 @@ table, th, td {
 
 th, td {
     padding: 5px;
+}
+
+div#taula {
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+img.argazkia {
+    max-height: 100px;
+    max-width: 100px;
 }
