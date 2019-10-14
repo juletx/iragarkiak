@@ -1,5 +1,5 @@
 <?php
-$lokal = 1; //0 hodeirako
+$lokal = 0; //0 hodeirako
 if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
