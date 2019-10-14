@@ -11,7 +11,7 @@
         <div>
             <?php include '../php/DbConfig.php'?>
             <?php
-            $esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db);
+            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
 			if (!$esteka) {
 				exit;
 			}

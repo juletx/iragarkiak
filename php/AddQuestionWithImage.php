@@ -11,27 +11,22 @@
         <div>
             <?php include '../php/DbConfig.php'?>
             <?php
-            $esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db);
+            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
 			if (!$esteka) {
 				exit;
             }
+
+            $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
+            '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', NULL)";
             
             if ($_FILES['argazkia']['size'] != 0) {
                 $direktorioa = '../images/';
                 $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
 
-                if (file_exists($argazkia)) {
+                if (file_exists($argazkia) || move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia)) {
                     $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
                     '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
-                } else if (move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia)) {
-                    $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
-                    '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
-                } else {
-                    echo "Arazoren bat egon da argazkiarekin";
                 }
-            } else {
-                $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
-                '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', NULL)";
             }
 			
             $emaitza = mysqli_query($esteka, $sql);

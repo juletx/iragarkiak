@@ -11,7 +11,7 @@
         <div id="taula">
             <?php include '../php/DbConfig.php'?>
             <?php
-            $esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db);
+            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
 			if (!$esteka) {
 				exit;
             }
@@ -22,17 +22,17 @@
             echo '<table border=1> <thead> <tr> <th> ID </th> <th> EPOSTA </th> 
             <th> GALDERA </th> <th> ERANTZUNA </th> 
             <th colspan="3"> ERANTZUN OKERRAK </th> <th> ZAILTASUNA </th> 
-            <th> GAIA </th> <th> ARGAZKIA </th> </tr> </thead>';
+            <th> GAIA </th> <th> ARGAZKIA </th> </tr> </thead> <tbody>';
 
             while ($row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC)) {
-                echo '<tbody> <tr> <td>'.$row['id'].'</td> <td>'.$row['eposta'].
+                echo '<tr> <td>'.$row['id'].'</td> <td>'.$row['eposta'].
                 '</td> <td>'.$row['galdera'].'</td> <td>'.$row['erantzun_zuzena'].
                 '</td> <td>'.$row['erantzun_okerra1'].'</td> <td>'.$row['erantzun_okerra2'].
                 '</td> <td>'.$row['erantzun_okerra3'].'</td> <td>'.zailtasuna($row['zailtasuna']).
-                '</td> <td>'.$row['gaia'].'</td> <td>'.argazkia($row['argazkia']).'</td> </tr> </tbody>';
+                '</td> <td>'.$row['gaia'].'</td> <td>'.argazkia($row['argazkia']).'</td> </tr>';
             }
 
-            echo '</table>';
+            echo '</tbody> </table>';
 
             function zailtasuna($zailtasuna) {
                 switch($zailtasuna) {
