@@ -1,9 +1,8 @@
 <div id='page-wrap'>
     <header class='main' id='h1'>
-        <span class="right"><a href="signup">Erregistratu</a></span>
-        <span class="right"><a href="login">Login</a></span>
-        <span class="right" style="display:none;"><a href="/logout">Logout</a></span>
-
+        <span class="right"><a href="SignUp.php">Erregistratu</a></span>
+        <span class="right"><a href="LogIn.php">Login</a></span>
+        <span class="right" style="display:none;"><a href="LogOut">Logout</a></span>
     </header>
     <nav class='main' id='n1' role='navigation'>
         <span><a href='Layout.php'>Hasiera</a></span>
