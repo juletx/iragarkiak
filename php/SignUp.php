@@ -45,7 +45,7 @@
                     if (strlen($_POST["pasahitza"]) >= 6 && $_POST["pasahitza"] == $_POST["pasahitza2"]) {
                         addUser();
                     } else {
-                        // echo "<script>alert('Pasahitzek ez dute 6ko luzera edo ez dira berdinak')</script>";
+                        echo "<script>alert('Pasahitzek ez dute 6ko luzera edo ez dira berdinak')</script>";
                     }
                 }
 
@@ -72,16 +72,12 @@
                     $emaitza = mysqli_query($esteka, $sql);
                 
                     if (!$emaitza) {
-                        // echo "<script>alert('Erabiltzailea ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."')</script>";
+                        echo "<script>alert('Erabiltzailea ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."')</script>";
                         mysqli_close($esteka);
                     } else {
-                        // Aukera desberdinak pronbatu:
-                        // echo "<script>alert('Erabiltzailea ondo gorde da')</script>";
-                        // alert('Erabiltzailea ondo gorde da')
-                        // headlocation
-                        // window head helb
                         mysqli_close($esteka);
-                        header("Location: ../php/Layout.php");
+                        echo "<script>alert('Erabiltzailea ondo gorde da');window.location.href = '../php/Layout.php'</script>";
+                        // header("Location: ../php/Layout.php");
                     }
                 }
             ?>
