@@ -3,14 +3,13 @@
 
 <head>
     <?php include '../html/Head.html'?>
-    <script src="../js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="#" method="post" enctype="multipart/form-data">
+            <form id="galderenF" name="galderenF" action="#" method="post">
                 <fieldset>
                     <legend>Saio hasiera</legend>
                     <br>
@@ -44,10 +43,10 @@
                         echo "Errorea datu basearen kontsultan";
                     } else {
                         $lerroKopurua = mysqli_num_rows($emaitza);
-                        if ($lerroKopurua == 0){
+                        if ($lerroKopurua == 0) {
                             echo "<script>alert('Erabiltzaile edo pasahitz okerra')</script>";
                         } else {
-                            echo "<script>alert('Ongi etorri');window.location.href = '../php/Layout.php';</script>";
+                            echo "<script>alert('Ongi etorri'); window.location.href = '../php/Layout.php?eposta=".$eposta."'</script>";
                             // header("Location: ../php/Layout.php");
                         }
                     }
