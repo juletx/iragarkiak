@@ -76,8 +76,7 @@
                         mysqli_close($esteka);
                     } else {
                         mysqli_close($esteka);
-                        echo "<script>alert('Erabiltzailea ondo gorde da');window.location.href = '../php/Layout.php'</script>";
-                        // header("Location: ../php/Layout.php");
+                        echo "<script>alert('Erabiltzailea ondo gorde da'); window.location.href = '../php/Layout.php'</script>".PHP_EOL;
                     }
                 }
             ?>

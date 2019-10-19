@@ -40,14 +40,13 @@
                     $emaitza = mysqli_query($esteka, $sql);
 
                     if (!$emaitza) {
-                        echo "Errorea datu basearen kontsultan";
+                        echo "Errorea datu basearen kontsultan".PHP_EOL;
                     } else {
                         $lerroKopurua = mysqli_num_rows($emaitza);
                         if ($lerroKopurua == 0) {
-                            echo "<script>alert('Erabiltzaile edo pasahitz okerra')</script>";
+                            echo "<script>alert('Erabiltzaile edo pasahitz okerra')</script>".PHP_EOL;
                         } else {
-                            echo "<script>alert('Ongi etorri'); window.location.href = '../php/Layout.php?eposta=".$eposta."'</script>";
-                            // header("Location: ../php/Layout.php");
+                            echo "<script>alert('Ongi etorri ".$eposta."'); window.location.href = '../php/Layout.php?eposta=".$eposta."'</script>".PHP_EOL;
                         }
                     }
 
