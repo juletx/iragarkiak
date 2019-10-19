@@ -3,11 +3,12 @@
         <span class="loggedOut"><a href="SignUp.php">Erregistratu</a></span>
         <span class="loggedOut"><a href="LogIn.php">Login</a></span>
         <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'LogOut.php?eposta='.$_GET['eposta']?>">Logout</a></span>
+        <span><?php echo (isset($_GET['eposta'])) ? $_GET['eposta'] : 'Anonimoa'?></span>
     </header>
     <nav class='main' id='n1' role='navigation'>
         <span><a href="<?php echo (isset($_GET['eposta'])) ? 'Layout.php?eposta='.$_GET['eposta'] : 'Layout.php'?>">Hasiera</a></span>
         <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'QuestionFormWithImage.php?eposta='.$_GET['eposta']?>">Galdera gehitu</a></span>
-        <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'ShowQuestions.php?eposta='.$_GET['eposta']?>">Argazkirik gabeko galderak ikusi</a></span>
+        <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'ShowQuestions.php?eposta='.$_GET['eposta']?>">Galderak ikusi</a></span>
         <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'ShowQuestionsWithImage.php?eposta='.$_GET['eposta']?>">Argazkidun galderak ikusi</a></span>
         <span><a href="<?php echo (isset($_GET['eposta'])) ? 'Credits.php?eposta='.$_GET['eposta'] : 'Credits.php'?>">Kredituak</a></span>
     </nav>
@@ -27,6 +28,8 @@
             $sql = "SELECT argazkia FROM users WHERE eposta='$eposta'";
             $emaitza = mysqli_query($esteka, $sql);
 
+            mysqli_free_result($emaitza);
+            mysqli_close($esteka);
         } else {
             echo "<script>$('.loggedIn').hide()</script>".PHP_EOL;
         }

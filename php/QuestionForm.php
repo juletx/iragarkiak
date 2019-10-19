@@ -10,9 +10,10 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="AddQuestion.php" onsubmit="return validateFields()">
+            <form id="galderenF" name="galderenF" action="<?php echo 'AddQuestion.php?eposta='.$_GET['eposta']?>"
+                onsubmit="return validateFields()">
                 <label for="eposta">Ehuko eposta(*):</label>
-                <input type="text" id="eposta" name="eposta">
+                <input type="text" id="eposta" name="eposta" value="<?php echo $_GET['eposta']?>" readonly>
                 <br><br>
                 <label for="galdera">Galdera(*):</label>
                 <input type="text" id="galdera" name="galdera">

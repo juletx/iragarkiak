@@ -46,7 +46,7 @@
             }
 
             function argazkia($helbidea) {
-                return "<img src=$helbidea alt='?' class='argazkia'";
+                return "<img src='$helbidea' alt='Ez dauka' class='argazkia'";
             }
 
             mysqli_free_result($emaitza);

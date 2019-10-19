@@ -11,7 +11,9 @@
     <?php include '../php/Menus.php'?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="<?php echo 'AddQuestionWithImage.php?eposta='.$_GET['eposta']?>" onsubmit="return validateFields()" method="post" enctype="multipart/form-data">
+            <form id="galderenF" name="galderenF"
+                action="<?php echo 'AddQuestionWithImage.php?eposta='.$_GET['eposta']?>"
+                onsubmit="return validateFields()" method="post" enctype="multipart/form-data">
                 <label for="eposta">Ehuko eposta(*):</label>
                 <input type="text" id="eposta" name="eposta" value="<?php echo $_GET['eposta']?>" readonly>
                 <br><br>

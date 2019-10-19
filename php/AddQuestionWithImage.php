@@ -39,15 +39,13 @@
                         echo "<p>Galdera ondo gorde da</p>";
                     }
 
-                    echo "<p><a href='QuestionFormWithImage.php'>Galdera berri bat gehitu</a></p>";
-                    echo "<p><a href='ShowQuestions.php'>Argazkirik gabeko galderak ikusi</a></p>";
-                    echo "<p><a href='ShowQuestionsWithImage.php'>Argazkidun galderak ikusi</a></p>";
+                    echo "<p><a href='QuestionFormWithImage.php?eposta=".$_GET['eposta']."'>Galdera berri bat gehitu</a></p>";
+                    echo "<p><a href='ShowQuestions.php?eposta=".$_GET['eposta']."'>Galderak ikusi</a></p>";
+                    echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$_GET['eposta']."'>Argazkidun galderak ikusi</a></p>";
 
                     mysqli_close($esteka);    
                 }
-                
             }
-            
 			?>
         </div>
     </section>

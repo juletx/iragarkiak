@@ -50,6 +50,7 @@
                         }
                     }
 
+                    mysqli_free_result($emaitza);
                     mysqli_close($esteka);
                 }
             ?>

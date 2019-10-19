@@ -9,10 +9,11 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF" action="AddQuestion.php">
+            <form id="galderenF" name="galderenF" action="<?php echo 'AddQuestion.php?eposta='.$_GET['eposta']?>">
                 <label for="eposta">Ehuko eposta(*):</label>
                 <input type="email" id="eposta" name="eposta"
-                    pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu.eu?s)" required>
+                    pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu.eu?s)" required
+                    value="<?php echo $_GET['eposta']?>" readonly>
                 <br><br>
                 <label for="galdera">Galdera(*):</label>
                 <input type="text" id="galdera" name="galdera" minlength="10" required>
