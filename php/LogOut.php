@@ -10,7 +10,7 @@
     <section class="main" id="s1">
         <div>
             <?php
-                echo "<script>if (confirm('Ziur al zaude?')) {alert('Gero arte ".$_GET['eposta']."'); window.location.href = '../php/Layout.php'}</script>".PHP_EOL;
+                echo "<script>if (confirm('Ziur al zaude?')) {alert('Gero arte ".$_GET['eposta']."'); window.location.href = '../php/Layout.php'} else {history.go(-1)}</script>".PHP_EOL;
             ?>
         </div>
     </section>

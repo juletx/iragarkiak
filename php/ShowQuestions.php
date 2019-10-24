@@ -19,6 +19,8 @@
             $sql = "SELECT * FROM questions";
             $emaitza = mysqli_query($esteka, $sql);
 
+            echo '<h2>Galderak ikusi</h2> <br>';
+
             echo '<table border=1> <thead> <tr> <th> ID </th> <th> EPOSTA </th> 
             <th> GALDERA </th> <th> ERANTZUNA </th> 
             <th colspan="3"> ERANTZUN OKERRAK </th> <th> ZAILTASUNA </th> 

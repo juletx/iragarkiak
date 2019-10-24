@@ -11,8 +11,7 @@
         <div id="form">
             <form id="galderenF" name="galderenF" action="#" method="post">
                 <fieldset>
-                    <legend>Saio hasiera</legend>
-                    <br>
+                    <legend><h2>Login</h2></legend>
                     <label for="eposta">Ehuko eposta(*):</label>
                     <input type="email" id="eposta" name="eposta"
                         pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu.eu?s)" required>

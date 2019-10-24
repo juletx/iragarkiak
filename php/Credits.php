@@ -9,8 +9,8 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div>
-            <h2>EGILEEN DATUAK</h2>
-
+            <h2>Kredituak</h2>
+            <br>    
             <h3>Deiturak: Julen Etxaniz eta Aitor Zubillaga</h3>
 
             <h3>Ikastegia: Informatika Fakultatea</h3>

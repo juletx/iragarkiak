@@ -4,7 +4,7 @@
         <span class="loggedOut"><a href="LogIn.php">Login</a></span>
         <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'LogOut.php?eposta='.$_GET['eposta']?>">Logout</a></span>
         <span><?php echo (isset($_GET['eposta'])) ? $_GET['eposta'] : 'Anonimoa'?></span>        
-        <img id="argazkia" src="" alt="" class="argazkiaLogin"> 
+        <img id="argazkia" src="" alt="argazkia" class="argazkiaLogin"> 
     </header>
     <nav class='main' id='n1' role='navigation'>
         <span><a href="<?php echo (isset($_GET['eposta'])) ? 'Layout.php?eposta='.$_GET['eposta'] : 'Layout.php'?>">Hasiera</a></span>

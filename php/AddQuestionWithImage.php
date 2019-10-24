@@ -11,8 +11,10 @@
         <div>
             <?php include '../php/DbConfig.php'?>
             <?php
-            if(isset($_POST['eposta'],$_POST['galdera'],$_POST['erantzun_zuzena'],$_POST['erantzun_okerra1'],$_POST['erantzun_okerra2'],$_POST['erantzun_okerra3'],$_POST['zailtasuna'],$_POST['gaia'])&& $_POST['eposta'] != "" && $_POST['galdera'] != ""&& $_POST['erantzun_zuzena'] != ""&& $_POST['erantzun_okerra1'] != ""&& $_POST['erantzun_okerra2'] != ""&& $_POST['erantzun_okerra3'] != ""&& $_POST['zailtasuna'] != ""&& $_POST['gaia'] != ""){
-                if(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $_POST['eposta'])||preg_match('/[a-z]+\.?[a-z]{2,}@ehu.eu?s/', $_POST['eposta'])){
+            if (isset($_POST['eposta'], $_POST['galdera'], $_POST['erantzun_zuzena'], $_POST['erantzun_okerra1'], $_POST['erantzun_okerra2'], $_POST['erantzun_okerra3'], 
+            $_POST['zailtasuna'], $_POST['gaia']) && $_POST['eposta'] != "" && $_POST['galdera'] != "" && $_POST['erantzun_zuzena'] != "" && $_POST['erantzun_okerra1'] != "" &&
+            $_POST['erantzun_okerra2'] != "" && $_POST['erantzun_okerra3'] != "" && $_POST['zailtasuna'] != "" && $_POST['gaia'] != "") {
+                if (preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $_POST['eposta']) || preg_match('/[a-z]+\.?[a-z]{2,}@ehu.eu?s/', $_POST['eposta'])) {
                     $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
                     if (!$esteka) {
                         exit;

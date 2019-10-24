@@ -9,8 +9,9 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="taula">
-            <?php include '../php/DbConfig.php'?>
+            <h2>Galderak ikusi</h2> <br>
             <?php
+            include '../php/DbConfig.php';
             $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
 			if (!$esteka) {
 				exit;
