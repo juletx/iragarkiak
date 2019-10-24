@@ -8,7 +8,7 @@ if ($lokal) {
 } else {
     $zerbitzaria = "localhost";
     $erabiltzailea = "id11105782_wst03";
-    $gakoa = "Zubetx03";
+    $gakoa = "********";
     $db = "id11105782_quiz";
 }
 ?>

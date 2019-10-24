@@ -29,7 +29,7 @@
                 '</td> <td>'.$row['galdera'].'</td> <td>'.$row['erantzun_zuzena'].
                 '</td> <td>'.$row['erantzun_okerra1'].'</td> <td>'.$row['erantzun_okerra2'].
                 '</td> <td>'.$row['erantzun_okerra3'].'</td> <td>'.zailtasuna($row['zailtasuna']).
-                '</td> <td>'.$row['gaia'].'</td> <td>'.argazkia($row['argazkia']).'</td> </tr>';
+                '</td> <td>'.$row['gaia'].'</td> <td class="argazkia">'.argazkia($row['argazkia']).'</td> </tr>';
             }
 
             echo '</tbody> </table>';
@@ -46,7 +46,7 @@
             }
 
             function argazkia($helbidea) {
-                return "<img src='$helbidea' alt='Ez dauka' class='argazkia'";
+                return "<img src='$helbidea' alt='Ez dauka' class='argazkia'>";
             }
 
             mysqli_free_result($emaitza);

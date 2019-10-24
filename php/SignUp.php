@@ -34,10 +34,10 @@
                 <label for="argazki">Argazkia:</label>
                 <img id="argazki" alt="Aukeratu galderarekin zerikusia duen argazkia" height="100" src="#" />
                 <br><br>
-                <input type="file" id="argazkia" name="argazkia" accept="image/*" onchange="showImage(this)">
+                <input type="file" id="argazkiaa" name="argazkia" accept="image/*" >
                 <br><br>
                 <input type="submit" value="Erregistratu">
-                <input type="reset" value="Berrezarri" onclick="hideImage()">
+                <input type="reset" value="Berrezarri">
             </form>
 
             <?php
@@ -67,8 +67,14 @@
                             $sql = "INSERT INTO users VALUES (NULL, '$_POST[eposta]', '$_POST[mota]' , '$_POST[deiturak]', 
                             '$_POST[pasahitza]', '$argazkia')";
                         }
+                    }else{
+                        $direktorioa = '../images/';
+                        $argazkia = $direktorioa.basename('Anonimoa.png');
+                        if (file_exists($argazkia)) {
+                            $sql = "INSERT INTO users VALUES (NULL, '$_POST[eposta]', '$_POST[mota]' , '$_POST[deiturak]', 
+                            '$_POST[pasahitza]', '$argazkia')";
+                        }
                     }
-                
                     $emaitza = mysqli_query($esteka, $sql);
                 
                     if (!$emaitza) {

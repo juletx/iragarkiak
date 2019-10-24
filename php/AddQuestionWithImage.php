@@ -29,6 +29,13 @@
                             $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
                             '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
                         }
+                    }else{
+                        $direktorioa = '../images/';
+                        $argazkia = $direktorioa.basename('Galdera.png');
+                        if (file_exists($argazkia)) {
+                            $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
+                            '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
+                        }
                     }
                     
                     $emaitza = mysqli_query($esteka, $sql);
@@ -40,8 +47,7 @@
                     }
 
                     echo "<p><a href='QuestionFormWithImage.php?eposta=".$_GET['eposta']."'>Galdera berri bat gehitu</a></p>";
-                    echo "<p><a href='ShowQuestions.php?eposta=".$_GET['eposta']."'>Galderak ikusi</a></p>";
-                    echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$_GET['eposta']."'>Argazkidun galderak ikusi</a></p>";
+                    echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$_GET['eposta']."'>Galderak ikusi</a></p>";
 
                     mysqli_close($esteka);    
                 }

@@ -12,8 +12,8 @@
     <section class="main" id="s1">
         <div id="form">
             <form id="galderenF" name="galderenF"
-                action="<?php echo 'AddQuestionWithImage.php?eposta='.$_GET['eposta']?>"
-                onsubmit="return validateFields()" method="post" enctype="multipart/form-data">
+                action="<?php echo 'AddQuestionWithImage.php?eposta='.$_GET['eposta']?>" method="post"
+                enctype="multipart/form-data">
                 <label for="eposta">Ehuko eposta(*):</label>
                 <input type="text" id="eposta" name="eposta" value="<?php echo $_GET['eposta']?>" readonly>
                 <br><br>
@@ -46,10 +46,10 @@
                 <label for="argazki">Argazkia:</label>
                 <img id="argazki" alt="Aukeratu galderarekin zerikusia duen argazkia" height="100" src="#" />
                 <br><br>
-                <input type="file" id="argazkia" name="argazkia" accept="image/*" onchange="showImage(this)">
+                <input type="file" id="argazkiaa" name="argazkia" accept="image/*">
                 <br><br>
                 <input type="submit" value="Galdera gehitu">
-                <input type="reset" value="Berrezarri" onclick="hideImage()">
+                <input type="reset" value="Berrezarri">
             </form>
         </div>
     </section>

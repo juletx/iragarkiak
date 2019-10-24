@@ -69,6 +69,11 @@ div#taula {
 }
 
 img.argazkia {
-    max-height: 100px;
+    max-height: 50px;
+    max-width: 100px;
+}
+
+img.argazkiaLogin {
+    max-height: 50px;
     max-width: 100px;
 }
