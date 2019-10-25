@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <assessmentItems>
 	<assessmentItem author="rosa.arruabarrena@ehu.eus" subject="Mikologia">
-		<itemBody> 
+		<itemBody>
 			<p>Zein Amanita da jangarria?</p>
 		</itemBody>
 		<correctResponse>
@@ -14,7 +14,7 @@
 		</incorrectResponses>
 	</assessmentItem>
 	<assessmentItem author="vadillo@ehu.es" subject="Mikologia">
-		<itemBody> 
+		<itemBody>
 			<p>Tripakiek zer dute kapela azpian?</p>
 		</itemBody>
 		<correctResponse>
@@ -37,6 +37,19 @@
 			<value>Gibel urdinak</value>
 			<value>Esnegorriak</value>
 			<value>Errotariak</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="jetxaniz007@ikasle.ehu.eus" subject="Informatika">
+		<itemBody>
+			<p>Non gordetzen dira cookie-ak?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Bezeroaren nabigatzailean</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Web orrien zerbitzarian</value>
+			<value>Zerbitzari aldeko aplikazioatan</value>
+			<value>Bai bezeroan bai eta zerbitzarian</value>
 		</incorrectResponses>
 	</assessmentItem>
 </assessmentItems>

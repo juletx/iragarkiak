@@ -10,7 +10,7 @@
     <section class="main" id="s1">
         <div>
             <?php
-            $xml = simplexml_load_file('Questions.xml');
+            $xml = simplexml_load_file('../xml/Questions.xml');
 
             $assessmentItem = $xml->addChild('assessmentItem');
             $assessmentItem->addAttribute('author', $_POST['eposta']);
@@ -26,6 +26,14 @@
             $incorrectResponses->addChild('value', $_POST['erantzun_okerra1']);
             $incorrectResponses->addChild('value', $_POST['erantzun_okerra2']);
             $incorrectResponses->addChild('value', $_POST['erantzun_okerra3']);
+
+            $ondo = $xml->asXML('../xml/Questions.xml');
+
+            if (!$emaitza) {
+                echo "<p>Galdera ez da ondo gorde xml-an</p>";
+            } else {
+                echo "<p>Galdera ondo gorde da xml-an</p>";
+            }
             ?>
             <?php
             include '../php/DbConfig.php';
@@ -61,9 +69,9 @@
                     $emaitza = mysqli_query($esteka, $sql);
                     
                     if (!$emaitza) {
-                        echo "<p>Galdera ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."</p>";
+                        echo "<p>Galdera ez da ondo gorde datubasean: ".mysqli_error($esteka).PHP_EOL."</p>";
                     } else {
-                        echo "<p>Galdera ondo gorde da</p>";
+                        echo "<p>Galdera ondo gorde da datubasean</p>";
                     }
 
                     echo "<p><a href='QuestionFormWithImage.php?eposta=".$_GET['eposta']."'>Galdera berri bat gehitu</a></p>";
