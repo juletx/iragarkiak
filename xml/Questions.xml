@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../xml/ShowXmlQuestions.xsl"?>
 <assessmentItems>
 	<assessmentItem author="rosa.arruabarrena@ehu.eus" subject="Mikologia">
 		<itemBody>

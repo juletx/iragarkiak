@@ -15,6 +15,17 @@
             $assessmentItem = $xml->addChild('assessmentItem');
             $assessmentItem->addAttribute('author', $_POST['eposta']);
             $assessmentItem->addAttribute('subject', $_POST['gaia']);
+            /*$assessmentItem->addAttribute('difficulty', zailtasuna($_POST['zailtasuna']));
+            function zailtasuna($zailtasuna) {
+                switch($zailtasuna) {
+                case 1:
+                    return "Txikia";
+                case 2:
+                    return "Ertaina";
+                case 3:
+                    return "Handia";
+                }
+            }*/
 
             $itemBody = $assessmentItem->addChild('itemBody');
             $itemBody->addChild('p', $_POST['galdera']);
