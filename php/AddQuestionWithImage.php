@@ -9,8 +9,26 @@
     <?php include '../php/Menus.php'?>
     <section class="main" id="s1">
         <div>
-            <?php include '../php/DbConfig.php'?>
             <?php
+            $xml = simplexml_load_file('Questions.xml');
+
+            $assessmentItem = $xml->addChild('assessmentItem');
+            $assessmentItem->addAttribute('author', $_POST['eposta']);
+            $assessmentItem->addAttribute('subject', $_POST['gaia']);
+
+            $itemBody = $assessmentItem->addChild('itemBody');
+            $itemBody->addChild('p', $_POST['galdera']);
+
+            $correctResponse = $assessmentItem->addChild('correctResponse');
+            $correctResponse->addChild('value', $_POST['erantzun_zuzena']);
+
+            $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
+            $incorrectResponses->addChild('value', $_POST['erantzun_okerra1']);
+            $incorrectResponses->addChild('value', $_POST['erantzun_okerra2']);
+            $incorrectResponses->addChild('value', $_POST['erantzun_okerra3']);
+            ?>
+            <?php
+            include '../php/DbConfig.php';
             if (isset($_POST['eposta'], $_POST['galdera'], $_POST['erantzun_zuzena'], $_POST['erantzun_okerra1'], $_POST['erantzun_okerra2'], $_POST['erantzun_okerra3'], 
             $_POST['zailtasuna'], $_POST['gaia']) && $_POST['eposta'] != "" && $_POST['galdera'] != "" && $_POST['erantzun_zuzena'] != "" && $_POST['erantzun_okerra1'] != "" &&
             $_POST['erantzun_okerra2'] != "" && $_POST['erantzun_okerra3'] != "" && $_POST['zailtasuna'] != "" && $_POST['gaia'] != "") {
