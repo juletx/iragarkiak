@@ -10,43 +10,6 @@
     <section class="main" id="s1">
         <div>
             <?php
-            $xml = simplexml_load_file('../xml/Questions.xml');
-
-            $assessmentItem = $xml->addChild('assessmentItem');
-            $assessmentItem->addAttribute('author', $_POST['eposta']);
-            $assessmentItem->addAttribute('subject', $_POST['gaia']);
-            /*$assessmentItem->addAttribute('difficulty', zailtasuna($_POST['zailtasuna']));
-            function zailtasuna($zailtasuna) {
-                switch($zailtasuna) {
-                case 1:
-                    return "Txikia";
-                case 2:
-                    return "Ertaina";
-                case 3:
-                    return "Handia";
-                }
-            }*/
-
-            $itemBody = $assessmentItem->addChild('itemBody');
-            $itemBody->addChild('p', $_POST['galdera']);
-
-            $correctResponse = $assessmentItem->addChild('correctResponse');
-            $correctResponse->addChild('value', $_POST['erantzun_zuzena']);
-
-            $incorrectResponses = $assessmentItem->addChild('incorrectResponses');
-            $incorrectResponses->addChild('value', $_POST['erantzun_okerra1']);
-            $incorrectResponses->addChild('value', $_POST['erantzun_okerra2']);
-            $incorrectResponses->addChild('value', $_POST['erantzun_okerra3']);
-
-            $ondo = $xml->asXML('../xml/Questions.xml');
-
-            if (!$ondo) {
-                echo "<p>Galdera ez da ondo gorde xml-an</p>";
-            } else {
-                echo "<p>Galdera ondo gorde da xml-an</p>";
-            }
-            ?>
-            <?php
             include '../php/DbConfig.php';
             if (isset($_POST['eposta'], $_POST['galdera'], $_POST['erantzun_zuzena'], $_POST['erantzun_okerra1'], $_POST['erantzun_okerra2'], $_POST['erantzun_okerra3'], 
             $_POST['zailtasuna'], $_POST['gaia']) && $_POST['eposta'] != "" && $_POST['galdera'] != "" && $_POST['erantzun_zuzena'] != "" && $_POST['erantzun_okerra1'] != "" &&
@@ -68,7 +31,7 @@
                             $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
                             '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
                         }
-                    }else{
+                    } else {
                         $direktorioa = '../images/';
                         $argazkia = $direktorioa.basename('Galdera.png');
                         if (file_exists($argazkia)) {
@@ -85,12 +48,48 @@
                         echo "<p>Galdera ondo gorde da datubasean</p>";
                     }
 
-                    echo "<p><a href='QuestionFormWithImage.php?eposta=".$_GET['eposta']."'>Galdera berri bat gehitu</a></p>";
-                    echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$_GET['eposta']."'>Galderak ikusi</a></p>";
+					mysqli_close($esteka);
+					
+					$xml = simplexml_load_file('../xml/Questions.xml');
 
-                    mysqli_close($esteka);    
-                }
-            }
+					$assessmentItem = $xml->addChild('assessmentItem');
+					$assessmentItem->addAttribute('author', $_POST['eposta']);
+					$assessmentItem->addAttribute('subject', $_POST['gaia']);
+					/*$assessmentItem->addAttribute('difficulty', zailtasuna($_POST['zailtasuna']));
+					function zailtasuna($zailtasuna) {
+						switch($zailtasuna) {
+						case 1:
+							return "Txikia";
+						case 2:
+							return "Ertaina";
+						case 3:
+							return "Handia";
+						}
+					}*/
+
+					$itemBody = $assessmentItem->addChild('itemBody');
+					$itemBody->addChild('p', $_POST['galdera']);
+
+					$correctResponse = $assessmentItem->addChild('correctResponse');
+					$correctResponse->addChild('value', $_POST['erantzun_zuzena']);
+
+					$incorrectResponses = $assessmentItem->addChild('incorrectResponses');
+					$incorrectResponses->addChild('value', $_POST['erantzun_okerra1']);
+					$incorrectResponses->addChild('value', $_POST['erantzun_okerra2']);
+					$incorrectResponses->addChild('value', $_POST['erantzun_okerra3']);
+
+					$ondo = $xml->asXML('../xml/Questions.xml');
+
+					if (!$ondo) {
+						echo "<p>Galdera ez da ondo gorde xml-an</p>";
+					} else {
+						echo "<p>Galdera ondo gorde da xml-an</p>";
+					}
+
+					echo "<p><a href='QuestionFormWithImage.php?eposta=".$_GET['eposta']."'>Galdera berri bat gehitu</a></p>";
+                    echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$_GET['eposta']."'>Galderak ikusi</a></p>";
+				}	
+			}	
 			?>
         </div>
     </section>
