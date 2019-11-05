@@ -48,7 +48,7 @@
                     if (strlen($_POST["pasahitza"]) >= 6 && $_POST["pasahitza"] == $_POST["pasahitza2"]) {
                         addUser();
                     } else {
-                        echo "<script>alert('Pasahitzek ez dute 6ko luzera edo ez dira berdinak')</script>";
+                        echo "<script>alert('Pasahitzek ez dute 6ko luzera edo ez dira berdinak'); history.go(-1);</script>";
                     }
                 }
 
@@ -81,7 +81,7 @@
                     $emaitza = mysqli_query($esteka, $sql);
                 
                     if (!$emaitza) {
-                        echo "<script>alert('Erabiltzailea ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."')</script>";
+                        echo "<script>alert('Erabiltzailea ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."'); history.go(-1);</script>";
                         mysqli_close($esteka);
                     } else {
                         mysqli_close($esteka);

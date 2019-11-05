@@ -43,7 +43,7 @@
                     } else {
                         $lerroKopurua = mysqli_num_rows($emaitza);
                         if ($lerroKopurua == 0) {
-                            echo "<script>alert('Erabiltzaile edo pasahitz okerra')</script>".PHP_EOL;
+                            echo "<script>alert('Erabiltzaile edo pasahitz okerra'); history.go(-1);</script>".PHP_EOL;
                         } else {
                             echo "<script>alert('Ongi etorri ".$eposta."'); window.location.href = '../php/Layout.php?eposta=".$eposta."'</script>".PHP_EOL;
                         }

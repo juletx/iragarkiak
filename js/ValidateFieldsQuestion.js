@@ -1,4 +1,3 @@
-  
 $(document).ready(function(){
     $("#galderenF").submit(function(){
         if (checkRequired() && checkEposta() && checkGaldera()) {
