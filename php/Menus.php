@@ -10,6 +10,7 @@
         <span><a href="<?php echo (isset($_GET['eposta'])) ? 'Layout.php?eposta='.$_GET['eposta'] : 'Layout.php'?>">Hasiera</a></span>
         <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'QuestionFormWithImage.php?eposta='.$_GET['eposta']?>">Galdera gehitu</a></span>
         <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'ShowQuestionsWithImage.php?eposta='.$_GET['eposta']?>">Galderak ikusi</a></span>
+        <span class="loggedIn"><a href="<?php if (isset($_GET['eposta'])) echo 'ShowXMLQuestions.php?eposta='.$_GET['eposta']?>">Ikusi XML galderak</a></span>
         <span><a href="<?php echo (isset($_GET['eposta'])) ? 'Credits.php?eposta='.$_GET['eposta'] : 'Credits.php'?>">Kredituak</a></span>
     </nav>
 

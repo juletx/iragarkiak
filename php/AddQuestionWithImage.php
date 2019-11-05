@@ -40,7 +40,7 @@
 
             $ondo = $xml->asXML('../xml/Questions.xml');
 
-            if (!$emaitza) {
+            if (!$ondo) {
                 echo "<p>Galdera ez da ondo gorde xml-an</p>";
             } else {
                 echo "<p>Galdera ondo gorde da xml-an</p>";
