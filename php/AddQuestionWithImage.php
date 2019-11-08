@@ -16,7 +16,7 @@
 			empty($_POST['erantzun_okerra2']) || empty($_POST['erantzun_okerra3']) || empty($_POST['zailtasuna']) || empty($_POST['gaia'])) {
 				echo "<script>alert('Bete eremu guztiak'); history.go(-1);</script>";
 			}
-			else if (!(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $_POST['eposta']) || preg_match('/[a-z]+\.?[a-z]{2,}@ehu.eu?s/', $_POST['eposta']))) {
+			else if (!(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $_POST['eposta']) || preg_match('/[a-z]+\.?[a-z]{2,}@ehu\.eu?s/', $_POST['eposta']))) {
 				echo "<script>alert('Posta elektronikoa ez da zuzena'); history.go(-1);</script>";
 			}
 			else if (strlen("$_POST[galdera]") < 10) {

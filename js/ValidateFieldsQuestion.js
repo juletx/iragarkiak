@@ -21,7 +21,7 @@ $(document).ready(function(){
         function checkEposta() {
             var eposta = $("#eposta").val();
             var epostaikasle = /[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/;
-            var epostairakasle = /[a-z]+\.?[a-z]{2,}@ehu.eu?s/;
+            var epostairakasle = /[a-z]+\.?[a-z]{2,}@ehu\.eu?s/;
             if ((eposta.match(epostaikasle) == eposta) || (eposta.match(epostairakasle) == eposta))
                 return true;
             alert("Posta elektronikoa ez da zuzena");
