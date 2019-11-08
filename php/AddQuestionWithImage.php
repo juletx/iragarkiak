@@ -10,61 +10,61 @@
     <section class="main" id="s1">
         <div>
             <?php
-			$eposta = $_GET['eposta'];
+			$eposta = trim($_POST['eposta']);
+			$galdera = trim($_POST['galdera']);
+			$erantzuna = trim($_POST['erantzuna']);
+			$okerra1 = trim($_POST['okerra1']);
+			$okerra2 = trim($_POST['okerra2']);
+			$okerra3 = trim($_POST['okerra3']);
+			$zailtasuna = $_POST['zailtasuna'];
+			$gaia = trim($_POST['gaia']);
 
-			if (empty($_POST['eposta']) || empty($_POST['galdera']) || empty($_POST['erantzun_zuzena']) || empty($_POST['erantzun_okerra1']) || 
-			empty($_POST['erantzun_okerra2']) || empty($_POST['erantzun_okerra3']) || empty($_POST['zailtasuna']) || empty($_POST['gaia'])) {
+			if (empty($eposta) || empty($galdera) || empty($erantzuna) || empty($okerra1) || 
+				empty($okerra2) || empty($okerra3) || empty($zailtasuna) || empty($gaia)) {
 				echo "<script>alert('Bete eremu guztiak'); history.go(-1);</script>";
 			}
-			else if (!(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $_POST['eposta']) || preg_match('/[a-z]+\.?[a-z]{2,}@ehu\.eu?s/', $_POST['eposta']))) {
+			else if (!(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $eposta) || 
+				preg_match('/[a-z]+\.?[a-z]{2,}@ehu\.eu?s/', $eposta))) {
 				echo "<script>alert('Posta elektronikoa ez da zuzena'); history.go(-1);</script>";
 			}
-			else if (strlen("$_POST[galdera]") < 10) {
+			else if (strlen($galdera) < 10) {
 				echo "<script>alert('Galderak gutxienez 10 karaktere izan behar ditu'); history.go(-1);</script>";
 			}
 			else {
 				include '../php/DbConfig.php';
-				$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
-                if (!$esteka) {
-                    exit;
-                }
-
-                $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
-                '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', NULL)";
-                    
+				$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
+				
+				$direktorioa = '../images/';
+                $argazkia = $direktorioa.'Galdera.png';
+                
                 if ($_FILES['argazkia']['size'] != 0) {
-                    $direktorioa = '../images/';
                     $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
-
-                    if (file_exists($argazkia) || move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia)) {
-                        $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
-                        '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
-                    }
-                } else {
-                    $direktorioa = '../images/';
-                    $argazkia = $direktorioa.basename('Galdera.png');
-                    if (file_exists($argazkia)) {
-                        $sql = "INSERT INTO questions VALUES (NULL, '$_POST[eposta]', '$_POST[galdera]' , '$_POST[erantzun_zuzena]', 
-                        '$_POST[erantzun_okerra1]', '$_POST[erantzun_okerra2]', '$_POST[erantzun_okerra3]', $_POST[zailtasuna], '$_POST[gaia]', '$argazkia')";
+						
+                    if (!file_exists($argazkia)) {
+						move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia);
                     }
                 }
+				
+				$sql = "INSERT INTO questions VALUES (NULL, '$eposta', '$galdera' , '$erantzuna', 
+                    '$okerra1', '$okerra2', '$okerra3', $zailtasuna, '$gaia', '$argazkia')";
                     
-                $emaitza = mysqli_query($esteka, $sql);
+				$emaitza = mysqli_query($esteka, $sql);
+				
+				mysqli_close($esteka);
                     
                 if (!$emaitza) {
-                    echo "<p>Galdera ez da ondo gorde datu-basean: ".mysqli_error($esteka).PHP_EOL."</p>";
+					echo "<script>alert('Galdera ez da ondo gorde datu-basean'); history.go(-1);</script>";
                 } else {
+					echo "<script>alert('Galdera ondo gorde da datu-basean');</script>";
                     echo "<p>Galdera ondo gorde da datu-basean</p>";
                 }
-
-				mysqli_close($esteka);
-					
+				
 				$xml = simplexml_load_file('../xml/Questions.xml');
 
 				$assessmentItem = $xml->addChild('assessmentItem');
-				$assessmentItem->addAttribute('author', $_POST['eposta']);
-				$assessmentItem->addAttribute('subject', $_POST['gaia']);
-				/*$assessmentItem->addAttribute('difficulty', zailtasuna($_POST['zailtasuna']));
+				$assessmentItem->addAttribute('author', $eposta);
+				$assessmentItem->addAttribute('subject', $gaia);
+				/*$assessmentItem->addAttribute('difficulty', zailtasuna($zailtasuna));
 				function zailtasuna($zailtasuna) {
 					switch($zailtasuna) {
 					case 1:
@@ -77,23 +77,26 @@
 				}*/
 
 				$itemBody = $assessmentItem->addChild('itemBody');
-				$itemBody->addChild('p', $_POST['galdera']);
+				$itemBody->addChild('p', $galdera);
 
 				$correctResponse = $assessmentItem->addChild('correctResponse');
-				$correctResponse->addChild('value', $_POST['erantzun_zuzena']);
+				$correctResponse->addChild('value', $erantzuna);
 
 				$incorrectResponses = $assessmentItem->addChild('incorrectResponses');
-				$incorrectResponses->addChild('value', $_POST['erantzun_okerra1']);
-				$incorrectResponses->addChild('value', $_POST['erantzun_okerra2']);
-				$incorrectResponses->addChild('value', $_POST['erantzun_okerra3']);
+				$incorrectResponses->addChild('value', $okerra1);
+				$incorrectResponses->addChild('value', $okerra2);
+				$incorrectResponses->addChild('value', $okerra3);
 
 				$ondo = $xml->asXML('../xml/Questions.xml');
 
 				if (!$ondo) {
-					echo "<p>Galdera ez da ondo gorde xml-an</p>";
+					echo "<script>alert('Galdera ez da ondo gorde xml-an'); history.go(-1);</script>";
 				} else {
+					echo "<script>alert('Galdera ondo gorde da xml-an');</script>";
 					echo "<p>Galdera ondo gorde da xml-an</p>";
 				}
+
+				$eposta = $_GET['eposta'];
 
 				echo "<p><a href='QuestionFormWithImage.php?eposta=".$eposta."'>Galdera gehitu</a></p>";
 				echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$eposta."'>Galderak ikusi</a></p>";

@@ -11,10 +11,7 @@
         <div id="taula">
             <?php include '../php/DbConfig.php'?>
             <?php
-            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
-			if (!$esteka) {
-				exit;
-            }
+            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
             
             $sql = "SELECT * FROM questions";
             $emaitza = mysqli_query($esteka, $sql);
@@ -28,9 +25,9 @@
 
             while ($row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC)) {
                 echo '<tr> <td>'.$row['id'].'</td> <td>'.$row['eposta'].
-                '</td> <td>'.$row['galdera'].'</td> <td>'.$row['erantzun_zuzena'].
-                '</td> <td>'.$row['erantzun_okerra1'].'</td> <td>'.$row['erantzun_okerra2'].
-                '</td> <td>'.$row['erantzun_okerra3'].'</td> <td>'.zailtasuna($row['zailtasuna']).
+                '</td> <td>'.$row['galdera'].'</td> <td>'.$row['erantzuna'].
+                '</td> <td>'.$row['okerra1'].'</td> <td>'.$row['okerra2'].
+                '</td> <td>'.$row['okerra3'].'</td> <td>'.zailtasuna($row['zailtasuna']).
                 '</td> <td>'.$row['gaia'].'</td> </tr>';
             }
 

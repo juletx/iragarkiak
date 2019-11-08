@@ -21,17 +21,17 @@
                 <label for="galdera">Galdera(*):</label>
                 <input type="text" id="galdera" name="galdera" minlength="10" required>
                 <br><br>
-                <label for="erantzun_zuzena">Erantzun zuzena(*):</label>
-                <input type="text" id="erantzun_zuzena" name="erantzun_zuzena" required>
+                <label for="erantzuna">Erantzun zuzena(*):</label>
+                <input type="text" id="erantzuna" name="erantzuna" required>
                 <br><br>
-                <label for="erantzun_okerra1">Erantzun okerra 1(*):</label>
-                <input type="text" id="erantzun_okerra1" name="erantzun_okerra1" required>
+                <label for="okerra1">Erantzun okerra 1(*):</label>
+                <input type="text" id="okerra1" name="okerra1" required>
                 <br><br>
-                <label for="erantzun_okerra2">Erantzun okerra 2(*):</label>
-                <input type="text" id="erantzun_okerra2" name="erantzun_okerra2" required>
+                <label for="okerra2">Erantzun okerra 2(*):</label>
+                <input type="text" id="okerra2" name="okerra2" required>
                 <br><br>
-                <label for="erantzun_okerra3">Erantzun okerra 3(*):</label>
-                <input type="text" id="erantzun_okerra3" name="erantzun_okerra3" required>
+                <label for="okerra3">Erantzun okerra 3(*):</label>
+                <input type="text" id="okerra3" name="okerra3" required>
                 <br><br>
                 <label>Zailtasuna(*):
                     <input type="radio" id="txikia" name="zailtasuna" value="1">

@@ -11,17 +11,14 @@
         <div>
             <?php include '../php/DbConfig.php'?>
             <?php
-            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
-			if (!$esteka) {
-				exit;
-			}
+            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
-			$sql = "INSERT INTO questions VALUES (NULL, '$_GET[eposta]', '$_GET[galdera]' , '$_GET[erantzun_zuzena]', 
-            '$_GET[erantzun_okerra1]', '$_GET[erantzun_okerra2]', '$_GET[erantzun_okerra3]', $_GET[zailtasuna], '$_GET[gaia]')";
+			$sql = "INSERT INTO questions VALUES (NULL, '$_GET[eposta]', '$_GET[galdera]' , '$_GET[erantzuna]', 
+            '$_GET[okerra1]', '$_GET[okerra2]', '$_GET[okerra3]', $_GET[zailtasuna], '$_GET[gaia]')";
             $emaitza = mysqli_query($esteka, $sql);
             
 			if (!$emaitza) {
-				echo "<p>Galdera ez da ondo gorde: ".mysqli_error($esteka).PHP_EOL."</p>";
+				echo "<p>Galdera ez da ondo gorde</p>";
 			} else {
                 echo "<p>Galdera ondo gorde da</p>";
             }

@@ -20,10 +20,7 @@
             echo "<script>$('.loggedOut').hide()</script>".PHP_EOL;
 
             include '../php/DbConfig.php';
-            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db);
-            if (!$esteka) {
-                exit;
-            }
+            $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
             $eposta = $_GET['eposta'];
                 
@@ -46,7 +43,7 @@
             mysqli_free_result($emaitza);
             mysqli_close($esteka);
         } else {
-            echo "<script>$('.loggedIn').hide()</script>".PHP_EOL;
+            echo "<script>$('.loggedIn').hide();</script>".PHP_EOL;
             echo "<script>$('#argazkia').attr('src', '../images/Anonimoa.png')</script>".PHP_EOL; 
         }
     ?>
