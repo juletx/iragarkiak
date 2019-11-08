@@ -5,15 +5,15 @@
     <?php include '../html/Head.html'?>
     <!--script src="../js/ValidateFieldsQuestion.js"></script-->
     <script src="../js/ShowImageInForm.js"></script>
+	<script src="../js/AddQuestionAjax.js"></script>
+	<script src="../js/ShowQuestionsAjax.js"></script>
 </head>
 
 <body>
     <?php include '../php/Menus.php'?>
     <section class="main" id="s1">
         <div id="form">
-            <form id="galderenF" name="galderenF"
-                action="<?php echo 'AddQuestionWithImage.php?eposta='.$_GET['eposta']?>" method="post"
-                enctype="multipart/form-data">
+            <form id="galderenF" name="galderenF">
                 <fieldset>
                     <legend><h2>Galdera gehitu</h2></legend>
                     <label for="eposta">Ehuko eposta(*):</label>
@@ -50,7 +50,8 @@
                     <br><br>
                     <input type="file" id="argazkiaa" name="argazkia" accept="image/*">
                     <br><br>
-                    <input type="submit" value="Galdera gehitu">
+					<input type="button" value="Galderak ikusi">
+                    <input type="button" value="Galdera gehitu" onClick="addQuestion();">
                     <input type="reset" value="Berrezarri">
                 </fieldset>
             </form>
