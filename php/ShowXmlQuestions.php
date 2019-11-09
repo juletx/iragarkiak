@@ -14,8 +14,8 @@
 			<?php
 			$questions = simplexml_load_file('../xml/Questions.xml');
 			
-			$irteera = "<table border=1> <thead> <tr> <th> EGILEA </th> 
-			<th> ENUNTZIATUA </th> <th> ERANTZUN ZUZENA </th> </tr> </thead> <tbody>";
+			$irteera = "<table border=1> <thead> <tr> <th> EPOSTA </th> 
+			<th> GALDERA </th> <th> ERANTZUNA </th> </tr> </thead> <tbody>";
 
             foreach($questions->xpath('//assessmentItem') as $galdera) {
                 $irteera .= "<tr>";
