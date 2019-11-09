@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../xml/ShowXmlQuestions.xsl"?>
-<assessmentItems>
+<assessmentItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="Questions.xsd">
 	<assessmentItem author="rosa.arruabarrena@ehu.eus" subject="Mikologia">
 		<itemBody>
 			<p>Zein Amanita da jangarria?</p>

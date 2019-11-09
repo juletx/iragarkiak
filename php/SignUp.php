@@ -17,16 +17,15 @@
 					</legend>
 					<label for="eposta">Ehuko eposta(*):</label>
 					<input type="email" id="eposta" name="eposta"
-						pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu.eu?s)" required>
+						pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu\.eu?s)" required>
 					<br><br>
-					<label>Erabiltzaile mota(*):
-						<input type="radio" id="irakaslea" name="mota" value="irakaslea">
-						<label for="irakaslea">Irakaslea</label>
-						<input type="radio" id="ikaslea" name="mota" value="ikaslea" checked>
-						<label for="ikaslea">Ikaslea</label>
-					</label>
+					<label>Erabiltzaile mota(*):</label>
+					<input type="radio" id="ikaslea" name="mota" value="ikaslea" checked>
+					<label for="ikaslea">Ikaslea</label>
+					<input type="radio" id="irakaslea" name="mota" value="irakaslea">
+					<label for="irakaslea">Irakaslea</label>
 					<br><br>
-					<label for="deiturak">Izena eta abizenak(*):</label>
+					<label for="deiturak">Deiturak(*):</label>
 					<input type="text" id="deiturak" name="deiturak" pattern="[A-Za-z]{2,}( [A-Za-z]{2,})+" required>
 					<br><br>
 					<label for="pasahitza">Pasahitza(*):</label>
@@ -47,41 +46,68 @@
 
 			<?php
                 if (isset($_POST["eposta"])) {
+					$eposta = trim($_POST["eposta"]);
+					$mota = trim($_POST["mota"]);
+					$deiturak = trim($_POST["deiturak"]);
 					$pasahitza = trim($_POST["pasahitza"]);
 					$pasahitza2 = trim($_POST["pasahitza2"]);
-                    if (strlen($pasahitza) >= 6 && $pasahitza == $pasahitza2) {
-                        addUser();
-                    } else {
-                        echo "<script>alert('Pasahitzek ez dute 6ko luzera edo ez dira berdinak'); history.go(-1);</script>";
-                    }
-                }
 
-                function addUser() {
-                    include '../php/DbConfig.php';
-                    $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
-					
-					$direktorioa = '../images/';
-                    $argazkia = $direktorioa.'Anonimoa.png';
-                
-                    if ($_FILES['argazkia']['size'] != 0) {
-                        $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
+					if (empty($eposta) || empty($mota) || empty($deiturak) || empty($pasahitza) || empty($pasahitza2)) {
+						echo "<script>alert('Bete eremu guztiak'); history.go(-1);</script>";
+					}
+					else if (!(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $eposta) || 
+						preg_match('/[a-z]+\.?[a-z]{2,}@ehu\.eu?s/', $eposta))) {
+						echo "<script>alert('Posta elektronikoa ez da zuzena'); history.go(-1);</script>";
+					}
+					else if ($mota != "ikaslea" && $mota != "irakaslea") {
+						echo "<script>alert('Erabiltzaile motak ikaslea edo irakaslea izan behar du'); history.go(-1);</script>";
+					}
+					else if (!preg_match('/[A-Za-z]{2,}( [A-Za-z]{2,})+/', $deiturak)) {
+						echo "<script>alert('Deiturak gutxienez izena eta abizen bat eduki behar ditu'); history.go(-1);</script>";
+					}
+					else if (strlen($pasahitza) < 6 || $pasahitza != $pasahitza2) {
+						echo "<script>alert('Pasahitzek ez dute 6ko luzera edo ez dira berdinak'); history.go(-1);</script>";
+					}
+					else {
+                        include '../php/DbConfig.php';
+						$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 						
-                        if (!file_exists($argazkia)) {
-							move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia);
-                        }
-                    }
+						$sql = "SELECT * FROM users WHERE eposta='$eposta'";
+						$emaitza = mysqli_query($esteka, $sql);
 
-					$sql = "INSERT INTO users VALUES ('$_POST[eposta]', '$_POST[mota]', '$_POST[deiturak]', 
-                        '$pasahitza', '$argazkia')";
-
-					$emaitza = mysqli_query($esteka, $sql);
-			
-					mysqli_close($esteka);
+						if (!$emaitza) {
+							echo "<script>alert('Errorea datu basearen kontsultan'); history.go(-1);</script>";
+							die();
+						} else if (mysqli_num_rows($emaitza) > 0) {
+							echo "<script>alert('Eposta horrekin jadanik erabiltzaile bat dago'); history.go(-1);</script>";
+							die();
+						}
+						
+						mysqli_free_result($emaitza);
+					
+						$direktorioa = '../images/';
+                    	$argazkia = $direktorioa.'Anonimoa.png';
                 
-                    if (!$emaitza) {
-                        echo "<script>alert('Erabiltzailea ez da ondo gorde datu-basean'); history.go(-1);</script>";
-                    } else {
-                        echo "<script>alert('Erabiltzailea ondo gorde da datu-basean'); window.location.href = '../php/Layout.php'</script>".PHP_EOL;
+                    	if ($_FILES['argazkia']['size'] != 0) {
+                    	    $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
+						
+                    	    if (!file_exists($argazkia)) {
+								move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia);
+                    	    }
+						}
+						
+						$pasahitza_hash = password_hash($pasahitza, PASSWORD_DEFAULT);
+
+						$sql = "INSERT INTO users VALUES ('$eposta', '$mota', '$deiturak', '$pasahitza_hash', '$argazkia')";
+						$emaitza = mysqli_query($esteka, $sql);
+			
+						mysqli_close($esteka);
+                
+                    	if (!$emaitza) {
+                    	    echo "<script>alert('Erabiltzailea ez da ondo gorde datu-basean'); history.go(-1);</script>";
+                    	} else {
+                        	echo "<script>alert('Erabiltzailea ondo gorde da datu-basean'); window.location.href = '../php/Layout.php'</script>".PHP_EOL;
+                    	}
                     }
                 }
             ?>

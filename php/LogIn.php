@@ -32,19 +32,25 @@
                     $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
                     $eposta = $_POST['eposta'];
-                    $pasahitza = $_POST['pasahitza'];
+					$pasahitza = $_POST['pasahitza'];
                 
-                    $sql = "SELECT eposta FROM users WHERE eposta='$eposta' AND pasahitza='$pasahitza'";
+                    $sql = "SELECT pasahitza FROM users WHERE eposta='$eposta'";
                     $emaitza = mysqli_query($esteka, $sql);
 
                     if (!$emaitza) {
-                        echo "Errorea datu basearen kontsultan".PHP_EOL;
+                        echo "<script>alert('Errorea datu basearen kontsultan'); history.go(-1);</script>";
                     } else {
                         $lerroKopurua = mysqli_num_rows($emaitza);
                         if ($lerroKopurua == 0) {
-                            echo "<script>alert('Erabiltzaile edo pasahitz okerra'); history.go(-1);</script>".PHP_EOL;
+                            echo "<script>alert('Erabiltzaile edo pasahitz okerra'); history.go(-1);</script>";
                         } else {
-                            echo "<script>alert('Ongi etorri ".$eposta."'); window.location.href = '../php/Layout.php?eposta=".$eposta."'</script>".PHP_EOL;
+							$row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC);
+							$pasahitza_hash = $row['pasahitza'];
+							if (!password_verify($pasahitza, $pasahitza_hash)) {
+								echo "<script>alert('Erabiltzaile edo pasahitz okerra'); history.go(-1);</script>";
+							} else {
+								echo "<script>alert('Ongi etorri ".$eposta."'); window.location.href = '../php/Layout.php?eposta=".$eposta."'</script>";
+							}
                         }
                     }
 

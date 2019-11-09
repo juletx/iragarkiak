@@ -30,6 +30,9 @@
 			else if (strlen($galdera) < 10) {
 				echo "<script>alert('Galderak gutxienez 10 karaktere izan behar ditu'); history.go(-1);</script>";
 			}
+			else if ($zailtasuna != 1 && $zailtasuna != 2 && $zailtasuna != 3) {
+				echo "<script>alert('Zailtasunak txikia, ertaina edo handia izan behar du'); history.go(-1);</script>";
+			}
 			else {
 				include '../php/DbConfig.php';
 				$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");

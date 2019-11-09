@@ -9,8 +9,8 @@
     <?php include '../php/Menus.php' ?>
     <section class="main" id="s1">
         <div id="taula">
-            <?php include '../php/DbConfig.php'?>
             <?php
+			include '../php/DbConfig.php';
             $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
             
             $sql = "SELECT * FROM questions";
