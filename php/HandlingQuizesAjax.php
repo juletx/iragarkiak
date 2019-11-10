@@ -5,8 +5,9 @@
 	<?php include '../html/Head.html'?>
 	<!--script src="../js/ValidateFieldsQuestion.js"></script-->
 	<script src="../js/ShowImageInForm.js"></script>
-	<script src="../js/AddQuestionAjax.js"></script>
+	<!--script src="../js/AddQuestionAjax.js"></script-->
 	<script src="../js/ShowQuestionsAjax.js"></script>
+	<script src="../js/ShowNumberOfQuestions.js"></script>
 </head>
 
 <body>
@@ -58,6 +59,11 @@
 					<input type="button" id="ikusi" value="Galderak ikusi/ezkutatu">
 				</fieldset>
 			</form>
+		</div>
+		<div id="erabiltzaileKop">
+			<h2>Erabiltzaile kopurua</h2>
+		</div>
+		<div id="galderaKop">
 		</div>
 		<div id="feedback">
 		</div>

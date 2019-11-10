@@ -11,5 +11,5 @@ $(document).ready(function(){
 
 	$("input[type='reset']").click(function() {
 		$('#argazki').attr('src', '#');
-	}); 
+	});
 });

@@ -89,4 +89,15 @@ div#taula {
 
 div#feedback {
 	float: left;
+	border: 3px solid #999;
+}
+
+div#galderaKop {
+	float: left;
+	border: 3px solid #999;
+}
+
+div#erabiltzaileKop {
+	float: left;
+	border: 3px solid #999;
 }
