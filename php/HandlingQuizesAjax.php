@@ -7,7 +7,8 @@
 	<script src="../js/ShowImageInForm.js"></script>
 	<script src="../js/AddQuestionAjax.js"></script>
 	<script src="../js/ShowQuestionsAjax.js"></script>
-	<script src="../js/ShowNumberOfQuestions.js"></script>
+	<script src="../js/ShowQuestionCountAjax.js"></script>
+	<script src="../js/ShowUserCountAjax.js"></script>
 </head>
 
 <body>
@@ -61,12 +62,11 @@
 			</form>
 		</div>
 		<div id="erabiltzaileKop">
-			<h2>Erabiltzaile kopurua</h2>
 		</div>
 		<div id="galderaKop">
 		</div>
-		<div align="center" id="feedback"><b> </b></div>
-        <div align="center" id="taula" style="display:none"><b> </b></div>
+		<div id="feedback"><b> </b></div>
+		<div id="taula" style="display:none"><b> </b></div>
 	</section>
 	<?php include '../html/Footer.html' ?>
 </body>

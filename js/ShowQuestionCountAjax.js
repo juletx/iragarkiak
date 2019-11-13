@@ -1,16 +1,16 @@
-$(document).ready(function() {
-	showNumberOfQuestions();
-	setInterval(showNumberOfQuestions, 10000);
+$(document).ready(function () {
+	showQuestionCount();
+	setInterval(showQuestionCount, 10000);
 
-	function showNumberOfQuestions() {
+	function showQuestionCount() {
 		$('#galderaKop').html('<div><img class="argazkia" src="../images/Loading.gif"/></div>');
-		$.get('../xml/Questions.xml', function(d) {
+		$.get('../xml/Questions.xml', function (d) {
 			var galderak = $(d).find("assessmentItem");
 			var totalak = galderak.length;
 			var nireak = 0;
 			var eposta = $("#eposta").val();
 			galderak.each(function () {
-				if (eposta == $(this).attr("author")) {
+				if (eposta === $(this).attr("author")) {
 					nireak++;
 				}
 			});
