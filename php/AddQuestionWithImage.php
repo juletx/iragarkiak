@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <?php include '../html/Head.html'?>
+    <!--?php include '../html/Head.html'?-->
 </head>
 
 <body>
-    <?php include '../php/Menus.php'?>
+    <!--?php include '../php/Menus.php'?-->
     <section class="main" id="s1">
         <div>
             <?php
@@ -99,11 +99,11 @@
 					echo "<p>Galdera ondo gorde da xml-an</p>";
 				}
 
-				$eposta = $_GET['eposta'];
+				/*$eposta = $_GET['eposta'];
 
 				echo "<p><a href='QuestionFormWithImage.php?eposta=".$eposta."'>Galdera gehitu</a></p>";
 				echo "<p><a href='ShowQuestionsWithImage.php?eposta=".$eposta."'>Galderak ikusi</a></p>";
-				echo "<p><a href='ShowXmlQuestions.php?eposta=".$eposta."'>XML Galderak ikusi</a></p>";
+				echo "<p><a href='ShowXmlQuestions.php?eposta=".$eposta."'>XML Galderak ikusi</a></p>";*/
 			}	
 			?>
         </div>

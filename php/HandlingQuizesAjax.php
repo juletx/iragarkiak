@@ -5,7 +5,7 @@
 	<?php include '../html/Head.html'?>
 	<!--script src="../js/ValidateFieldsQuestion.js"></script-->
 	<script src="../js/ShowImageInForm.js"></script>
-	<!--script src="../js/AddQuestionAjax.js"></script-->
+	<script src="../js/AddQuestionAjax.js"></script>
 	<script src="../js/ShowQuestionsAjax.js"></script>
 	<script src="../js/ShowNumberOfQuestions.js"></script>
 </head>
@@ -53,10 +53,10 @@
 					<br><br>
 					<input type="file" id="argazkiaa" name="argazkia" accept="image/*">
 					<br><br>
-					<input type="button" id="gehitu" value="Galdera gehitu" onClick="addQuestion();">
+					<input type="button" id="gehitu" value="Galdera gehitu" onClick="galderaGehitu()">
 					<input type="reset" value="Berrezarri">
 					<br><br>
-					<input type="button" id="ikusi" value="Galderak ikusi/ezkutatu">
+					<input type="button" id="ikusi" value="Galderak ikusi/ezkutatu" onClick="galderakIkusi()">
 				</fieldset>
 			</form>
 		</div>
@@ -65,11 +65,8 @@
 		</div>
 		<div id="galderaKop">
 		</div>
-		<div id="feedback">
-		</div>
-		<div id="taula" style="display:none">
-			<h2 id="h2ikusi">Galderak ikusi</h2>
-		</div>
+		<div align="center" id="feedback"><b> </b></div>
+        <div align="center" id="taula" style="display:none"><b> </b></div>
 	</section>
 	<?php include '../html/Footer.html' ?>
 </body>

@@ -1,18 +1,15 @@
-$(document).ready(function() {
-	$("#ikusi").click(function() {
-		if ($("#taula").is(":hidden")) {
-			var jqxhr = $.get("../php/ShowXmlQuestions.php", function(datuak){
-				$('#taula').append($(datuak).find("table"));
-				$('#taula').show();
-			});
-
-			jqxhr.fail(function(){
-				$('#feedback').html('<p>Zerbitzariak ez duela erantzuten dirudi</p>');
-			});
-		}
-		else {
-			$('table').remove();
-			$('#taula').hide();
-		}	
-	});
-});
+xhro = new XMLHttpRequest();
+xhro.onreadystatechange = function(){
+    if(xhro.readyState == 4 && xhro.status == 200){
+        document.getElementById('taula').innerHTML = xhro.responseText;
+    }
+}
+function galderakIkusi(){
+    var x = document.getElementById("taula");
+    if (window.getComputedStyle(x).display === "none") {
+        document.getElementById("taula").style.display = "block";
+        xhro.open("GET","ShowXMLQuestions.php");
+        xhro.send();
+    }else 
+        document.getElementById("taula").style.display = "none";
+}

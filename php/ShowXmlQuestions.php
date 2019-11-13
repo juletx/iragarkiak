@@ -2,11 +2,11 @@
 <html>
 
 <head>
-	<?php include '../html/Head.html'?>
+	<!--?php include '../html/Head.html'?-->
 </head>
 
 <body>
-	<?php include '../php/Menus.php' ?>
+	<!--?php include '../php/Menus.php' ?-->
 	<section class="main" id="s1">
 		<div id="taula">
 			<h2> XML galderak ikusi</h2> 
@@ -36,7 +36,7 @@
             ?>
 		</div>
 	</section>
-	<?php include '../html/Footer.html' ?>
+	<!--?php include '../html/Footer.html' ?-->
 </body>
 
 </html>
