@@ -25,11 +25,6 @@ section>div {
     padding: 5px;
 }
 
-div#form {
-	text-align: left;
-	float: left;
-}
-
 header,
 nav,
 section {
@@ -83,21 +78,26 @@ section {
     overflow: auto;
 }
 
+div#form {
+	text-align: left;
+	display: inline-block;
+}
+
 div#taula {
-	float: left;
+	display: inline-block;
 }
 
 div#feedback {
-	float: left;
+	display: inline-block;
 	border: 3px solid #999;
 }
 
 div#galderaKop {
-	float: left;
+	display: inline-block;
 	border: 3px solid #999;
 }
 
 div#erabiltzaileKop {
-	float: left;
+	display: inline-block;
 	border: 3px solid #999;
 }

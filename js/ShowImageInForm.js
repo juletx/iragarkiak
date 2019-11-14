@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     $('#argazkiaa').change(function() {
         if (this.files && this.files[0]) {
             var reader = new FileReader();

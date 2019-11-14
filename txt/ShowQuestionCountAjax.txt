@@ -1,0 +1,5 @@
+Dokumentua kargatutakoan eta hortik aurrera 10 segunduro ejekutatzen den funtzio bat dago.
+Funtzio horretan Ajax-en bidez Questions.xml fitxategia eskuratzen da. Hortik galdera guztiak 
+hartzen dira. Galdera kopuru totala jakiteko nahikoa da lista horren luzera jakitea. Nire
+galderak zenbat diren jakiteko galdera bakoitza epostarekin konparatu behar da eta kontagailu
+baten bidez emaitza lortu. Amaitzeko, div-aren html-a lortutako emaitzekin ordezkatzen da.

@@ -7,8 +7,8 @@ xhro.onreadystatechange = function () {
 function galderakIkusi() {
 	var x = document.getElementById("taula");
 	if (window.getComputedStyle(x).display === "none") {
-		document.getElementById("taula").style.display = "block";
-		xhro.open("GET", "ShowXMLQuestions.php");
+		document.getElementById("taula").style.display = "inline-block";
+		xhro.open("GET", "../php/ShowXmlQuestions.php");
 		xhro.send();
 	} else
 		document.getElementById("taula").style.display = "none";

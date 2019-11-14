@@ -14,6 +14,11 @@
 <body>
 	<?php include '../php/Menus.php'?>
 	<section class="main" id="s1">
+		<div id="erabiltzaileKop">
+		</div>
+		<div id="galderaKop">
+		</div>
+		<br>
 		<div id="form">
 			<form id="galderenF" name="galderenF">
 				<fieldset>
@@ -54,19 +59,19 @@
 					<br><br>
 					<input type="file" id="argazkiaa" name="argazkia" accept="image/*">
 					<br><br>
-					<input type="button" id="gehitu" value="Galdera gehitu" onClick="galderaGehitu()">
+					<input type="button" id="gehitu" value="Galdera gehitu">
 					<input type="reset" value="Berrezarri">
 					<br><br>
 					<input type="button" id="ikusi" value="Galderak ikusi/ezkutatu" onClick="galderakIkusi()">
 				</fieldset>
 			</form>
 		</div>
-		<div id="erabiltzaileKop">
+		<br>
+		<div id="feedback" style="display:none">
 		</div>
-		<div id="galderaKop">
+		<br>
+		<div id="taula" style="display:none">
 		</div>
-		<div id="feedback"><b> </b></div>
-		<div id="taula" style="display:none"><b> </b></div>
 	</section>
 	<?php include '../html/Footer.html' ?>
 </body>
