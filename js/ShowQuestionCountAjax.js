@@ -1,5 +1,5 @@
 $(document).ready(showQuestionCount()); 
-	function showQuestionCount() {
+function showQuestionCount() {
     $('#galderaKop').html('<div><img class="argazkia" src="../images/Loading.gif"/></div>');
     $.get('../xml/Questions.xml', function (d) {
         var galderak = $(d).find("assessmentItem");
