@@ -1,7 +1,7 @@
 function galderaGehitu() {
 	var form = $("#galderenF").get(0);
 	$.ajax({
-		url: 'AddQuestionWithImage.php',
+		url: '../php/AddQuestionWithImage.php',
 		type: 'POST',
 		data: new FormData(form),
 		mimeType: 'multipart/form-data',
@@ -10,7 +10,8 @@ function galderaGehitu() {
 		dataType: 'HTML',
 		success: function (data) {
 			$("#feedback").html(data);
-			galderakIkusi();
+            showQuestionCount();
+            galderakIkusi();
 		},
 		error: function (data) {
 			$("#feedback").html("Ezin izan da galdera sartu.");

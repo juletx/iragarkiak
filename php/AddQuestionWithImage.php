@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+ 
 <head>
     <!--?php include '../html/Head.html'?-->
 </head>
@@ -21,17 +21,17 @@
 
 			if (empty($eposta) || empty($galdera) || empty($erantzuna) || empty($okerra1) || 
 				empty($okerra2) || empty($okerra3) || empty($zailtasuna) || empty($gaia)) {
-				echo "<script>alert('Bete eremu guztiak'); history.go(-1);</script>";
+				echo "<script>alert('Bete eremu guztiak'); <!--history.go(-1); --></script>";
 			}
 			else if (!(preg_match('/[a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s/', $eposta) || 
 				preg_match('/[a-z]+\.?[a-z]{2,}@ehu\.eu?s/', $eposta))) {
-				echo "<script>alert('Posta elektronikoa ez da zuzena'); history.go(-1);</script>";
+				echo "<script>alert('Posta elektronikoa ez da zuzena'); <!--history.go(-1); --></script>";
 			}
 			else if (strlen($galdera) < 10) {
-				echo "<script>alert('Galderak gutxienez 10 karaktere izan behar ditu'); history.go(-1);</script>";
+				echo "<script>alert('Galderak gutxienez 10 karaktere izan behar ditu'); <!--history.go(-1); --></script>";
 			}
 			else if ($zailtasuna != 1 && $zailtasuna != 2 && $zailtasuna != 3) {
-				echo "<script>alert('Zailtasunak txikia, ertaina edo handia izan behar du'); history.go(-1);</script>";
+				echo "<script>alert('Zailtasunak txikia, ertaina edo handia izan behar du'); <!--history.go(-1); --></script>";
 			}
 			else {
 				include '../php/DbConfig.php';
@@ -56,7 +56,7 @@
 				mysqli_close($esteka);
                     
                 if (!$emaitza) {
-					echo "<script>alert('Galdera ez da ondo gorde datu-basean'); history.go(-1);</script>";
+					echo "<script>alert('Galdera ez da ondo gorde datu-basean'); <!--history.go(-1); --></script>";
                 } else {
 					echo "<script>alert('Galdera ondo gorde da datu-basean');</script>";
                     echo "<p>Galdera ondo gorde da datu-basean</p>";
@@ -93,7 +93,7 @@
 				$ondo = $xml->asXML('../xml/Questions.xml');
 
 				if (!$ondo) {
-					echo "<script>alert('Galdera ez da ondo gorde xml-an'); history.go(-1);</script>";
+					echo "<script>alert('Galdera ez da ondo gorde xml-an');<!--history.go(-1); --> </script>";
 				} else {
 					echo "<script>alert('Galdera ondo gorde da xml-an');</script>";
 					echo "<p>Galdera ondo gorde da xml-an</p>";
