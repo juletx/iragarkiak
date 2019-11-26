@@ -4,7 +4,7 @@ if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
     $gakoa = "";
-    $db = "quiz";
+    $db = "db";
 } else {
     $zerbitzaria = "localhost";
     $erabiltzailea = "id11105782_wst03";
