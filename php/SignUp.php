@@ -1,9 +1,12 @@
+<?php include '../php/SecurityLoggedOut.php' ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<?php include '../html/Head.html'?>
 	<script src="../js/ShowImageInForm.js"></script>
+	<script src="../js/VerifyEnrollmentAjax.js"></script>
+	<script src="../js/VerifyPassAjax.js"></script>
 </head>
 
 <body>
@@ -18,6 +21,7 @@
 					<label for="eposta">Ehuko eposta(*):</label>
 					<input type="email" id="eposta" name="eposta"
 						pattern="([a-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s)|([a-z]+\.?[a-z]{2,}@ehu\.eu?s)" required>
+					<span id="matrikulatuta"></span>
 					<br><br>
 					<label>Erabiltzaile mota(*):</label>
 					<input type="radio" id="ikaslea" name="mota" value="ikaslea" checked>
@@ -30,6 +34,7 @@
 					<br><br>
 					<label for="pasahitza">Pasahitza(*):</label>
 					<input type="password" id="pasahitza" name="pasahitza" required>
+					<span id="baliozkoa"></span>
 					<br><br>
 					<label for="pasahitza2">Pasahitza errepikatu(*):</label>
 					<input type="password" id="pasahitza2" name="pasahitza2" required>
@@ -39,7 +44,7 @@
 					<br><br>
 					<input type="file" id="argazkiaa" name="argazkia" accept="image/*">
 					<br><br>
-					<input type="submit" value="Erregistratu">
+					<input type="submit" id="submit" value="Erregistratu" disabled="true">
 					<input type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
@@ -98,7 +103,7 @@
 						
 						$pasahitza_hash = password_hash($pasahitza, PASSWORD_DEFAULT);
 
-						$sql = "INSERT INTO users VALUES ('$eposta', '$mota', '$deiturak', '$pasahitza_hash', '$argazkia')";
+						$sql = "INSERT INTO users VALUES ('$eposta', '$mota', '$deiturak', '$pasahitza_hash', '$argazkia', 0)";
 						$emaitza = mysqli_query($esteka, $sql);
 			
 						mysqli_close($esteka);

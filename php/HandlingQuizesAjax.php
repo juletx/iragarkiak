@@ -1,9 +1,10 @@
+<?php include '../php/SecurityUsers.php' ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<?php include '../html/Head.html'?>
-	<!--script src="../js/ValidateFieldsQuestion.js"></script-->
+	<script src="../js/ValidateFieldsQuestion.js"></script>
 	<script src="../js/ShowImageInForm.js"></script>
 	<script src="../js/AddQuestionAjax.js"></script>
 	<script src="../js/ShowQuestionsAjax.js"></script>
@@ -26,7 +27,7 @@
 						<h2>Galdera gehitu</h2>
 					</legend>
 					<label for="eposta">Ehuko eposta(*):</label>
-					<input type="text" id="eposta" name="eposta" value="<?php echo $_GET['eposta']?>" readonly>
+					<input type="text" id="eposta" name="eposta" value="<?php echo $_SESSION['eposta']?>" readonly>
 					<br><br>
 					<label for="galdera">Galdera(*):</label>
 					<input type="text" id="galdera" name="galdera">
@@ -62,7 +63,7 @@
 					<input type="button" id="gehitu" value="Galdera gehitu">
 					<input type="reset" value="Berrezarri">
 					<br><br>
-					<input type="button" id="ikusi" value="Galderak ikusi/ezkutatu" onClick="galderakIkusi()">
+					<input type="button" id="ikusi" value="Galderak ikusi/ezkutatu" onClick="showQuestions()">
 				</fieldset>
 			</form>
 		</div>

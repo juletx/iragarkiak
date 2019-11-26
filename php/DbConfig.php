@@ -3,8 +3,8 @@ $lokal = 1; //0 hodeirako
 if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
-    $gakoa = "";
-    $db = "db";
+    $gakoa = "admin";
+    $db = "quiz";
 } else {
     $zerbitzaria = "localhost";
     $erabiltzailea = "id11105782_wst03";
