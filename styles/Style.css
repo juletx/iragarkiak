@@ -149,14 +149,14 @@ div#erabiltzaileKop {
 }
 
 .sarrera {
-  text-align: center;
-  display: inline-block;
+  float: left;
+  display: block;
 }
 .main {
   text-align: center;
   padding: 5%;
   margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
+  display:flex
 }
 
 .home {
@@ -166,6 +166,7 @@ div#erabiltzaileKop {
 .home-title {
 	text-align: center;
 	padding: 20px;
+  display: inline-block;
 }
 
 .home-kategoriak {
@@ -281,4 +282,52 @@ div#erabiltzaileKop {
 .shadow {
 -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
 -webkit-box-shadow: rgba(0, 0, 0,.30) 0 2px 3px;
+}
+
+.ad-big{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  padding: 20px;
+  float: left;
+  display: inline-block;
+  background-color: #adc6ff;
+  text-align: center;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+              -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+    padding-left: 10%;
+  padding-right: 10%;
+}
+
+.ad-big-header{
+  display: inline-block;
+  display: flex;
+
+}
+
+.avatar-small{
+  float: left;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.ad-image img{
+  width:1000px;
+  display: inline-block;
+  margin-top:2%;
+
+}
+
+.home-anuntzio-detail-deskripzio{
+  text-align: justify;
+}
+
+.ad-big-header p{
+  font-weight: bold;
+  font-size: 150%;
+  margin-left:60px;
 }
