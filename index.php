@@ -14,7 +14,7 @@
 	    <h3>Ongi etorri 100 Iragarki-ra bigarren eskuko erosketak eta salmentak egiteko toki egokiena</h3>
 	  </span>
       <div class="home">
-	    <span class="home-title"><h1>Zerren bila zabiltza?</h1></span>
+	    <div class="home-title"><h1>Zerren bila zabiltza?</h1></div>
 		<div class="home-kategoriak"> <ul class="home-kategoriak-lista"> <li>KOTXIAK</li> <li>MOBILAK</li> <li>ETXIAK</li></ul></div>
 		<div class="shadow">
           <div class="home-anuntzio">
