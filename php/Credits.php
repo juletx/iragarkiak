@@ -13,11 +13,11 @@
 		<div>
 			<h2>Kredituak</h2>
 			<br>
-			<h3>Deiturak: Julen Etxaniz eta Aitor Zubillaga</h3>
+			<h3>Deiturak: Markel Azpeitia, Julen Etxaniz, Jokin Irastorza eta Aitor Zubillaga</h3>
 
 			<h3>Ikastegia: Informatika Fakultatea</h3>
 
-			<h3>Espezialitatea: Software Ingeniaritza</h3>
+			<h3>Espezialitateak: Software Ingeniaritza eta Konputagailuen Ingeniaritza</h3>
 
 			<h3>Udalerria: Azpeitia</h3>
 			<br>
