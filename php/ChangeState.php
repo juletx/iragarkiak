@@ -1,13 +1,13 @@
 <?php
-$eposta = trim($_GET["eposta"]);
-if (empty($eposta)) {
-	echo "<script>alert('Epostarik ez dago'); history.go(-1);</script>";
+$email = trim($_GET["email"]);
+if (empty($email)) {
+	echo "<script>alert('emailrik ez dago'); history.go(-1);</script>";
 }
 
 include '../php/DbConfig.php';
 $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
-$sql = "SELECT blokeatuta FROM users WHERE eposta='$eposta'";
+$sql = "SELECT banned FROM users WHERE email='$email'";
 $emaitza = mysqli_query($esteka, $sql);
 
 if (!$emaitza) {
@@ -15,22 +15,22 @@ if (!$emaitza) {
 	die();
 } else {
 	$row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC);
-	$bloakeatuta = $row['blokeatuta'];
+	$banned = $row['banned'];
 }
 
 mysqli_free_result($emaitza);
 
-if ($bloakeatuta) {
-	$bloakeatuta = 0;
+if ($banned) {
+	$banned = 0;
 	$erantzuna = "Aktibatuta";
 } else {
-	$bloakeatuta = 1;
-	$erantzuna = "Blokeatuta";
+	$banned = 1;
+	$erantzuna = "Baneatuta";
 }
 	
 echo $erantzuna;
 
-$sql = "UPDATE users SET blokeatuta='$bloakeatuta' WHERE eposta='$eposta'";
+$sql = "UPDATE users SET banned='$banned' WHERE email='$email'";
 $emaitza = mysqli_query($esteka, $sql);
 
 mysqli_close($esteka);

@@ -4,11 +4,11 @@ if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
     $gakoa = "admin";
-    $db = "quiz";
+    $db = "advertisements";
 } else {
     $zerbitzaria = "localhost";
-    $erabiltzailea = "id11105782_wst03";
+    $erabiltzailea = "id11745620_iragarkiak";
     $gakoa = "********";
-    $db = "id11105782_quiz";
+    $db = "id11745620_advertisements";
 }
 ?>
