@@ -35,7 +35,7 @@ CREATE TABLE `ads` (
   `category` varchar(100) NOT NULL,
   `text` varchar(1000) NOT NULL,
   `price` int(11) NOT NULL,
-  `location_id` int(11) NOT NULL,
+  `city` varchar(100) NOT NULL,
   `images` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -77,7 +77,6 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `ads`
   ADD PRIMARY KEY (`ad_id`),
-  ADD KEY `FK_ADS_LOCATIONS` (`location_id`) USING BTREE,
   ADD KEY `FK_ADS_USERS` (`email`);
 
 --
