@@ -28,7 +28,7 @@
 					<div class="home-anuntzio-head"> </div>
 					<div class="home-anuntzio-detail">
 						<div class="home-anuntzio-detail-textu">
-							<a href=""><b>VENDO OPEL CORSA NUEVO!!!!!!!!!!!!</b></a><br>
+							<a href="Ad.php"><b>VENDO OPEL CORSA NUEVO!!!!!!!!!!!!</b></a><br>
 							<i class="fa fa-list-alt" aria-hidden="true"> Automobilak</i>
 							<div class="home-anuntzio-detail-textu-tokiordu">
 								<span class="home-anuntzio-detail-textu-toki"><i class="fa fa-map-marker"
@@ -74,7 +74,7 @@
 							<div class="home-anuntzio-head"></div>
 							<div class="home-anuntzio-detail">
 								<div class="home-anuntzio-detail-textu">
-									<a href=""><b>'.$row['title'].'</b></a><br>
+									<a href="Ad.php?ad_id='.$row['ad_id'].'"><b>'.$row['title'].'</b></a><br>
 									<i class="fa fa-list-alt" aria-hidden="true">'.$row['category'].'</i>
 									<div class="home-anuntzio-detail-textu-tokiordu">
 										<span class="home-anuntzio-detail-textu-toki"><i class="fa fa-map-marker"
@@ -82,15 +82,15 @@
 										<span class="home-anuntzio-detail-textu-denbora"><i class="fa fa-clock-o"
 											aria-hidden="true" style="font-size:24px">'.$row['date'].'</i></span>
 									</div>
-									<div class="home-anuntzio-detail-deskripzio">'
-										.$row['text'].
-									'</div>
+									<div class="home-anuntzio-detail-deskripzio">
+										'.$row['text'].'
+									</div>
 								</div>
 								<div class="home-anuntzio-detail-irudi">
-									<img class="home-anuntzio-detail-irudi-txiki" src="'.$row['images'].'/quiz.png">
+									<img class="home-anuntzio-detail-irudi-txiki" src="'.$row['images'].'quiz.png">
 								</div>
 							</div>
-							<p class="prezioa">'.$row['price'].'</p><br><br><br>
+							<p class="prezioa">'.$row['price'].'€</p><br><br><br>
 							<div class="home-anuntzio-footer">
 								<a href="#" class="home-anuntzio-footer-kontaktua">&#9743;'.$row['telephone'].'</a>
 								<a href="#" class="home-anuntzio-footer-kontaktua">&#9993;'.$row['email'].'</a>

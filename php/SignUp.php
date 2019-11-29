@@ -93,7 +93,7 @@
 					if (!$emaitza) {
 						echo "<script>alert('Erabiltzailea ez da ondo gorde datu-basean'); history.go(-1);</script>";
 					} else {
-						echo "<script>alert('Erabiltzailea ondo gorde da datu-basean'); window.location.href = '../php/LogInIragarkiak.php'</script>".PHP_EOL;
+						echo "<script>alert('Erabiltzailea ondo gorde da datu-basean'); window.location.href = '../php/LogIn.php'</script>".PHP_EOL;
 					}
 				}
 			}

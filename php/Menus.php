@@ -8,7 +8,7 @@
 
 <?php } else { $email = $_SESSION["email"]; ?>
 
-	<span><a href=""><?php echo $email ?></a></span>
+	<span><a href="ShowAccount.php"><?php echo $email ?></a></span>
 	<span><a href="LogOut.php">Logout</a></span>
 	
 <?php if ($email == "admin@ehu.es") { ?>
@@ -17,9 +17,8 @@
 	
 <?php } else { ?>
 
-	<span><a href="">Iragarkia ezabatu</a></span>
-	<span><a href="../php/AddAdvertisement.php" class="buttonProduktuaIgo">Iragarkia gehitu</a></span>
-	<span><a href="">Iragarkiak ikusi</a></span>
+	<span><a href="AddAdvertisement.php" class="buttonProduktuaIgo">Iragarkia gehitu</a></span>
+	<span><a href="ShowAdvertisements.php">Iragarkiak ikusi</a></span>
 
 <?php } } ?>
 
