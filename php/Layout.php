@@ -65,14 +65,15 @@
             include '../php/DbConfig.php';
             $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
             
-            $sql = "SELECT * FROM ads";
+            $sql = "SELECT * FROM ads NATURAL JOIN users";
 			$emaitza = mysqli_query($esteka, $sql) or die("Errorea datu-baseko kontsultan");
 
 			while ($row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC)) {
 				echo '<div class="shadow">
 						<div class="home-anuntzio">
 							<div class="home-anuntzio-head"></div>
-								<div class="home-anuntzio-detail">
+							<div class="home-anuntzio-detail">
+								<div class="home-anuntzio-detail-textu">
 									<a href=""><b>'.$row['title'].'</b></a><br>
 									<i class="fa fa-list-alt" aria-hidden="true">'.$row['category'].'</i>
 									<div class="home-anuntzio-detail-textu-tokiordu">
@@ -86,7 +87,7 @@
 									'</div>
 								</div>
 								<div class="home-anuntzio-detail-irudi">
-									<img class="home-anuntzio-detail-irudi-txiki" src="'.$row['images'].'/0.jpg">
+									<img class="home-anuntzio-detail-irudi-txiki" src="'.$row['images'].'/quiz.png">
 								</div>
 							</div>
 							<p class="prezioa">'.$row['price'].'</p><br><br><br>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2019 a las 18:21:19
+-- Tiempo de generación: 29-11-2019 a las 20:55:46
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.1.33
 
@@ -36,7 +36,8 @@ CREATE TABLE `ads` (
   `text` varchar(1000) NOT NULL,
   `price` int(11) NOT NULL,
   `city` varchar(100) NOT NULL,
-  `images` varchar(100) NOT NULL
+  `images` varchar(100) NOT NULL,
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -65,7 +66,7 @@ CREATE TABLE `users` (
   `surname1` varchar(100) NOT NULL,
   `surname2` varchar(100) NOT NULL,
   `telephone` int(11) NOT NULL,
-  `banned` int(11) NOT NULL,
+  `banned` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
