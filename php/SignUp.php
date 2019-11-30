@@ -4,7 +4,8 @@
 
 <head>
 	<?php include '../html/Head.html'?>
-	<!--<script src="../js/VerifyPassAjax.js"></script>-->
+    <!--<script src="../js/VerifyPassAjax.js"></script>-->
+    <<script src="../js/ShowImageInForm.js"></script>
 </head>
 
 <body>
@@ -32,7 +33,10 @@
 					<input type="tel" id="telephone" name="telephone" placeholder="Telefonoa" pattern="[0-9]{9}"
 						title="Telefonoak 9 digitu izan behar ditu" required>
 					<br>
-					<input type="submit" id="submit" value="Erregistratu">
+                    <label for="images">Argazkia aukeratu:</label>
+					<img id="argazki" alt="Aukeratu argazkia" class="argazkia" src="#" />
+					<input type="file" id="argazkiaa" name="argazkia" accept="image/*">
+                    <input type="submit" id="submit" value="Erregistratu">
 					<input type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
@@ -75,7 +79,17 @@
 					}
 					
 					mysqli_free_result($emaitza);
-					
+                    
+                    $direktorioa = '../images/';
+                    $argazkia = $direktorioa.'Anonimoa.png';
+                
+                    	if ($_FILES['argazkia']['size'] != 0) {
+                    	    $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
+						
+                    	    if (!file_exists($argazkia)) {
+								move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia);
+                    	    }
+						}
 					$password_hash = password_hash($password1, PASSWORD_DEFAULT);
 
 					$sql = "INSERT INTO users VALUES ('$email', '$password_hash', '$name', '$surname1', '$surname2', '$telephone', 0)";
