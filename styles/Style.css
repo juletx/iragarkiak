@@ -11,7 +11,7 @@ html {
 
 body {
 	margin: 0;
-	background-color: #d1e3ff;
+	background-color: #21ce77;
 }
 
 #page-wrap {
@@ -84,10 +84,6 @@ section {
 	max-height: 100%;
 	max-width: 100%;
 	overflow: auto;
-}
-
-div {
-	display: inline-block;
 }
 
 div#form {
@@ -190,6 +186,7 @@ div#erabiltzaileKop {
 		-1px -1px 2px #fff inset;
 	border-radius: 3px/6px;
   width:70%;
+
 }
 
 .home-anuntzio-detail {
@@ -287,10 +284,9 @@ div#erabiltzaileKop {
 }
 
 .shadow {
-	-webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, .30) 0 2px 3px;
     width: 70%; 
   height: 10%;
+  display: inline-block;
 }
 
 .ad-big {
@@ -363,4 +359,8 @@ div#erabiltzaileKop {
 
 .ad-big-footer-description{
   text-align:justify;
+}
+#argazki{
+    max-height: 50px;
+    max-width: 100px;
 }
