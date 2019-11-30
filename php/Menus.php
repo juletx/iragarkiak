@@ -18,7 +18,7 @@
 <?php } else { ?>
 
 	<span><a href="AddAdvertisement.php" class="buttonProduktuaIgo">Iragarkia gehitu</a></span>
-	<span><a href="ShowAdvertisements.php">Iragarkiak ikusi</a></span>
+	<span><a href="ShowAdvertisements.php">Nire iragarkiak</a></span>
 
 <?php } } ?>
 

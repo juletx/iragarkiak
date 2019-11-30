@@ -12,18 +12,19 @@
 	<div class="main">
 		<span class="sarrera">
 			<h3>Ongi etorri 100 Iragarki-ra bigarren eskuko erosketak eta salmentak egiteko toki egokiena</h3>
-		</span>
-		<div class="home">
-			<div class="home-title">
+		</span><br>
+		<div class="home-title">
 				<h1>Zerren bila zabiltza?</h1>
 			</div>
-			<div class="home-kategoriak">
+		<div class="home">
+			
+			<!--<div class="home-kategoriak">
 				<ul class="home-kategoriak-lista">
 					<li>KOTXIAK</li>
 					<li>MOBILAK</li>
 					<li>ETXIAK</li>
 				</ul>
-			</div>
+			</div>-->
 			<?php
             include '../php/DbConfig.php';
             $esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
