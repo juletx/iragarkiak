@@ -9,7 +9,7 @@
 <body>
 	<?php include '../php/Menus.php' ?>
 	<section class="main" id="s1">
-	<div id="taula">
+		<div id="taula">
 			<h2>Kontua kudeatu</h2>
 			<br>
             <?php
