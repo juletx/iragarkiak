@@ -16,7 +16,7 @@
 						<h2>Iragarkia gehitu</h2>
 					</legend>
 					<label for="category">Kategoria(*):</label>
-					<select name="category">
+					<select id="category" name="category" required>
 						<option value="Ibilgailuak">Ibilgailuak</option>
 						<option value="Eraikuntzak">Eraikuntzak</option>
 						<option value="Lana">Lana</option>
@@ -36,9 +36,9 @@
 					</select>
 					<br><br>
 					<label for="title">Titulua(*):</label>
-					<input type="text" id="title" name="title" minlength="5" required>
+					<input type="text" id="title" name="title" minlength="5" maxlength="100" required>
 					<br><br>
-					<label for="text">Textua(*):</label>
+					<label for="text">Testua(*):</label>
 					<textarea id="text" name="text" cols="40" rows="5" minlength="10" maxlength="1000" required></textarea>
 					<br><br>
 					<label for="price">Prezioa(*):</label>
@@ -69,8 +69,14 @@
 				else if (strlen($title) < 5) {
 					echo "<script>alert('Tituluak gutxienez 5 karaktere izan behar ditu'); history.go(-1);</script>";
 				}
+				else if (strlen($title) > 100) {
+					echo "<script>alert('Tituluak gehienez 100 karaktere izan ditzake'); history.go(-1);</script>";
+				}
 				else if (strlen($text) < 10) {
 					echo "<script>alert('Testuak gutxienez 10 karaktere izan behar ditu'); history.go(-1);</script>";
+				}
+				else if (strlen($text) > 1000) {
+					echo "<script>alert('Testuak gehienez 1000 karaktere izan ditzake'); history.go(-1);</script>";
 				}
 				else if ($price < 0) {
 					echo "<script>alert('Prezioak ezin du negatiboa izan'); history.go(-1);</script>";

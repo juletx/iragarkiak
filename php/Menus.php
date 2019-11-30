@@ -18,7 +18,7 @@
 <?php } else { ?>
 
 	<span><a href="AddAdvertisement.php" class="buttonProduktuaIgo">Iragarkia gehitu</a></span>
-	<span><a href="ShowAdvertisements.php">Nire iragarkiak</a></span>
+	<span><a href="ShowAdvertisementsUser.php?email=<?php echo $email ?>">Nire iragarkiak</a></span>
 
 <?php } } ?>
 
