@@ -35,7 +35,7 @@
 							<p>'.$row['email'].'</p>
 						</div>
 						<div class="ad-image">
-							<img src="'.$row['images'].'quiz.png">
+							<img src="'.$row['images'].'image0.jpg">
 						</div>
 						<div class="ad-big-footer">
 							<div class="ad-big-footer-price">'.$row['price'].'</div>

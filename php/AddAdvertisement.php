@@ -108,8 +108,10 @@
 								//Make sure we have a file path
 								if ($tmpFilePath != ""){
 									//Setup our new file path
-									$newFilePath = $directory.$_FILES['images']['name'][$i];
-
+									//$newFilePath = $directory.$_FILES['images']['name'][$i];
+									$name = $_FILES["images"]["name"][$i];
+									$extension = end((explode(".", $name)));
+									$newFilePath = $directory."image".$i.".".$extension;
 									//Upload the file into the temp dir
 									if (!move_uploaded_file($tmpFilePath, $newFilePath)) {
 										echo "<script>alert('Erroreren bat egon da argazkiak gordetzean'); history.go(-1);</script>";

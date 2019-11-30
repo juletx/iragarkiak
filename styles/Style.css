@@ -201,6 +201,7 @@ div#erabiltzaileKop {
 	box-shadow: 1px 1px 2px #fff inset,
 		-1px -1px 2px #fff inset;
 	border-radius: 3px/6px;
+  width:70%;
 }
 
 .home-anuntzio-detail {
@@ -209,12 +210,14 @@ div#erabiltzaileKop {
 
 .home-anuntzio-detail-textu {
 	padding-right: 50px;
+  float:left;
 }
 
-.home-anuntzio-detail-textu a {
-	color: #6d98fc;
-	text-decoration: none;
-	font-size: 150%;
+
+.home-anuntzio-detail-textu-title{
+  color: #6d98fc;
+  text-decoration: none;
+  font-size: 150%;
 }
 
 .home-anuntzio-detail-irudi {}
@@ -224,6 +227,8 @@ div#erabiltzaileKop {
 	border-radius: 4px;
 	padding: 5px;
 	width: 300px;
+  height:200px;
+  float: right;
 }
 
 .prezioa {
@@ -292,6 +297,8 @@ div#erabiltzaileKop {
 .shadow {
 	-webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
 	-webkit-box-shadow: rgba(0, 0, 0, .30) 0 2px 3px;
+    width: 70%; 
+  height: 10%;
 }
 
 .ad-big {
