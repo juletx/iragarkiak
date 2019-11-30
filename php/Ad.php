@@ -28,21 +28,20 @@
 		}
 		else {
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
+			$files = scandir ($row['images']);
+			$firstFile = $row['images'] . $files[2];// because [0] = "." [1] = ".." 
 			echo 	'<div class="ad-big">
 						<div class="ad-big-header">
 							<img class="avatar-small" src="../images/avatar.jpg" alt="Avatar">
 							<p>'.$row['email'].'</p>
 						</div>
 						<div class="ad-image">
-							<img src="'.$row['images'].'image0.jpg">
+							<img src="'.$firstFile.'">
 						</div>
 						<div class="ad-big-footer">
-							<div class="ad-big-footer-price">'.$row['price'].'</div>
 							<div class="ad-big-footer-title">'.$row['title'].'</div>
-							<div class="ad-big-footer-description">
-								'.$row['text'].'
-							</div>
+							<div class="prezioa">'.$row['price'].'€</div>
+							<div class="ad-big-footer-description">'.$row['text'].'</div>
 						</div>
 					</div>';
 		}

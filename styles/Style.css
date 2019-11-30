@@ -294,10 +294,10 @@ div#erabiltzaileKop {
 }
 
 .ad-big {
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 25%;
+	margin-right: 25%;
 	margin-top: 10px;
-	padding: 20px;
+  padding: 2%;
 	float: left;
 	display: inline-block;
 	background-color: #adc6ff;
@@ -306,37 +306,61 @@ div#erabiltzaileKop {
 	box-shadow: 1px 1px 2px #fff inset,
 		-1px -1px 2px #fff inset;
 	border-radius: 3px/6px;
-	padding-left: 10%;
-	padding-right: 10%;
+
 }
 
 .ad-big-header {
 	display: inline-block;
 	display: flex;
-
 }
 
 .avatar-small {
 	float: left;
 	overflow: hidden;
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
 }
 
-.ad-image img {
-	width: 1000px;
+.ad-image {
 	display: inline-block;
 	margin-top: 2%;
+  width:100%;
+  height: 100%;
+  max-width:600px;
+  max-height:600px;
+}
 
+.ad-image img {
+  width:100%;
+  max-width:600px;
+  max-height:600px;
 }
 
 .home-anuntzio-detail-deskripzio {
+  display:inline-block;
 	text-align: justify;
+  display: flex;
 }
 
 .ad-big-header p {
 	font-weight: bold;
 	font-size: 150%;
 	margin-left: 60px;
+}
+
+.ad-big-footer{
+  text-align: left;
+  padding-top: 2%;
+}
+
+.ad-big-footer-title{
+  color: #242d8c;
+  text-decoration: none;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.ad-big-footer-description{
+  text-align:justify;
 }
