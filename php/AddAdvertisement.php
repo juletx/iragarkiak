@@ -110,7 +110,8 @@
 									//Setup our new file path
 									//$newFilePath = $directory.$_FILES['images']['name'][$i];
 									$name = $_FILES["images"]["name"][$i];
-									$extension = end((explode(".", $name)));
+									$tmp = explode(".", $name);
+									$extension = end($tmp);
 									$newFilePath = $directory."image".$i.".".$extension;
 									//Upload the file into the temp dir
 									if (!move_uploaded_file($tmpFilePath, $newFilePath)) {
