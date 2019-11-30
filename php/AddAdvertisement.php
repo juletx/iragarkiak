@@ -39,7 +39,7 @@
 					<input type="text" id="title" name="title" minlength="5" required>
 					<br><br>
 					<label for="text">Textua(*):</label>
-					<textarea id="text" name="text" cols="40" rows="5" minlength="10" required></textarea>
+					<textarea id="text" name="text" cols="40" rows="5" minlength="10" maxlength="1000" required></textarea>
 					<br><br>
 					<label for="price">Prezioa(*):</label>
 					<input type="number" id="price" name="price" min="0" required>
