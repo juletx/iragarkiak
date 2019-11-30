@@ -40,7 +40,7 @@
 						</div>
 						<div class="ad-big-footer">
 							<div class="ad-big-footer-title">'.$row['title'].'</div>
-							<div class="prezioa">'.$row['price'].'€</div>
+							<div class="ad-big-footer-price">'.$row['price'].'€</div>
 							<div class="ad-big-footer-description">'.$row['text'].'</div>
 						</div>
 					</div>';

@@ -8,25 +8,7 @@
 
 <body>
 	<?php include '../php/Menus.php' ?>
-	<section class="main" id="s1">
-		<div id="form">
-			<form id="login" name="login" action="#" method="post">
-				<fieldset>
-					<legend>
-						<h2>Login</h2>
-					</legend>
-					<label for="email">Eposta(*):</label>
-					<input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
-					<br><br>
-					<label for="password">Pasahitza(*):</label>
-					<input type="password" id="password" name="password" required>
-					<br><br>
-					<input type="submit" value="Login">
-					<input type="reset" value="Berrezarri">
-				</fieldset>
-			</form>
-
-			<?php
+		<?php
 			if (isset($_POST["email"])) {
 				include '../php/DbConfig.php';
 				$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
@@ -51,6 +33,7 @@
 							$password_hash = $row['password'];
 							if (!password_verify($password, $password_hash)) {
 								echo "<script>alert('Erabiltzaile edo pasahitz okerra'); history.go(-1);</script>";
+								$error = "Erabiltzaile edo pasahitz okerra";
 							} else {
 								$_SESSION["email"] = $email;
 								echo "<script>alert('Ongi etorri ".$email."');</script>";
@@ -66,10 +49,26 @@
 				mysqli_free_result($emaitza);
 				mysqli_close($esteka);
 			}
-            ?>
+        ?>
+	<section class="main" id="s1">
+		<div id="form">
+			<form id="login" name="login" action="#" method="post">
+				<fieldset>
+					<legend>
+						<h2>Login</h2>
+					</legend>
+					<input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Posta elektronikoa" required>
+					<br>
+					<input type="password" id="password" name="password"  placeholder="Pasahitza" required>
+					<br>
+					<input type="submit" value="Login">
+					<input type="reset" value="Berrezarri">
+				</fieldset>
+			</form>
+
+
 		</div>
 	</section>
-	<?php include '../html/Footer.html' ?>
 </body>
 
 </html>

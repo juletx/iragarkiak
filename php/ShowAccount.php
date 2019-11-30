@@ -13,6 +13,13 @@
 
 <body>
 	<?php include '../php/Menus.php' ?>
+<<<<<<< HEAD
+=======
+	<section class="main" id="s1">
+		<div id="taula">
+			<h2>Kontua kudeatu</h2>
+			<br>
+>>>>>>> c199932f9ea889b3a5fbdf387d1d6c720b02f7d2
             <?php
                 include '../php/DbConfig.php';
 				$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
