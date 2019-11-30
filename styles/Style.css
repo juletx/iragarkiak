@@ -12,7 +12,7 @@ html {
 
 body {
 	margin: 0;
-	background-color: #d1e3ff;
+	background-color: #21ce77;
 }
 
 
@@ -76,7 +76,8 @@ section {
 	overflow: auto;
 }
 
-div {
+div#form {
+	text-align: left;
 	display: inline-block;
 }
 
@@ -124,7 +125,6 @@ div#erabiltzaileKop {
 	background-color: #7892c2;
 	border-radius: 28px;
 	border: 1px solid #4e6096;
-	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
 	font-size: 17px;
@@ -176,6 +176,7 @@ div#erabiltzaileKop {
 		-1px -1px 2px #fff inset;
 	border-radius: 3px/6px;
   width:70%;
+
 }
 
 .home-anuntzio-detail {
@@ -275,10 +276,9 @@ div#erabiltzaileKop {
 }
 
 .shadow {
-	-webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, .30) 0 2px 3px;
     width: 70%; 
   height: 10%;
+  display: inline-block;
 }
 
 .ad-big {
@@ -286,7 +286,6 @@ div#erabiltzaileKop {
 	margin-right: 25%;
 	margin-top: 10px;
   padding: 2%;
-	float: left;
 	display: inline-block;
 	background-color: #adc6ff;
 	text-align: center;
@@ -351,6 +350,10 @@ div#erabiltzaileKop {
 .ad-big-footer-description{
   text-align:justify;
 }
+#argazki{
+    max-height: 50px;
+    max-width: 100px;
+}
 
 .ad-big-footer-price{
   color: #ce1555;
@@ -389,7 +392,7 @@ input[type="email"]
  {
   display: block;
   box-sizing: border-box;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   padding: 4px;
   width: 220px;
   height: 32px;
@@ -404,7 +407,7 @@ input[type="email"]
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="tel"]:focus,
-input[type="email"]:focus, {
+input[type="email"]:focus {
   border-bottom: 2px solid #16a085;
   color: #16a085;
   transition: 0.2s ease;
@@ -437,7 +440,6 @@ input[type="submit"]:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
 }
-
 
 
 input[type="reset"] {

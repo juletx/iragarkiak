@@ -4,7 +4,8 @@
 
 <head>
 	<?php include '../html/Head.html'?>
-	<!--<script src="../js/VerifyPassAjax.js"></script>-->
+    <!--<script src="../js/VerifyPassAjax.js"></script>-->
+    <<script src="../js/ShowImageInForm.js"></script>
 </head>
 
 <body>
@@ -16,30 +17,26 @@
 					<legend>
 						<h2>Erregistratu</h2>
 					</legend>
-					<label for="email">Eposta(*):</label>
-					<input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
-					<br><br>
-					<label for="password1">Pasahitza(*):</label>
-					<input type="password" id="password1" name="password1" minlength="6" required>
+					<input type="email" id="email" name="email" placeholder="Posta Elektronikoa" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+					<br>
+					<input type="password" id="password1" name="password1" placeholder="Pasahitza" minlength="6" required>
 					<span id="baliozkoa"></span>
-					<br><br>
-					<label for="password2">Pasahitza errepikatu(*):</label>
-					<input type="password" id="password2" name="password2" required>
-					<br><br>
-					<label for="name">Izena(*):</label>
-					<input type="text" id="name" name="name" required>
-					<br><br>
-					<label for="surname1">Abizena 1(*):</label>
-					<input type="text" id="surname1" name="surname1" required>
-					<br><br>
-					<label for="surname2">Abizena 2(*):</label>
-					<input type="text" id="surname2" name="surname2" required>
-					<br><br>
-					<label for="telephone">Telefonoa(*):</label>
-					<input type="tel" id="telephone" name="telephone" pattern="[0-9]{9}"
+					<br>
+					<input type="password" id="password2" name="password2"placeholder="Errepikatu pasahitza" required>
+					<br>
+					<input type="text" id="name" name="name" placeholder="Izena" required>
+					<br>
+					<input type="text" id="surname1" name="surname1" placeholder="Lehen abizena" required>
+					<br>
+					<input type="text" id="surname2" name="surname2" placeholder="Bigarren abizena "required>
+					<br>
+					<input type="tel" id="telephone" name="telephone" placeholder="Telefonoa" pattern="[0-9]{9}"
 						title="Telefonoak 9 digitu izan behar ditu" required>
-					<br><br>
-					<input type="submit" id="submit" value="Erregistratu">
+					<br>
+                    <label for="images">Argazkia aukeratu:</label>
+					<img id="argazki" alt="Aukeratu argazkia" class="argazkia" src="#" />
+					<input type="file" id="argazkiaa" name="argazkia" accept="image/*">
+                    <input type="submit" id="submit" value="Erregistratu">
 					<input type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
@@ -82,7 +79,17 @@
 					}
 					
 					mysqli_free_result($emaitza);
-					
+                    
+                    $direktorioa = '../images/';
+                    $argazkia = $direktorioa.'Anonimoa.png';
+                
+                    	if ($_FILES['argazkia']['size'] != 0) {
+                    	    $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
+						
+                    	    if (!file_exists($argazkia)) {
+								move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia);
+                    	    }
+						}
 					$password_hash = password_hash($password1, PASSWORD_DEFAULT);
 
 					$sql = "INSERT INTO users VALUES ('$email', '$password_hash', '$name', '$surname1', '$surname2', '$telephone', 0)";
