@@ -22,7 +22,7 @@
 					<input type="password" id="password1" name="password1" placeholder="Pasahitza" minlength="6" required>
 					<span id="baliozkoa"></span>
 					<br>
-					<input type="password" id="password2" name="password2"placeholder="Errepikatu pasahitza" required>
+					<input type="password" id="password2" name="password2" placeholder="Errepikatu pasahitza" required>
 					<br>
 					<input type="text" id="name" name="name" placeholder="Izena" required>
 					<br>

@@ -1,4 +1,4 @@
-<?php include '../php/SecurityUsers.php' ?>
+<?php session_start (); ?>
 <!DOCTYPE html>
 <html>
 
