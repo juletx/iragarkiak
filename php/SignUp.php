@@ -34,8 +34,10 @@
 						title="Telefonoak 9 digitu izan behar ditu" required>
 					<br>
                     <label for="images">Argazkia aukeratu:</label>
-					<img id="argazki" alt="Aukeratu argazkia" class="argazkia" src="#" />
-					<input type="file" id="argazkiaa" name="argazkia" accept="image/*">
+					<img id="argazki" alt="" class="argazkia" src="#" />
+					<br>
+                    <input type="file" id="argazkiaa" name="argazkia" accept="image/*">
+                    <br>
                     <input type="submit" id="submit" value="Erregistratu">
 					<input type="reset" value="Berrezarri">
 				</fieldset>

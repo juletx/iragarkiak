@@ -9,6 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="../js/ShowImageInForm.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<l<script src="../js/EguneratuAjax.js"></script>
 </head>
 
 <body>
@@ -47,6 +48,11 @@
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
+      <div class="alert alert-info alert-dismissable" style="display:none" id="alerta">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="material-icons" style="font-size:24px" id="ikono">sync</i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
         <h3>Personal info</h3>       
         <form class="form-horizontal" role="form" action="#" method="post" name="eguneratu" id="eguneratu">
         <div class="form-group">
@@ -94,9 +100,9 @@
           <div class="form-group">
             <label class="col-lg-3 control-label"></label>
             <div class="col-lg-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="button" class="btn btn-primary" value="Save Changes" id="eguneratu">
               <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
+              <input type="reset" class="btn btn-default" value="Cancel" onclick="location.href='ShowAccount.php'">
             </div>
           </div>
         </form>
