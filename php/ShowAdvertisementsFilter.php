@@ -77,8 +77,9 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 								echo '<a href=\'javascript:;\' onclick=\'GetFullDescription('. $row['ad_id'] .');\'> ... Gehiago erakutsi[+] </a>';
 							}
 							//Aukeratu anuntzioari dagokion irudien karpetatik lehenengo irudaren izena
-							$files = scandir ($row['images']);
-							$firstFile = $row['images'] . $files[2];// because [0] = "." [1] = ".." 
+							$directory = "../images/ads/".$row['ad_id']."/";
+							$files = scandir($directory);
+							$firstFile = $directory . $files[2];// because [0] = "." [1] = ".." 
 						echo '</div>
 					</div>
 					<div class="home-anuntzio-detail-irudi">

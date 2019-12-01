@@ -86,8 +86,8 @@
                     $directory = '../images/users/';
                 
 					if ($_FILES['image']['size'] != 0) {
-						$name = $_FILES["image"]["name"];
-						$tmp = explode(".", $name);
+						$image = $_FILES["image"]["name"];
+						$tmp = explode(".", $image);
 						$extension = end($tmp);
 						$newFilePath = $directory.$email.".".$extension;
 					

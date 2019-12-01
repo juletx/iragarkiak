@@ -28,9 +28,16 @@
 		}
 		else {
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-			$files = scandir ($row['images']);
-			$firstFile = $row['images'] . $files[2];// because [0] = "." [1] = ".."
-			$avatar = glob("../images/users/".$row['email'].".*")[0];
+			$directory = "../images/ads/".$row['ad_id']."/";
+			$files = scandir($directory);
+			$firstFile = $directory . $files[2];// because [0] = "." [1] = ".." 
+			$images = glob("../images/users/".$row['email'].".*");
+			if (empty($images)) {
+				$avatar = "../images/Anonimoa.png";
+			}
+			else {
+				$avatar = $images[0];
+			}
 			echo 	'<div class="ad-big">
 						<div class="ad-big-header">
 							<img class="avatar-small" src="'.$avatar.'" alt="Avatar">

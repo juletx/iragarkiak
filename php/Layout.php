@@ -26,7 +26,7 @@
 					<select id="category" name="category">
 						<option value="">Guztiak</option>
 						<?php
-							if(isset($_GET['category'])) { $category = $_GET['category'];
+							isset($_GET['category']) ? $category = $_GET['category'] : $category = "";
 						?>
 						<option value="Ibilgailuak" <?php if($category=='Ibilgailuak') echo 'selected'; ?>>
 							Ibilgailuak</option>
@@ -60,9 +60,6 @@
 							Kirolak</option>
 						<option value="Maskotak" <?php if($category=='Maskotak') echo 'selected'; ?>>
 							Maskotak</option>
-						<?php
-							}
-						?>
 					</select>
 					<br><br>
 					<label for="min_price">Prezio minimoa:</label>
@@ -79,20 +76,16 @@
 					<br><br>
 					<label for="order">Ordenatu:</label>
 					<select id="order" name="order">
+						<option value="Berrienak">Berrienak</option>
 						<?php
-							if(isset($_GET['order'])) { $order = $_GET['order'];
+							isset($_GET['order']) ? $order = $_GET['order'] : $order = "Berrienak";
 						?>
-						<option value="Berrienak" <?php if($order=='Berrienak') echo 'selected'; ?>>
-							Berrienak</option>
 						<option value="Zaharrenak" <?php if($order=='Zaharrenak') echo 'selected'; ?>>
 							Zaharrenak</option>
 						<option value="Merkeenak" <?php if($order=='Merkeenak') echo 'selected'; ?>>
 							Merkeenak</option>
 						<option value="Garestienak" <?php if($order=='Garestienak') echo 'selected'; ?>>
 							Garestienak</option>
-						<?php
-							}
-						?>
 					</select>
 					<br><br>
 					<label for="text">Testua:</label>
