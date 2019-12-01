@@ -12,7 +12,7 @@
 	<?php include '../php/Menus.php' ?>
 	<section class="main" id="s1">
 		<div id="form">
-			<form id="erregistratu" name="erregistratu" action="#" method="post">
+			<form id="erregistratu" name="erregistratu" method="post" enctype='multipart/form-data'>
 				<fieldset>
 					<legend>
 						<h2>Erregistratu</h2>
@@ -33,11 +33,12 @@
 					<input type="tel" id="telephone" name="telephone" placeholder="Telefonoa" pattern="[0-9]{9}"
 						title="Telefonoak 9 digitu izan behar ditu" required>
 					<br>
-                    <label for="images">Argazkia aukeratu:</label>
-					<img id="argazki" alt="" class="argazkia" src="#" />
+                    <label for="image">Argazkia aukeratu:</label>
 					<br>
-                    <input type="file" id="argazkiaa" name="argazkia" accept="image/*">
-                    <br>
+					<img id="argazki" alt="Aukeratu argazkia" class="image" src="#" />
+					<br>
+					<input type="file" id="image" name="image" accept="image/*">
+					<br>
                     <input type="submit" id="submit" value="Erregistratu">
 					<input type="reset" value="Berrezarri">
 				</fieldset>
@@ -82,16 +83,19 @@
 					
 					mysqli_free_result($emaitza);
                     
-                    $direktorioa = '../images/';
-                    $argazkia = $direktorioa.'Anonimoa.png';
+                    $directory = '../images/users/';
                 
-                    	if ($_FILES['argazkia']['size'] != 0) {
-                    	    $argazkia = $direktorioa.basename($_FILES['argazkia']['name']);
-						
-                    	    if (!file_exists($argazkia)) {
-								move_uploaded_file($_FILES['argazkia']['tmp_name'], $argazkia);
-                    	    }
+					if ($_FILES['image']['size'] != 0) {
+						$name = $_FILES["image"]["name"];
+						$tmp = explode(".", $name);
+						$extension = end($tmp);
+						$newFilePath = $directory.$email.".".$extension;
+					
+						if (!file_exists($image)) {
+							move_uploaded_file($_FILES['image']['tmp_name'], $newFilePath);
 						}
+					}
+
 					$password_hash = password_hash($password1, PASSWORD_DEFAULT);
 
 					$sql = "INSERT INTO users VALUES ('$email', '$password_hash', '$name', '$surname1', '$surname2', '$telephone', 0)";

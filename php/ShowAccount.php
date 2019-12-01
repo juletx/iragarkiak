@@ -39,7 +39,8 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="../images/<?php echo $email; ?>.jpg" class="avatar img-circle" alt="avatar" id="argazki">
+		  <?php $avatar = glob("../images/users/".$email.".*")[0]; ?>
+          <img src="<?php echo $avatar; ?>" class="avatar img-circle" alt="avatar" id="argazki">
           <h6>Igo beste argazki bat...</h6>
           
           <input type="file" class="form-control" id="argazkiaa" accept="image/*">
