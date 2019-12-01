@@ -25,54 +25,44 @@
 					<label for="category">Kategoria:</label>
 					<select id="category" name="category">
 						<option value="">Guztiak</option>
-						<option value="Ibilgailuak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Ibilgailuak') echo 'selected'; ?>>
+						<?php
+							if(isset($_GET['category'])) { $category = $_GET['category'];
+						?>
+						<option value="Ibilgailuak" <?php if($category=='Ibilgailuak') echo 'selected'; ?>>
 							Ibilgailuak</option>
-						<option value="Eraikuntzak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Eraikuntzak') echo 'selected'; ?>>
+						<option value="Eraikuntzak" <?php if($category=='Eraikuntzak') echo 'selected'; ?>>
 							Eraikuntzak</option>
-						<option value="Lana"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Lana') echo 'selected'; ?>>
+						<option value="Lana" <?php if($category=='Lana') echo 'selected'; ?>>
 							Lana</option>
-						<option value="Heziketa"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Heziketa') echo 'selected'; ?>>
+						<option value="Heziketa" <?php if($category=='Heziketa') echo 'selected'; ?>>
 							Heziketa</option>
-						<option value="Zerbitzuak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Zerbitzuak') echo 'selected'; ?>>
+						<option value="Zerbitzuak" <?php if($category=='Zerbitzuak') echo 'selected'; ?>>
 							Zerbitzuak</option>
-						<option value="Negozioak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Negozioak') echo 'selected'; ?>>
+						<option value="Negozioak" <?php if($category=='Negozioak') echo 'selected'; ?>>
 							Negozioak</option>
-						<option value="Informatika"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Informatika') echo 'selected'; ?>>
+						<option value="Informatika" <?php if($category=='Informatika') echo 'selected'; ?>>
 							Informatika</option>
-						<option value="Ikus-entzunezkoak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Ikus-entzunezkoak') echo 'selected'; ?>>
+						<option value="Ikus-entzunezkoak" <?php if($category=='Ikus-entzunezkoak') echo 'selected'; ?>>
 							Ikus-entzunezkoak</option>
-						<option value="Telefonia"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Telefonia') echo 'selected'; ?>>
+						<option value="Telefonia" <?php if($category=='Telefonia') echo 'selected'; ?>>
 							Telefonia</option>
-						<option value="Jokoak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Jokoak') echo 'selected'; ?>>
+						<option value="Jokoak" <?php if($category=='Jokoak') echo 'selected'; ?>>
 							Jokoak</option>
-						<option value="Etxetresnak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Etxetresnak') echo 'selected'; ?>>
+						<option value="Etxetresnak" <?php if($category=='Etxetresnak') echo 'selected'; ?>>
 							Etxetresnak</option>
-						<option value="Moda"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Moda') echo 'selected'; ?>>
+						<option value="Moda" <?php if($category=='Moda') echo 'selected'; ?>>
 							Moda</option>
-						<option value="Umeak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Umeak') echo 'selected'; ?>>
+						<option value="Umeak" <?php if($category=='Umeak') echo 'selected'; ?>>
 							Umeak</option>
-						<option value="Zaletasunak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Zaletasunak') echo 'selected'; ?>>
+						<option value="Zaletasunak" <?php if($category=='Zaletasunak') echo 'selected'; ?>>
 							Zaletasunak</option>
-						<option value="Kirolak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Kirolak') echo 'selected'; ?>>
+						<option value="Kirolak" <?php if($category=='Kirolak') echo 'selected'; ?>>
 							Kirolak</option>
-						<option value="Maskotak"
-							<?php if(isset($_GET['category']) && $_GET['category']=='Maskotak') echo 'selected'; ?>>
+						<option value="Maskotak" <?php if($category=='Maskotak') echo 'selected'; ?>>
 							Maskotak</option>
+						<?php
+							}
+						?>
 					</select>
 					<br><br>
 					<label for="min_price">Prezio minimoa:</label>
@@ -89,25 +79,27 @@
 					<br><br>
 					<label for="order">Ordenatu:</label>
 					<select id="order" name="order">
-						<option value="Berrienak"
-							<?php if(isset($_GET['order']) && $_GET['order']=='Berrienak') echo 'selected'; ?>>
+						<?php
+							if(isset($_GET['order'])) { $order = $_GET['order'];
+						?>
+						<option value="Berrienak" <?php if($order=='Berrienak') echo 'selected'; ?>>
 							Berrienak</option>
-						<option value="Zaharrenak"
-							<?php if(isset($_GET['order']) && $_GET['order']=='Zaharrenak') echo 'selected="true"'; ?>>
+						<option value="Zaharrenak" <?php if($order=='Zaharrenak') echo 'selected'; ?>>
 							Zaharrenak</option>
-						<option value="Merkeenak"
-							<?php if(isset($_GET['order']) && $_GET['order']=='Merkeenak') echo 'selected'; ?>>
+						<option value="Merkeenak" <?php if($order=='Merkeenak') echo 'selected'; ?>>
 							Merkeenak</option>
-						<option value="Garestienak"
-							<?php if(isset($_GET['order']) && $_GET['order']=='Garestienak') echo 'selected'; ?>>
+						<option value="Garestienak" <?php if($order=='Garestienak') echo 'selected'; ?>>
 							Garestienak</option>
+						<?php
+							}
+						?>
 					</select>
 					<br><br>
 					<label for="text">Testua:</label>
 					<input type="text" id="text" name="text" maxlength="100"
 						value="<?php echo isset($_GET['text']) ? $_GET['text'] : '' ?>">
 					<input type="submit" id="submit" value="Filtroak gehitu">
-					<input type="reset" value="Berrezarri">
+					<a href="Layout.php">Berrezarri</a>
 				</fieldset>
 			</form>
 			<?php include '../php/ShowAdvertisementsFilter.php'; ?>

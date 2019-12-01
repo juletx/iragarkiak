@@ -29,11 +29,12 @@
 		else {
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$files = scandir ($row['images']);
-			$firstFile = $row['images'] . $files[2];// because [0] = "." [1] = ".." 
+			$firstFile = $row['images'] . $files[2];// because [0] = "." [1] = ".."
+			$avatar = glob("../images/users/".$row['email'].".*")[0];
 			echo 	'<div class="ad-big">
 						<div class="ad-big-header">
-							<img class="avatar-small" src="../images/avatar.jpg" alt="Avatar">
-							<p>'.$row['email'].'</p>
+							<img class="avatar-small" src="'.$avatar.'" alt="Avatar">
+							<a href="ShowAdvertisementsUser.php?email='.$row['email'].'"><p>'.$row['email'].'</p></a>
 						</div>
 						<div class="ad-image">
 							<img src="'.$firstFile.'">

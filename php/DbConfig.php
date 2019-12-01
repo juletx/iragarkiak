@@ -4,7 +4,7 @@ if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
     $gakoa = "admin";
-    $db = "db";
+    $db = "advertisements";
 } else {
     $zerbitzaria = "localhost";
     $erabiltzailea = "id11745620_iragarkiak";

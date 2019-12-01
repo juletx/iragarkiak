@@ -4,15 +4,19 @@ if (empty($email)) {
 	echo "<script>alert('Epostarik ez dago'); history.go(-1);</script>";
 }
 include '../php/DbConfig.php';
-$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
+$link = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
 $sql = "DELETE FROM users WHERE email='$email'";
-$emaitza = mysqli_query($esteka, $sql);
+$result = mysqli_query($link, $sql);
 
-if (!$emaitza) {
+if (!$result) {
 	echo "<script>alert('Errorea datu basearen kontsultan'); history.go(-1);</script>";
 	die();
 }
+else {
+	$avatar = glob("../images/users/".$email.".*")[0];
+	unlink($avatar);
+}
 
-mysqli_close($esteka);
+mysqli_close($link);
 ?>
