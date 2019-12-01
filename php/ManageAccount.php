@@ -5,7 +5,7 @@
 <head>
 	<?php include '../html/Head.html'?>
 	<script src="../js/ShowImageInForm.js"></script>
-	<script src="../js/EguneratuAjax.js"></script>
+	<script src="../js/UpdateAccAjax.js"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
 		<hr>
 		<div class="row">
 			<!-- left column -->
-			<form class="form-horizontal" role="form" name="eguneratu" id="eguneratu">
+			
 			<div class="col-md-3">
 				<div class="text-center">
 					<?php 
@@ -48,8 +48,6 @@
 					?>
 					<img src="<?php echo $avatar; ?>" class="avatar img-circle" alt="avatar" id="argazki">
 					<h6>Igo beste argazki bat...</h6>
-
-					<input type="file" class="form-control" id="image" name="image" accept="image/*">
 				</div>
 			</div>
 
@@ -61,7 +59,7 @@
 					This is an <strong>.alert</strong>. Use this to show important messages to the user.
 				</div>
 				<h3>Kontuko datuak</h3>
-				
+				<form class="form-horizontal" role="form" name="eguneratu" id="eguneratu">
 					<div class="form-group">
 						<label class="col-lg-3 control-label">Email:</label>
 						<div class="col-lg-8">
@@ -105,16 +103,18 @@
 							<input class="form-control" type="password" name="password2" value="123456">
 						</div>
 					</div>
-					<div class="form-group">
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*">   
+                    <div class="form-group">
 						<label class="col-lg-3 control-label"></label>
 						<div class="col-lg-8">
 							<input type="button" class="btn btn-primary" value="Gorde aldaketak" id="gorde">
 							<input type="reset" class="btn btn-default" value="Berrezarri"
 								onclick="location.href='ShowAccount.php'">
 						</div>
-					</div>
-			</div>
-			</form>
+					</div> 
+                </form>
+                </div>
+			
 		</div>
 	</div>
 	<?php include '../html/Footer.html' ?>

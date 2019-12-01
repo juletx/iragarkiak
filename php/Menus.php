@@ -1,10 +1,11 @@
-<header class='navbar'>
-	<img src="../images/logo.png">
-
+<header class='navbar fixed-top'>
+	<img class="navbar-brand" src="../images/logo.png">
+	<button type="button" onclick="location.href='Layout.php'" class="btn btn-primary btn-lg">Hasiera</button>
+	
 <?php if (empty($_SESSION["email"])) { ?>
 
-	<span><a href="LogIn.php" class="buttonIrekiSesioa">Login</a></span>
-	<span><a href="SignUp.php">Erregistratu</a></span>
+	<button type="button" onclick="location.href='LogIn.php'" class="btn btn-primary btn-lg">Login</button>
+	<button type="button" onclick="location.href='SignUp.php'" class="btn btn-primary btn-lg">Erregistratu</button>
 
 <?php } else { 
 	include '../php/DbConfig.php';
@@ -17,20 +18,19 @@
 
 	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 	mysqli_close($link);
+ 
+ 	if ($row['admin']) { 
 ?>
-	<span><a href="ShowAccount.php"><?php echo $email ?></a></span>
-	<span><a href="LogOut.php">Logout</a></span>
-	
-<?php if ($row['admin']) { ?>
+	<button type="button" onclick="location.href='HandlingAccounts.php'" class="btn btn-primary btn-lg">Erabiltzaileak kudeatu</button>
+	<button type="button" onclick="location.href='ManageAccount.php'" class="btn btn-primary btn-lg"><?php echo $email ?></button>
+	<button type="button" onclick="if (confirm('Ziur al zaude?')) location.href='LogOut.php'" class="btn btn-primary btn-lg"><?php echo $email ?></button>
 
-	<span><a href="HandlingAccounts.php">Erabiltzaileak kudeatu</a></span>
-	
 <?php } else { ?>
-
-	<span><a href="AddAdvertisement.php" class="buttonProduktuaIgo">Iragarkia gehitu</a></span>
-	<span><a href="ShowAdvertisementsUser.php?email=<?php echo $email ?>">Nire iragarkiak</a></span>
-
+    <button type="button" onclick="location.href='AddAdvertisement.php'" class="btn btn-primary btn-lg">Iragarkia gehitu</button>
+    <button type="button" onclick="location.href='ShowAdvertisementsUser.php?email=<?php echo $email ?>'" class="btn btn-primary btn-lg">Nire iragarkiak</button>
+    <button type="button" onclick="if (confirm('Ziur al zaude?')) location.href='LogOut.php'" class="btn btn-primary btn-lg">Logout</button>
+    <button type="button" onclick="location.href='ManageAccount.php'" class="btn btn-light btn-lg"><?php echo $email ?></button>
+	
 <?php } } ?>
 
-	<span><a href="Layout.php">Hasiera</a></span>
 </header>

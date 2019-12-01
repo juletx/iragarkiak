@@ -5,7 +5,7 @@
 <head>
 	<?php include '../html/Head.html'?>
     <!--<script src="../js/VerifyPassAjax.js"></script>-->
-    <<script src="../js/ShowImageInForm.js"></script>
+    <script src="../js/ShowImageInForm.js"></script>
 </head>
 
 <body>
