@@ -10,7 +10,7 @@
 
 <body>
     <?php include '../php/Menus.php' ?>
-    <section class="main" id="s1">
+    <div class="main">
         <div id="taula">
 			<h2>Erabiltzaileak kudeatu</h2>
 			<br>
@@ -46,7 +46,7 @@
             	mysqli_close($esteka);
             ?>
         </div>
-    </section>
+	</div>
     <?php include '../html/Footer.html' ?>
 </body>
 

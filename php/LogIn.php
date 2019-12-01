@@ -8,7 +8,7 @@
 
 <body>
 	<?php include '../php/Menus.php' ?>
-		<?php
+	<?php
 			if (isset($_POST["email"])) {
 				include '../php/DbConfig.php';
 				$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
@@ -50,25 +50,24 @@
 				mysqli_close($esteka);
 			}
         ?>
-	<section class="main" id="s1">
+	<div class="main">
 		<div id="form">
 			<form id="login" name="login" action="#" method="post">
 				<fieldset>
 					<legend>
 						<h2>Login</h2>
 					</legend>
-					<input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Posta elektronikoa" required>
+					<input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+						placeholder="Posta elektronikoa" required>
 					<br>
-					<input type="password" id="password" name="password"  placeholder="Pasahitza" required>
+					<input type="password" id="password" name="password" placeholder="Pasahitza" required>
 					<br>
 					<input type="submit" value="Login">
 					<input type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
-
-
 		</div>
-	</section>
+	</div>
 </body>
 
 </html>

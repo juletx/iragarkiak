@@ -10,7 +10,7 @@
 
 <body>
 	<?php include '../php/Menus.php' ?>
-	<section class="main" id="s1">
+	<div class="main">
 		<div id="form">
 			<form id="erregistratu" name="erregistratu" method="post" enctype='multipart/form-data'>
 				<fieldset>
@@ -98,7 +98,7 @@
 
 					$password_hash = password_hash($password1, PASSWORD_DEFAULT);
 
-					$sql = "INSERT INTO users VALUES ('$email', '$password_hash', '$name', '$surname1', '$surname2', '$telephone', 0)";
+					$sql = "INSERT INTO users VALUES ('$email', '$password_hash', '$name', '$surname1', '$surname2', '$telephone', 0, 0)";
 					$emaitza = mysqli_query($esteka, $sql);
 		
 					mysqli_close($esteka);
@@ -112,7 +112,7 @@
 			}
             ?>
 		</div>
-	</section>
+	</div>
 </body>
 
 </html>

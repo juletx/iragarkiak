@@ -17,7 +17,7 @@ if (!$result) {
 	die();
 }
 else {
-	$directory = '../images/'.$ad_id.'/';
+	$directory = '../images/ads/'.$ad_id.'/';
 	array_map('unlink', glob("$directory*.*"));
 	rmdir($directory);
 }

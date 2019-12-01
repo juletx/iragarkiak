@@ -27,6 +27,7 @@
 		$telephone = $row['telephone'];
 	}
 	mysqli_free_result($emaitza);
+	mysqli_close($esteka);
 	?>
 	<div class="container">
 		<h1 style="text-align:center">Editatu perfila</h1>

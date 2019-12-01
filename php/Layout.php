@@ -61,19 +61,19 @@
 						<option value="Maskotak" <?php if($category=='Maskotak') echo 'selected'; ?>>
 							Maskotak</option>
 					</select>
-					<br><br>
+					<br>
 					<label for="min_price">Prezio minimoa:</label>
 					<input type="number" id="min_price" name="min_price" min="0"
 						value="<?php echo isset($_GET['min_price']) ? $_GET['min_price'] : '' ?>">
-					<br><br>
+					<br>
 					<label for="max_price">Prezio maximoa:</label>
 					<input type="number" id="max_price" name="max_price" min="0"
 						value="<?php echo isset($_GET['max_price']) ? $_GET['max_price'] : '' ?>">
-					<br><br>
+					<br>
 					<label for="city">Hiria:</label>
 					<input type="text" id="city" name="city"
 						value="<?php echo isset($_GET['city']) ? $_GET['city'] : '' ?>">
-					<br><br>
+					<br>
 					<label for="order">Ordenatu:</label>
 					<select id="order" name="order">
 						<option value="Berrienak">Berrienak</option>
@@ -87,7 +87,7 @@
 						<option value="Garestienak" <?php if($order=='Garestienak') echo 'selected'; ?>>
 							Garestienak</option>
 					</select>
-					<br><br>
+					<br>
 					<label for="text">Testua:</label>
 					<input type="text" id="text" name="text" maxlength="100"
 						value="<?php echo isset($_GET['text']) ? $_GET['text'] : '' ?>">
@@ -95,6 +95,7 @@
 					<a href="Layout.php">Berrezarri</a>
 				</fieldset>
 			</form>
+			<br>
 			<?php include '../php/ShowAdvertisementsFilter.php'; ?>
 		</div>
 	</div>

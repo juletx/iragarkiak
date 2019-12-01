@@ -8,50 +8,83 @@
 
 <body>
 	<?php include '../php/Menus.php' ?>
+	<?php
+	include '../php/DbConfig.php';
+	$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
+
+	$ad_id = trim($_GET["ad_id"]);
+
+	$sql = "SELECT * FROM ads WHERE ad_id='$ad_id'";
+	$emaitza = mysqli_query($esteka, $sql) or die("Errorea datu-baseko kontsultan");
+		
+	while ($row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC)) {
+		$category = trim($row["category"]);
+		$title = trim($row["title"]);
+		$text = trim($row["text"]);
+		$price = trim($row["price"]);
+		$city = trim($row["city"]);
+	}
+	
+	mysqli_free_result($emaitza);
+	mysqli_close($esteka);
+	?>
 	<div class="main">
 		<div id="form">
 			<form id="iragarkia" name="iragarkia" method="post" enctype='multipart/form-data'>
 				<fieldset>
 					<legend>
-						<h2>Iragarkia gehitu</h2>
+						<h2>Iragarkia editatu</h2>
 					</legend>
 					<label for="category">Kategoria(*):</label>
 					<select id="category" name="category" required>
-						<option value="Ibilgailuak">Ibilgailuak</option>
-						<option value="Eraikuntzak">Eraikuntzak</option>
-						<option value="Lana">Lana</option>
-						<option value="Heziketa">Heziketa</option>
-						<option value="Zerbitzuak">Zerbitzuak</option>
-						<option value="Negozioak">Negozioak</option>
-						<option value="Informatika">Informatika</option>
-						<option value="Ikus-entzunezkoak">Ikus-entzunezkoak</option>
-						<option value="Telefonia">Telefonia</option>
-						<option value="Jokoak">Jokoak</option>
-						<option value="Etxetresnak">Etxetresnak</option>
-						<option value="Moda">Moda</option>
-						<option value="Umeak">Umeak</option>
-						<option value="Zaletasunak">Zaletasunak</option>
-						<option value="Kirolak">Kirolak</option>
-						<option value="Maskotak">Maskotak</option>
+						<option value="Ibilgailuak" <?php if($category=='Ibilgailuak') echo 'selected'; ?>>Ibilgailuak
+						</option>
+						<option value="Eraikuntzak" <?php if($category=='Eraikuntzak') echo 'selected'; ?>>Eraikuntzak
+						</option>
+						<option value="Lana" <?php if($category=='Lana') echo 'selected'; ?>>Lana</option>
+						<option value="Heziketa" <?php if($category=='Heziketa') echo 'selected'; ?>>Heziketa
+						</option>
+						<option value="Zerbitzuak" <?php if($category=='Zerbitzuak') echo 'selected'; ?>>Zerbitzuak
+						</option>
+						<option value="Negozioak" <?php if($category=='Negozioak') echo 'selected'; ?>>Negozioak
+						</option>
+						<option value="Informatika" <?php if($category=='Informatika') echo 'selected'; ?>>Informatika
+						</option>
+						<option value="Ikus-entzunezkoak" <?php if($category=='Ikus-entzunezkoak') echo 'selected'; ?>>
+							Ikus-entzunezkoak</option>
+						<option value="Telefonia" <?php if($category=='Telefonia') echo 'selected'; ?>>Telefonia
+						</option>
+						<option value="Jokoak" <?php if($category=='Jokoak') echo 'selected'; ?>>Jokoak</option>
+						<option value="Etxetresnak" <?php if($category=='Etxetresnak') echo 'selected'; ?>>Etxetresnak
+						</option>
+						<option value="Moda" <?php if($category=='Moda') echo 'selected'; ?>>Moda</option>
+						<option value="Umeak" <?php if($category=='Umeak') echo 'selected'; ?>>Umeak</option>
+						<option value="Zaletasunak" <?php if($category=='Zaletasunak') echo 'selected'; ?>>Zaletasunak
+						</option>
+						<option value="Kirolak" <?php if($category=='Kirolak') echo 'selected'; ?>>Kirolak</option>
+						<option value="Maskotak" <?php if($category=='Maskotak') echo 'selected'; ?>>Maskotak
+						</option>
 					</select>
 					<br><br>
 					<label for="title">Titulua(*):</label>
-					<input type="text" id="title" name="title" minlength="5" maxlength="100" required>
+					<input type="text" id="title" name="title" minlength="5" maxlength="100"
+						value="<?php echo $title; ?>" required>
 					<br><br>
 					<label for="text">Testua(*):</label>
 					<br>
-					<textarea id="text" name="text" cols="40" rows="5" minlength="10" maxlength="1000" required></textarea>
+					<textarea id="text" name="text" cols="40" rows="5" minlength="10" maxlength="1000"
+						required><?php echo $text; ?></textarea>
 					<br><br>
 					<label for="price">Prezioa(*):</label>
-					<input type="number" id="price" name="price" min="0" required>
+					<input type="number" id="price" name="price" min="0" value="<?php echo $price; ?>" required>
 					<br><br>
 					<label for="city">Hiria(*):</label>
-					<input type="text" id="city" name="city" required>
+					<input type="text" id="city" name="city" value="<?php echo $city; ?>" required>
 					<br><br>
 					<label for="images">Argazkia(k) aukeratu(*):</label>
 					<input type="file" id="images" name="images[]" accept="image/*" multiple required>
 					<br><br>
-					<input type="submit" id="submit" value="Iragarkia gehitu">
+					<input type="submit" id="submit" value="Iragarkia editatu">
 					<input type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
@@ -95,16 +128,8 @@
 					else {
 						include '../php/DbConfig.php';
 						$link = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
-					
-						$sql = "SELECT AUTO_INCREMENT
-						FROM information_schema.TABLES
-						WHERE TABLE_SCHEMA = '$db' AND TABLE_NAME = 'ads'";
-						
-						$result = mysqli_query($link, $sql);
 
-						$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-						$id = $row['AUTO_INCREMENT'];
-						$directory = '../images/ads/'.$id.'/';
+						$directory = '../images/ads/'.$ad_id.'/';
 
 						if (file_exists($directory) || mkdir($directory, 0777, true)) {
 							// Loop through each file
@@ -129,22 +154,17 @@
 							}
 						}
 
-						$email = $_SESSION['email'];
-
-						date_default_timezone_set('Europe/Madrid');
-						$date = date('Y-m-d H:i:s');
-
-						$sql = "INSERT INTO ads VALUES ($id, '$email', '$title', '$category', '$text', 
-						$price, '$city', '$date')";
+						$sql = "UPDATE ads SET title='$title', category='$category', text='$text', 
+						price=$price, city='$city' WHERE ad_id=$ad_id";
 						
 						$emaitza = mysqli_query($link, $sql);
 
 						mysqli_close($link);
 
 						if (!$emaitza) {
-							echo "<script>alert('Iruzkina ez da ondo gorde datu-basean'); history.go(-1);</script>";
+							echo "<script>alert('Iruzkina ez da ondo eguneratu datu-basean'); history.go(-1);</script>";
 						} else {
-							echo "<script>alert('Iruzkina ondo gorde da datu-basean');</script>";
+							echo "<script>alert('Iruzkina ondo eguneratu da datu-basean');</script>";
 						}
 					}
 				}

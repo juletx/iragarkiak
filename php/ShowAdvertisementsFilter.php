@@ -54,7 +54,7 @@ if (isset($_GET['order']) && !empty($order = trim($_GET['order']))) {
 
 $result_count = mysqli_query($link, $sql_count) or die("Errorea datu-baseko kontsultan");
 $row = mysqli_fetch_array($result_count, MYSQLI_ASSOC);
-echo $row['COUNT(*)'].' iragarki aurkitu d(ir)a'.PHP_EOL;
+echo "<div>Aurkitutako iragarki kopurua: ".$row['COUNT(*)']."<div>";
 
 $result = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
 
@@ -93,7 +93,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				</div>';
 				if (isset($_SESSION['email']) && $_SESSION['email']==$email && $_SESSION['email']==$row['email']) {
 					echo 	'<div>
-								<span><a href="">Iragarkia editatu</a></span>
+								<span><a href="EditAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia editatu</a></span>
 								<span><a href="DeleteAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia ezabatu</a></span>
 							</div>';
 				} 
