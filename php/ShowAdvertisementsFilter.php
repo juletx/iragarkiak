@@ -64,10 +64,12 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				<div class="home-anuntzio-detail">
 					<div class="home-anuntzio-detail-textu">
 						<a href="Ad.php?ad_id='.$row['ad_id'].'"><b>'.$row['title'].'</b></a><br>
-						<i class="fa fa-list-alt" aria-hidden="true">'.$row['category'].'</i>
+                        <a href="Layout.php?category='.$row['category'].'">
+                        <i class="fa fa-list-alt" aria-hidden="true">'.$row['category'].'</i><a>
 						<div class="home-anuntzio-detail-textu-tokiordu">
-							<span class="home-anuntzio-detail-textu-toki"><i class="fa fa-map-marker"
-								style="font-size:24px">'.$row['city'].'</i></span>
+                        <a href="Layout.php?city='.$row['city'].'">
+                        <span class="home-anuntzio-detail-textu-toki"><i class="fa fa-map-marker"
+								style="font-size:24px">'.$row['city'].'</i></span></a>
 							<span class="home-anuntzio-detail-textu-denbora"><i class="fa fa-clock-o"
 								aria-hidden="true" style="font-size:24px">'.$row['date'].'</i></span>
 						</div>
