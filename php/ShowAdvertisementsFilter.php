@@ -38,10 +38,10 @@ if (isset($_GET['order']) && !empty($order = trim($_GET['order']))) {
 	$sql .= " ORDER BY ";
 	switch ($order) {
 	case "Berrienak":
-		$sql .= "date";
+		$sql .= "date DESC";
 		break;
 	case "Zaharrenak":
-		$sql .= "date DESC";
+		$sql .= "date";
 		break;
 	case "Merkeenak":
 		$sql .= "price";
