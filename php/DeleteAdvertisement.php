@@ -1,4 +1,4 @@
-<?php include '../php/SecurityUsers.php' ?>
+<?php include '../php/SecurityLoggedIn.php' ?>
 <?php
 $ad_id = trim($_GET["ad_id"]);
 if (empty($ad_id)) {

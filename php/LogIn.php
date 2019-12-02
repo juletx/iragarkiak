@@ -59,7 +59,7 @@
 					</legend>
 					<input type="email" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
 						placeholder="Posta elektronikoa" required>
-					<br>
+					<br><br>
 					<input type="password" id="password" name="password" placeholder="Pasahitza" required>
 					<br>
 					<input type="submit" value="Login">

@@ -1,4 +1,4 @@
-<?php include '../php/SecurityUsers.php' ?>
+<?php include '../php/SecurityLoggedIn.php' ?>
 <!DOCTYPE html>
 <html>
 

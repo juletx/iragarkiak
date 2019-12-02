@@ -18,25 +18,25 @@
 						<h2>Erregistratu</h2>
 					</legend>
 					<input type="email" id="email" name="email" placeholder="Posta Elektronikoa" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
-					<br>
+					<br><br>
 					<input type="password" id="password1" name="password1" placeholder="Pasahitza" minlength="6" required>
 					<span id="baliozkoa"></span>
-					<br>
+					<br><br>
 					<input type="password" id="password2" name="password2" placeholder="Errepikatu pasahitza" required>
-					<br>
+					<br><br>
 					<input type="text" id="name" name="name" placeholder="Izena" required>
-					<br>
+					<br><br>
 					<input type="text" id="surname1" name="surname1" placeholder="Lehen abizena" required>
-					<br>
+					<br><br>
 					<input type="text" id="surname2" name="surname2" placeholder="Bigarren abizena "required>
-					<br>
+					<br><br>
 					<input type="tel" id="telephone" name="telephone" placeholder="Telefonoa" pattern="[0-9]{9}"
 						title="Telefonoak 9 digitu izan behar ditu" required>
-					<br>
+					<br><br>
                     <label for="image">Argazkia aukeratu:</label>
-					<br>
+					<br><br>
 					<img id="argazki" alt="Aukeratu argazkia" class="image" src="#" />
-					<br>
+					<br><br>
 					<input type="file" id="image" name="image" accept="image/*">
 					<br>
                     <input type="submit" id="submit" value="Erregistratu">

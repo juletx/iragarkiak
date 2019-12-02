@@ -57,7 +57,7 @@ $row = mysqli_fetch_array($result_count, MYSQLI_ASSOC);
 echo "<div>Aurkitutako iragarki kopurua: ".$row['COUNT(*)']."<div>";
 
 $result = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
-$id=0;
+$id = 0;
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	echo 	'<div class="home-anuntzio">
 				<div class="home-anuntzio-head"></div>
@@ -91,15 +91,13 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         $i = 0;
                         foreach ($images as $image) {
                             if ($i == 0) {
-                                echo'<div class="carousel-item active">
-                                <img class="d-block w-100" src="'.$image.'"
-                                alt="First slide">
-                            </div>'; 
+                                echo	'<div class="carousel-item active">
+                                			<img class="d-block w-100" src="'.$image.'" alt="First slide">
+                            			</div>'; 
                             }else {
-                                echo'<div class="carousel-item">
-                                <img class="d-block w-100" src="'.$image.'"
-                                alt="Next slides">
-                            </div>';
+                                echo	'<div class="carousel-item">
+                                			<img class="d-block w-100" src="'.$image.'" alt="Next slides">
+                            			</div>';
                             }
                             $i++;     
                         }
@@ -122,15 +120,25 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 					<a href="#" class="home-anuntzio-footer-kontaktua">&#9743;'.$row['telephone'].'</a>
 					<a href="#" class="home-anuntzio-footer-kontaktua">&#9993;'.$row['email'].'</a>
 				</div>';
-				if (isset($_SESSION['email']) && $_SESSION['email']==$email && $_SESSION['email']==$row['email']) {
-					echo 	'<div>
-								<span><a href="EditAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia editatu</a></span>
-								<span><a href="DeleteAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia ezabatu</a></span>
-							</div>';
-				} 
+				if (isset($_SESSION['email'])) {
+					$email_db = $row['email'];
+					$email_session = $_SESSION['email'];
+
+					$sql = "SELECT admin FROM users WHERE email='$email_session'";
+					$result2 = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
+
+					$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+
+					if ($row2['admin'] || $email_session == $email && $email_session == $email_db) {
+						echo 	'<div>
+									<span><a href="EditAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia editatu</a></span>
+									<span><a onclick="'; echo 'if (confirm(\'Ziur al zaude?\')) location.href=\'DeleteAdvertisement.php?ad_id='.$row['ad_id'].'\'">Iragarkia ezabatu</a></span>
+								</div>';
+					}
+				}
 				
 			echo '</div>';					
-            $id=$id+1;
+            $id = $id + 1;
         }
 
 mysqli_free_result($result);
