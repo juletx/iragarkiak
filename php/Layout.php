@@ -63,18 +63,22 @@
 					</select>
 					<br>
 					<label for="min_price">Prezio minimoa:</label>
-					<input type="number" id="min_price" name="min_price" min="0"
+                    <input type="number" id="min_price" name="min_price" min="0"
 						value="<?php echo isset($_GET['min_price']) ? $_GET['min_price'] : '' ?>">
-					<br>
-					<label for="max_price">Prezio maximoa:</label>
-					<input type="number" id="max_price" name="max_price" min="0"
+                        &nbsp;&nbsp;&nbsp;
+					<label for="max_price">Prezio maximoa:</label><input type="number" id="max_price" name="max_price" min="0"
 						value="<?php echo isset($_GET['max_price']) ? $_GET['max_price'] : '' ?>">
 					<br>
 					<label for="city">Hiria:</label>
 					<input type="text" id="city" name="city"
 						value="<?php echo isset($_GET['city']) ? $_GET['city'] : '' ?>">
 					<br>
-					<label for="order">Ordenatu:</label>
+					<label for="text">Testua:</label>
+					<input type="text" id="text" name="text" maxlength="100"
+						value="<?php echo isset($_GET['text']) ? $_GET['text'] : '' ?>">
+                    <br>
+                    <br>
+                    <label for="order">Ordenatu:</label>
 					<select id="order" name="order">
 						<option value="Berrienak">Berrienak</option>
 						<?php
@@ -88,10 +92,7 @@
 							Garestienak</option>
 					</select>
 					<br>
-					<label for="text">Testua:</label>
-					<input type="text" id="text" name="text" maxlength="100"
-						value="<?php echo isset($_GET['text']) ? $_GET['text'] : '' ?>">
-					<input type="submit" id="submit" value="Filtroak gehitu">
+                        <input type="submit" id="submit" value="GEHITU FILTROA">
 					<a href="Layout.php">Berrezarri</a>
 				</fieldset>
 			</form>

@@ -57,7 +57,7 @@ $row = mysqli_fetch_array($result_count, MYSQLI_ASSOC);
 echo "<div>Aurkitutako iragarki kopurua: ".$row['COUNT(*)']."<div>";
 
 $result = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
-
+$id=0;
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	echo 	'<div class="home-anuntzio">
 				<div class="home-anuntzio-head"></div>
@@ -84,9 +84,38 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 							$firstFile = $directory . $files[2];// because [0] = "." [1] = ".." 
 						echo '</div>
 					</div>
-					<div class="home-anuntzio-detail-irudi">
-						<img class="home-anuntzio-detail-irudi-txiki" src="'. $firstFile .'">
-					</div>
+					<div id="carousel-thumb'.$id.'" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+                        <!--Slides-->
+                        <div class="carousel-inner" role="listbox">';
+                        $images = glob($directory."*.*");
+                        $i = 0;
+                        foreach ($images as $image) {
+                            if ($i == 0) {
+                                echo'<div class="carousel-item active">
+                                <img class="d-block w-100" src="'.$image.'"
+                                alt="First slide">
+                            </div>'; 
+                            }else {
+                                echo'<div class="carousel-item">
+                                <img class="d-block w-100" src="'.$image.'"
+                                alt="Next slides">
+                            </div>';
+                            }
+                            $i++;     
+                        }
+                        echo'</div>
+                        <!--/.Slides-->
+                        <!--Controls-->
+                        <a class="carousel-control-prev" href="#carousel-thumb'.$id.'" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-thumb'.$id.'" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <!--/.Controls-->
+                        </div>
 				</div>
 				<p class="prezioa">'.$row['price'].'€</p><br><br><br>
 				<div class="home-anuntzio-footer">
@@ -101,7 +130,8 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				} 
 				
 			echo '</div>';					
-}
+            $id=$id+1;
+        }
 
 mysqli_free_result($result);
 mysqli_close($link);
