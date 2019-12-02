@@ -3,7 +3,7 @@ $lokal = 1; //0 hodeirako
 if ($lokal) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
-    $gakoa = "admin";
+    $gakoa = "";
     $db = "db";
 } else {
     $zerbitzaria = "localhost";
