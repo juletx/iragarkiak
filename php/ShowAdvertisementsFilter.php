@@ -50,6 +50,8 @@ if (isset($_GET['order']) && !empty($order = trim($_GET['order']))) {
 		$sql .= "price DESC";
 		break;
 	}
+}else {
+	$sql .= " ORDER BY date DESC";
 }
 
 $result_count = mysqli_query($link, $sql_count) or die("Errorea datu-baseko kontsultan");
