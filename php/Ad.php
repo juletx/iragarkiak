@@ -79,8 +79,24 @@
 							<div class="ad-big-footer-title">'.$row['title'].'</div>
 							<div class="ad-big-footer-price">'.$row['price'].'€</div>
 							<div class="ad-big-footer-description">'.$row['text'].'</div>
-						</div>
-					</div>';
+						</div>';
+						if (isset($_SESSION['email'])) {
+							$email_db = $row['email'];
+							$email_session = $_SESSION['email'];
+			
+							$sql = "SELECT admin FROM users WHERE email='$email_session'";
+							$result2 = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
+			
+							$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+			
+							if ($row2['admin'] || $email_session == $email_db) {
+								echo 	'<br><div>
+											<span><a class="btn btn-success" href="EditAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia editatu</a></span>
+											<span><a class="btn btn-danger" onclick="'; echo 'if (confirm(\'Ziur al zaude?\')) location.href=\'DeleteAdvertisement.php?ad_id='.$row['ad_id'].'\'">Iragarkia ezabatu</a></span>
+										</div>';
+							}
+						}
+					echo '</div>';
 		}
 
 		mysqli_free_result($result);

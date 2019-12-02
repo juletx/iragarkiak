@@ -190,7 +190,12 @@ div#erabiltzaileKop {
 .home-anuntzio-detail-irudi {
 	width: 30%;
 	height: 300px;
+  opacity: 1;
+  transition: 0.3s;
 	display: inline-block;
+}
+.home-anuntzio-detail-irudi:hover{
+  opacity: 0.6;
 }
 
 .home-anuntzio-detail-irudi-txiki {
@@ -290,6 +295,7 @@ div#erabiltzaileKop {
 .ad-big-header {
 	display: inline-block;
 	display: flex;
+  padding-bottom: 2%;
 }
 
 .avatar-small {
@@ -466,4 +472,8 @@ input[type="reset"]:active {
 
 figure.credits-image {
 	display:inline-block
+}
+
+textarea{
+  resize: none;
 }
