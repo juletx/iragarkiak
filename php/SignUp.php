@@ -39,8 +39,9 @@
 					<br><br>
 					<input type="file" id="image" name="image" accept="image/*">
 					<br>
-                    <input type="submit" id="submit" value="Erregistratu">
-					<input type="reset" value="Berrezarri">
+					<br>
+                    <input class="btn btn-success" type="submit" id="submit" value="Erregistratu">
+					<input class="btn btn-danger" type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
 

@@ -21,7 +21,6 @@
 			
 			<h3>Ikasgaia: Sare Zerbitzuak eta Aplikazioak</h3>
 
-			<h3>Udalerria: Azpeitia</h3>
 			<br>
 			<figure class="credits-image">
 				<img src="../images/MarkelAzpeitia.png" alt="Markel Azpeitia">

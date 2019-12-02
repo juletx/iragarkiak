@@ -7,7 +7,7 @@ $(document).ready(function () {
 			url: "../php/ChangeState.php?email=" + email,
 			cache: false,
 			success: function (result) {
-				td.prev().text(result);
+				td.prev().html(result);
 			},
 		});
 	});

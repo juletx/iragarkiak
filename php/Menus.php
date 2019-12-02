@@ -9,15 +9,15 @@
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
 		<div class="navbar-nav mr-auto">
 			<a class="nav-item nav-link" href="Layout.php">Hasiera</a>
-			<a class="nav-item nav-link" href="Credits.php">Kredituak</a></span>
-			<a class="nav-item nav-link" href="https://gitlab.com/juletx/Iragarkiak" target="_blank">GitLab</a>
 
 			<?php if (empty($_SESSION["email"])) { ?>
 
+			<a class="nav-item nav-link" href="Credits.php">Kredituak</a></span>
+			<a class="nav-item nav-link" href="https://gitlab.com/juletx/Iragarkiak" target="_blank">GitLab</a>
 		</div>
 		<div class="navbar-nav ml-auto">
 			<a class="nav-item nav-link" href="SignUp.php">Erregistratu</a>
-			<a class="nav-item nav-link" href="LogIn.php">Login</a>
+			<?php include 'Login.php'; ?>
 		</div>
 
 			<?php } else { 
@@ -43,8 +43,11 @@
 				iragarkiak</a>
 		
 			<?php } ?>
-		
+
+			<a class="nav-item nav-link" href="Credits.php">Kredituak</a></span>
+			<a class="nav-item nav-link" href="https://gitlab.com/juletx/Iragarkiak" target="_blank">GitLab</a>
 		</div>
+		
 		<div class="navbar-nav ml-auto">
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

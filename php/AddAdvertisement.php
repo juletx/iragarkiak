@@ -49,10 +49,11 @@
 					<input type="text" id="city" name="city" required>
 					<br><br>
 					<label for="images">Argazkia(k) aukeratu(*):</label>
+					<br>
 					<input type="file" id="images" name="images[]" accept="image/*" multiple required>
 					<br><br>
-					<input type="submit" id="submit" value="Iragarkia gehitu">
-					<input type="reset" value="Berrezarri">
+					<input class="btn btn-success" type="submit" id="submit" value="Iragarkia gehitu">
+					<input class="btn btn-danger" type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
 

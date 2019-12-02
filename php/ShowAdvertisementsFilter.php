@@ -130,9 +130,9 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 					$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
 
 					if ($row2['admin'] || $email_session == $email && $email_session == $email_db) {
-						echo 	'<div>
-									<span><a href="EditAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia editatu</a></span>
-									<span><a onclick="'; echo 'if (confirm(\'Ziur al zaude?\')) location.href=\'DeleteAdvertisement.php?ad_id='.$row['ad_id'].'\'">Iragarkia ezabatu</a></span>
+						echo 	'<br><div>
+									<span><a class="btn btn-success" href="EditAdvertisement.php?ad_id='.$row['ad_id'].'">Iragarkia editatu</a></span>
+									<span><a class="btn btn-danger" onclick="'; echo 'if (confirm(\'Ziur al zaude?\')) location.href=\'DeleteAdvertisement.php?ad_id='.$row['ad_id'].'\'">Iragarkia ezabatu</a></span>
 								</div>';
 					}
 				}

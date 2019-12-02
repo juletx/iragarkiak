@@ -22,10 +22,10 @@ mysqli_free_result($emaitza);
 
 if ($banned) {
 	$banned = 0;
-	$erantzuna = "Aktibatuta";
+	$erantzuna = "<span style='color:green'>Aktibatuta</span>";
 } else {
 	$banned = 1;
-	$erantzuna = "Baneatuta";
+	$erantzuna = "<span style='color:red'>Baneatuta</span>";
 }
 	
 echo $erantzuna;

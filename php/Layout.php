@@ -91,9 +91,9 @@
 						<option value="Garestienak" <?php if($order=='Garestienak') echo 'selected'; ?>>
 							Garestienak</option>
 					</select>
-					<br>
-                        <input type="submit" id="submit" value="GEHITU FILTROA">
-					<a href="Layout.php">Berrezarri</a>
+					<br><br>
+                    <input class="btn btn-success" type="submit" id="submit" value="Filtroa gehitu">
+					<a class="btn btn-danger" href="Layout.php">Berrezarri</a>
 				</fieldset>
 			</form>
 			<br>

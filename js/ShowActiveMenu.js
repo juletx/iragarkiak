@@ -1,6 +1,13 @@
 $(document).ready(function () {
-	$("navbar-nav .nav-link").on("click", function () {
-		$("navbar-nav").find(".active").removeClass("active");
-		$(this).addClass("active");
-	});
+	var location = window.location.href;
+	if (location.indexOf("ManageAccount.php") > - 1) {
+		$(".dropdown-toggle").addClass('active');
+	}
+	else {
+		$('.navbar-nav .nav-link').each(function(){
+			if(location.indexOf(this.href) > - 1) {
+				$(this).addClass('active');
+			}
+		});
+	}
 });

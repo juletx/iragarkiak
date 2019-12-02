@@ -407,9 +407,9 @@ input[type="email"]:focus {
 	transition: 0.2s ease;
 }
 
-input[type="submit"] {
+/*input[type="submit"] {
 	margin-top: 28px;
-	width: 120px;
+	width: 150px;
 	height: 32px;
 	background: #16a085;
 	border: none;
@@ -433,10 +433,10 @@ input[type="submit"]:active {
 	opacity: 1;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	transition: 0.1s ease;
-}
+}*/
 
 
-input[type="reset"] {
+/*input[type="reset"] {
 	margin-top: 10px;
 	width: 120px;
 	height: 32px;
@@ -462,7 +462,7 @@ input[type="reset"]:active {
 	opacity: 1;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	transition: 0.1s ease;
-}
+}*/
 
 figure.credits-image {
 	display:inline-block

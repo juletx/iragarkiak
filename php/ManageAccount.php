@@ -62,59 +62,65 @@
 					<h3>Kontuko datuak</h3>
 					<form class="form-horizontal" role="form" name="eguneratu" id="eguneratu">
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Email:</label>
+							<label class="col-lg-3 control-label" for="email">Email:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="text" name="email" value="<?php echo $email; ?>"
+								<input class="form-control" type="text" id="email" name="email" value="<?php echo $email; ?>"
 									readonly />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Izena:</label>
+							<label class="col-lg-3 control-label" for="name">Izena:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="text" name="name" value="<?php echo $name; ?>" />
+								<input class="form-control" type="text" id="name" name="name" value="<?php echo $name; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Lehen abizena:</label>
+							<label class="col-lg-3 control-label" for="surname1">Lehen abizena:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="text" name="surname1"
+								<input class="form-control" type="text" id="surname1" name="surname1"
 									value="<?php echo $surname1; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Bigarren abizena:</label>
+							<label class="col-lg-3 control-label" for="surname2">Bigarren abizena:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="text" name="surname2"
+								<input class="form-control" type="text" id="surname2" name="surname2"
 									value="<?php echo $surname2; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Telefonoa:</label>
+							<label class="col-lg-3 control-label" for="telephone">Telefonoa:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="number" name="telephone" pattern="[0-9]{9}"
+								<input class="form-control" type="number" id="telephone" name="telephone" pattern="[0-9]{9}"
 									title="Telefonoak 9 digitu izan behar ditu" value="<?php echo $telephone; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Pasahitza:</label>
+							<label class="col-lg-3 control-label" for="password1">Pasahitza:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="password" name="password1" minlength="6"
+								<input class="form-control" type="password" id="password1" name="password1" minlength="6"
 									value="123456">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label">Pasahitza errepikatu:</label>
+							<label class="col-lg-3 control-label" for="password2">Pasahitza errepikatu:</label>
 							<div class="col-lg-8">
-								<input class="form-control" type="password" name="password2" value="123456">
+								<input class="form-control" type="password" id="password2" name="password2" value="123456">
 							</div>
 						</div>
-						<input type="file" class="form-control" id="image" name="image" accept="image/*">
+						</div class="form-group">
+							<label class="col-lg-3 control-label" for="image">Argazkia aukeratu:</label>
+							<div class="col-lg-8">
+								<input type="file" class="form-control" id="image" name="image" accept="image/*">
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="col-lg-3 control-label"></label>
+							<br>
 							<div class="col-lg-8">
-								<input type="button" class="btn btn-primary" value="Gorde aldaketak" id="gorde">
-								<input type="reset" class="btn btn-default" value="Berrezarri"
-									onclick="location.href='ShowAccount.php'">
+								<input type="button" class="btn btn-success" value="Gorde aldaketak" id="gorde">
+								<input type="reset" class="btn btn-danger" value="Berrezarri"
+									onclick="location.href='ManageAccount.php'">
 							</div>
 						</div>
 					</form>
