@@ -9,6 +9,7 @@
 <body>
 	<?php include '../php/Menus.php' ?>
 	<div class="main">
+		<h2>Iragarkia ikusi</h2>
 		<?php
 		$ad_id = trim($_GET["ad_id"]);
 		if (empty($ad_id)) {
