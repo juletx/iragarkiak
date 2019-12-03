@@ -1,10 +1,10 @@
 <?php
-	if (isset($_POST["email"])) {
+	if (isset($_POST["email_login"])) {
 		include '../php/DbConfig.php';
 		$esteka = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$email = $_POST['email_login'];
+		$password = $_POST['password_login'];
 	
 		$sql = "SELECT * FROM users WHERE email='$email'";
 		$emaitza = mysqli_query($esteka, $sql);
@@ -42,9 +42,9 @@
 ?>
 
 <form class="form-inline" id="login" name="login" method="post">
-	<input class="form-control mr-sm-2" type="email" id="email" name="email" placeholder="Eposta"
+	<input class="form-control mr-sm-2" type="email" id="email_login" name="email_login" placeholder="Eposta"
 		aria-label="Eposta" required>
-	<input class="form-control mr-sm-2" type="password" id="password" name="password" placeholder="Pasahitza"
+	<input class="form-control mr-sm-2" type="password" id="password_login" name="password_login" placeholder="Pasahitza"
 		aria-label="Pasahitza" required>
 	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
 </form>

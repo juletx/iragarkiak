@@ -12,7 +12,7 @@
 
 			<?php if (empty($_SESSION["email"])) { ?>
 
-			<a class="nav-item nav-link" href="Credits.php">Kredituak</a></span>
+			<a class="nav-item nav-link" href="Credits.php">Kredituak</a>
 			<a class="nav-item nav-link" href="https://gitlab.com/juletx/Iragarkiak" target="_blank">GitLab</a>
 		</div>
 		<div class="navbar-nav ml-auto">

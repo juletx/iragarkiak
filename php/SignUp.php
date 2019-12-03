@@ -4,7 +4,7 @@
 
 <head>
 	<?php include '../html/Head.html'?>
-    <!--<script src="../js/VerifyPassAjax.js"></script>-->
+    <script src="../js/VerifyPassAjax.js"></script>
     <script src="../js/ShowImageInForm.js"></script>
 </head>
 
@@ -40,7 +40,7 @@
 					<input type="file" id="image" name="image" accept="image/*">
 					<br>
 					<br>
-                    <input class="btn btn-success" type="submit" id="submit" value="Erregistratu">
+                    <input class="btn btn-success" type="submit" id="submit" value="Erregistratu" disabled="true">
 					<input class="btn btn-danger" type="reset" value="Berrezarri">
 				</fieldset>
 			</form>
@@ -107,13 +107,14 @@
 					if (!$emaitza) {
 						echo "<script>alert('Erabiltzailea ez da ondo gorde datu-basean'); history.go(-1);</script>";
 					} else {
-						echo "<script>alert('Erabiltzailea ondo gorde da datu-basean'); window.location.href = '../php/LogIn.php'</script>".PHP_EOL;
+						echo "<script>alert('Erabiltzailea ondo gorde da datu-basean'); window.location.href = '../php/Layout.php'</script>".PHP_EOL;
 					}
 				}
 			}
             ?>
 		</div>
 	</div>
+	<?php include '../html/Footer.html' ?>
 </body>
 
 </html>
