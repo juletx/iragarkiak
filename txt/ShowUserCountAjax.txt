@@ -1,7 +1,0 @@
-Dokumentua kargatutakoan ajax-en bidez kontagailua inkrementatzeko php-ari deitzen zaio.
-Hasieran eta hortik aurrera 5 segunduro ejekutatzen den funtzio bat dago. Funtzio horretan 
-Ajax-en bidez Counter.xml fitxategia eskuratzen da. Kontagailuaren balioa lortzen da eta
-div-aren html-a balio horrekin ordezkatzen da. Amaitzeko, erabiltzaileak lehioa utzi aurretik
-kontagailuaren balioa txikitzen duen php-ari deitzen zaio Ajax erabiliz. Kontagailuaren 
-balioa aldatzeko php-ak oso sinpleak dira. Xml fitxategia ireki, kobtagailuaren balioa aldatu
-eta xml fitxategian aldaketa gordetzen dute.

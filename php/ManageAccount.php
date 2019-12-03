@@ -5,7 +5,7 @@
 <head>
 	<?php include '../html/Head.html'?>
 	<script src="../js/ShowImageInForm.js"></script>
-	<script src="../js/UpdateAccAjax.js"></script>
+	<script src="../js/UpdateAccountAjax.js"></script>
 </head>
 
 <body>

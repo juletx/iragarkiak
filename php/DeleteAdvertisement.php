@@ -20,6 +20,7 @@ else {
 	$directory = '../images/ads/'.$ad_id.'/';
 	array_map('unlink', glob("$directory*.*"));
 	rmdir($directory);
+	echo "<script>alert('Iragarkia ongi ezabatu da'); history.go(-1);</script>";
 }
 
 mysqli_close($link);

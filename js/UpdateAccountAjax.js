@@ -10,7 +10,6 @@ $(document).ready(function () {
 			processData: false,
 			dataType: 'HTML',
 			success: function (data) {
-				console.log(data);
 				if (!$("#alerta").is(":hidden")) {
 					$("#alerta").show();
 				}
