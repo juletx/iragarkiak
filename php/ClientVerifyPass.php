@@ -2,7 +2,7 @@
 require_once('../lib/nusoap.php');
 require_once('../lib/class.wsdlcache.php');
 
-$soapclient = new nusoap_client("http://localhost/wst03/php/VerifyPassWS.php?wsdl", true);
+$soapclient = new nusoap_client("http://localhost/Iragarkiak/php/VerifyPassWS.php?wsdl", true);
 
 $pasahitza = trim($_GET['pasahitza']);
 if (!empty($pasahitza)) {
