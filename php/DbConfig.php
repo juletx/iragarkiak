@@ -1,6 +1,6 @@
 <?php
-$lokal = 1; //0 hodeirako
-if ($lokal) {
+$local = 1; //0 for cloud database
+if ($local) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
     $gakoa = "admin";

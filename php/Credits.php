@@ -9,41 +9,41 @@
 
 <body>
 	<?php include '../php/Menus.php' ?>
-	<div class="main">
-		<div>
-			<h2>Kredituak</h2>
-			<br>
-			<h3>Deiturak: Markel Azpeitia, Julen Etxaniz, Jokin Irastorza eta Aitor Zubillaga</h3>
-
-			<h3>Gradua: Ingeniaritza Informatikoa</h3>
-
-			<h3>Espezialitateak: Software Ingeniaritza eta Konputagailuen Ingeniaritza</h3>
-			
-			<h3>Ikasgaia: Sare Zerbitzuak eta Aplikazioak</h3>
-
-			<br>
-			<figure class="credits-image">
-				<img src="../images/MarkelAzpeitia.png" alt="Markel Azpeitia">
-				<figcaption>Markel Azpeitia</figcaption>
-			</figure>
+	
 		
-			<figure class="credits-image">
-				<img src="../images/JulenEtxaniz.jpg" alt="Julen Etxaniz">
-				<figcaption>Julen Etxaniz</figcaption>
-			</figure>
-			
-			<figure class="credits-image">
-				<img src="../images/JokinIrastorza.jpg" alt="Jokin Irastorza">
-				<figcaption>Jokin Irastorza</figcaption>
-			</figure>
+	<div class="main" id="Credits">
+		<br><br><br>
+		<h2>Babesleak</h2>
 
+		<a href="https://basqueindustry.spri.eus">
 			<figure class="credits-image">
-				<img src="../images/AitorZubillaga.png" alt="Aitor Zubillaga">
-				<figcaption>Aitor Zubillaga</figcaption>
+					<img src="../images/basque40.png" alt="Industry" height=70>
+					<figcaption>Basque Industry 4.0</figcaption>
 			</figure>
-		</div>
-		<br>
-		<div id="taula">
+		</a>
+
+		<a href="https://www.goierrivalley.com/eu/">
+			<figure class="credits-image">
+					<img src="../images/goierri.png" alt="Goierri" height=70>
+					<figcaption>Goierry Valley Alliance</figcaption>
+			</figure>
+		</a>
+
+		<a href="https://www.bermeotunaworldcapital.org/eu/hasiera/">
+			<figure class="credits-image">
+					<img src="../images/bermeo.jpg" alt="Bermeo" height=70>
+					<figcaption>Bermeo World Tuna Capital</figcaption>
+			</figure>
+		</a>
+
+		<a href="https://sansebastianregion.com/eu/">
+			<figure class="credits-image">
+					<img src="../images/sansebastian.png" alt="SanSebastian" height=70>
+					<figcaption>Explore San Sebastian Region</figcaption>
+			</figure>
+		</a>
+
+		<div class="main" id="Credits">
 			<h2>Bezeroaren eta zerbitzariaren datuak</h2>
 			<table>
 				<thead>
@@ -72,8 +72,42 @@
 					<?php include '../php/ClientGeolocation.php' ?>
 				<tbody>
 			</table>
+		<div>
+
+		<div class="main">
+			<h2>Kredituak</h2><br>
+
+			<h4>Egileak: Markel Azpeitia, Julen Etxaniz, Jokin Irastorza eta Aitor Zubillaga</h4>
+			<h4>Gradua: Ingeniaritza Informatikoa</h4>
+			<h4>Espezialitateak: Software Ingeniaritza eta Konputagailuen Ingeniaritza</h4>
+			<h4>Ikasgaia: Sare Zerbitzuak eta Aplikazioak</h4>
+			<br>
+
+
+			<figure class="credits-image">
+				<img src="../images/MarkelAzpeitia.png" alt="Markel Azpeitia">
+				<figcaption>Markel Azpeitia</figcaption>
+			</figure>
+		
+			<figure class="credits-image">
+				<img src="../images/JulenEtxaniz.jpg" alt="Julen Etxaniz">
+				<figcaption>Julen Etxaniz</figcaption>
+			</figure>
+			
+			<figure class="credits-image">
+				<img src="../images/JokinIrastorza.jpg" alt="Jokin Irastorza">
+				<figcaption>Jokin Irastorza</figcaption>
+			</figure>
+
+			<figure class="credits-image">
+				<img src="../images/AitorZubillaga.png" alt="Aitor Zubillaga">
+				<figcaption>Aitor Zubillaga</figcaption>
+			</figure>
 		</div>
+
+
 	</div>
+	
 	<?php include '../html/Footer.html' ?>
 </body>
 
