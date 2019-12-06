@@ -17,7 +17,7 @@
 		</div>
 		<div class="navbar-nav ml-auto">
 			<a class="nav-item nav-link" href="SignUp.php">Erregistratu</a>
-			<?php include 'Login.php'; ?>
+			<?php include 'LogIn.php'; ?>
 		</div>
 
 			<?php } else { 

@@ -46,21 +46,6 @@ CREATE TABLE IF NOT EXISTS `ads` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `locations`
---
-
-DROP TABLE IF EXISTS `locations`;
-CREATE TABLE IF NOT EXISTS `locations` (
-  `location_id` int(11) NOT NULL AUTO_INCREMENT,
-  `country` varchar(100) NOT NULL,
-  `region` varchar(100) NOT NULL,
-  `city` varchar(100) NOT NULL,
-  PRIMARY KEY (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `users`
 --
 
