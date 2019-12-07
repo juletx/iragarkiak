@@ -10,15 +10,12 @@ $(document).ready(function () {
 			processData: false,
 			dataType: 'HTML',
 			success: function (data) {
-				if (!$("#alerta").is(":hidden")) {
-					$("#alerta").show();
-				}
-				$("#alerta").html(data);
+				
+                document.getElementById('alerta').style.display = 'block';
+				
 			},
 			error: function (data) {
-				if (!$("#alerta").is(":hidden")) {
-					$("#alerta").show();
-				}
+				document.getElementById('alerta').style.display = 'block';
 				$("#alerta").html(data);
 			}
 		});

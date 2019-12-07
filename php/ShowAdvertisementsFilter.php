@@ -93,8 +93,8 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				</div>
 				<p class="prezioa">'.$row['price'].'€</p><br><br><br>
 				<div class="home-anuntzio-footer">
-					<a href="#" class="home-anuntzio-footer-kontaktua">&#9743;'.$row['telephone'].'</a>
-					<a href="#" class="home-anuntzio-footer-kontaktua">&#9993;'.$row['email'].'</a>
+                    <h4><span class="badge badge-pill badge-info">&#9743;'.$row['telephone'].'</span></h4>    
+                    <h4><span class="badge badge-pill badge-info">&#9993;'.$row['email'].'</span></h4> 
 				</div>';
 				if (isset($_SESSION['email'])) {
 					$email_db = $row['email'];
@@ -160,11 +160,11 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 							}
 						echo'
 								</div>
-								<a class="carousel-control-prev" href="#imageCarousel'.$row['ad_id'].'" role="button" data-slide="prev">
+								<a class="carousel-control-prev" href="#imageCarrousel'.$row['ad_id'].'" role="button" data-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 									<span class="sr-only">Previous</span>
 								</a>
-								<a class="carousel-control-next" href="#imageCarousel'.$row['ad_id'].'" role="button" data-slide="next">
+								<a class="carousel-control-next" href="#imageCarrousel'.$row['ad_id'].'" role="button" data-slide="next">
 									<span class="carousel-control-next-icon" aria-hidden="true"></span>
 									<span class="sr-only">Next</span>
 								</a>

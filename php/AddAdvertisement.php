@@ -145,7 +145,7 @@
 						if (!$emaitza) {
 							echo "<script>alert('Iruzkina ez da ondo gorde datu-basean'); history.go(-1);</script>";
 						} else {
-							echo "<script>alert('Iruzkina ondo gorde da datu-basean');</script>";
+							echo "<script>alert('Iruzkina ondo gehitu da');</script>";
 						}
 					}
 				}

@@ -42,6 +42,7 @@ th,
 td {
 	border: 2px solid black;
 	border-collapse: collapse;
+    margin: 0px auto;
 }
 
 th,
@@ -485,4 +486,28 @@ figure.credits-image {
 
 textarea{
   resize: none;
+}
+.carousel .item {
+    height: 300px;
+  }
+  
+.item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px;
+}
+#carousel-thumb img {
+    max-width: 400px;
+    height: 225px;
+    max-height: 225px;  
+}
+#carousel-thumb{
+    max-width: 400px;
+    height: 225px;
+    max-height: 225px;
+}
+.badge-pill{
+    border: radius 4px;
+    padding:1px;
 }

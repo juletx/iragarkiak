@@ -53,71 +53,71 @@
 				</div>
 
 				<!-- edit form column -->
-				<div class="col-md-9 personal-info">
-					<div class="alert alert-info alert-dismissable" style="display:none" id="alerta">
+				<div class="col-md-6 personal-info">
+					<div class="alert alert-info alert-dismissable" style="display: none;" id="alerta">
 						<a class="panel-close close" data-dismiss="alert">×</a>
-						<i class="material-icons" style="font-size:24px" id="ikono">sync</i>
-						This is an <strong>.alert</strong>. Use this to show important messages to the user.
+						<i class="fa fa-refresh" aria-hidden="true"></i>
+                        Aldaketak gorde dira.
 					</div>
-					<h3>Kontuaren datuak</h3>
+					<h4 style="text-align:center">Kontuaren datuak</h4>
 					<form class="form-horizontal" role="form" name="eguneratu" id="eguneratu">
 						<div class="form-group">
 							<label class="col-lg-3 control-label" for="email">Email:</label>
-							<div class="col-lg-8">
+							<div class="col-lg-12">
 								<input class="form-control" type="text" id="email" name="email" value="<?php echo $email; ?>"
 									readonly />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="name">Izena:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-6 control-label" for="name">Izena:</label>
+							<div class="col-lg-12">
 								<input class="form-control" type="text" id="name" name="name" value="<?php echo $name; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="surname1">Lehenengo abizena:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-6 control-label" for="surname1">Lehenengo abizena:</label>
+							<div class="col-lg-12">
 								<input class="form-control" type="text" id="surname1" name="surname1"
 									value="<?php echo $surname1; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="surname2">Bigarren abizena:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-6 control-label" for="surname2">Bigarren abizena:</label>
+							<div class="col-lg-12">
 								<input class="form-control" type="text" id="surname2" name="surname2"
 									value="<?php echo $surname2; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="telephone">Telefonoa:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-6 control-label" for="telephone">Telefonoa:</label>
+							<div class="col-lg-12">
 								<input class="form-control" type="number" id="telephone" name="telephone" pattern="[0-9]{9}"
 									title="Telefonoak 9 digitu izan behar ditu" value="<?php echo $telephone; ?>" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="password1">Pasahitza:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-6 control-label" for="password1">Pasahitza:</label>
+							<div class="col-lg-12">
 								<input class="form-control" type="password" id="password1" name="password1" minlength="6"
 									value="123456">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="password2">Pasahitza errepikatu:</label>
-							<div class="col-lg-8">
+							<label class="col-lg-6 control-label" for="password2">Pasahitza errepikatu:</label>
+							<div class="col-lg-12">
 								<input class="form-control" type="password" id="password2" name="password2" value="123456">
 							</div>
 						</div>
 						</div class="form-group">
-							<label class="col-lg-3 control-label" for="image">Argazkia aukeratu:</label>
-							<div class="col-lg-8">
-								<input type="file" class="form-control" id="image" name="image" accept="image/*">
+							<label class="col-lg-12 control-label" for="image">Argazkia aukeratu:</label>
+							<div class="col-lg-12">
+								<input type="file" class="form-control" id="image" name="image" accept="image/*" style="width: 50%;display: inline-block;">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-lg-3 control-label"></label>
 							<br>
-							<div class="col-lg-8">
+							<div class="col-lg-12">
 								<input type="button" class="btn btn-success" value="Gorde aldaketak" id="gorde">
 								<input type="reset" class="btn btn-danger" value="Berrezarri"
 									onclick="location.href='ManageAccount.php'">

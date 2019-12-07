@@ -46,7 +46,7 @@
 						</div>
 						<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
 						<!--Slides-->
-						<div class="carousel-inner" role="listbox">';
+						<div class="carousel-inner">';
 						$images = glob($directory."*.*");
 						$i = 0;
 						foreach ($images as $image) {
