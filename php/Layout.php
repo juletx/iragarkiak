@@ -11,16 +11,17 @@
 	<?php include '../php/Menus.php' ?>
 	<div class="main">
 		<span class="sarrera">
-			<h3>Ongi etorri 100 Iragarki-ra bigarren eskuko erosketak eta salmentak egiteko toki egokiena</h3>
+			<h3>Ongi etorri 100 Iragarki-ra</h3>
+            <h4>Zure erakusleiho digitala</h4>
 		</span><br>
 		<div class="home-title">
-			<h1>Zerren bila zabiltza?</h1>
+			<h1>Zer bilatu nahi duzu duzu?</h1>
 		</div>
 		<div class="home">
 			<form id="filtroak" name="filtroak">
 				<fieldset>
 					<legend>
-						<h2>Filtroak gehitu</h2>
+						<h2>Filtroa gehitu</h2>
 					</legend>
 					<label for="category">Kategoria:</label>
 					<select id="category" name="category">
