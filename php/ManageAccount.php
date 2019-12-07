@@ -59,7 +59,7 @@
 						<i class="material-icons" style="font-size:24px" id="ikono">sync</i>
 						This is an <strong>.alert</strong>. Use this to show important messages to the user.
 					</div>
-					<h3>Kontuko datuak</h3>
+					<h3>Kontuaren datuak</h3>
 					<form class="form-horizontal" role="form" name="eguneratu" id="eguneratu">
 						<div class="form-group">
 							<label class="col-lg-3 control-label" for="email">Email:</label>
@@ -75,7 +75,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-3 control-label" for="surname1">Lehen abizena:</label>
+							<label class="col-lg-3 control-label" for="surname1">Lehenengo abizena:</label>
 							<div class="col-lg-8">
 								<input class="form-control" type="text" id="surname1" name="surname1"
 									value="<?php echo $surname1; ?>" />
