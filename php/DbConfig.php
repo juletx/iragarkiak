@@ -3,7 +3,7 @@ $local = 1; //0 for cloud database
 if ($local) {
     $zerbitzaria = "localhost";
     $erabiltzailea = "root";
-    $gakoa = "admin";
+    $gakoa = "";
     $db = "db";
 } else {
     $zerbitzaria = "localhost";
