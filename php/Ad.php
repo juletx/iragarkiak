@@ -44,6 +44,7 @@
 							<img class="avatar-small" src="'.$avatar.'" alt="Avatar">
 							<a href="ShowAdvertisementsUser.php?email='.$row['email'].'"><p>'.$row['email'].'</p></a>
 						</div>
+						<div class=div-center>
 						<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
 						<!--Slides-->
 						<div class="carousel-inner">';
@@ -76,6 +77,7 @@
 						</a>
 						<!--/.Controls-->
 						</div>
+						</div>
 						<div class="ad-big-footer">
 							<div class="ad-big-footer-title">'.$row['title'].'</div>
 							<div class="ad-big-footer-price">'.$row['price'].'€</div>
@@ -102,6 +104,7 @@
 
 		mysqli_free_result($result);
 		mysqli_close($link);
+		
 		?>
 	</div>
 	<?php include '../html/Footer.html' ?>

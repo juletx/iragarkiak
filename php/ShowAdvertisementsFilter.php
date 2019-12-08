@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 							<span class="home-anuntzio-detail-textu-denbora"><i class="fa fa-clock-o"
 								aria-hidden="true" style="font-size:24px">'.$row['date'].'</i></span>
 						</div>
-						<div class="home-anuntzio-detail-deskripzio">';
+						<div class="home-anuntzio-detail-deskripzio" id="home-anuntzio'.$row['ad_id'].'-deskripzio">';
 							echo substr($row['text'] , 0, 400);
 							if(strlen($row['text'])>400){
 							echo '<a href=\'javascript:;\' onclick=\'GetFullDescription('. $row['ad_id'] .');\'> ... Gehiago erakutsi[+] </a>';
