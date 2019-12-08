@@ -143,9 +143,9 @@
 						mysqli_close($link);
 
 						if (!$emaitza) {
-							echo "<script>alert('Iruzkina ez da ondo gorde datu-basean'); history.go(-1);</script>";
+							echo "<script>alert('Iragarkia ez da ondo gorde datu-basean'); history.go(-1);</script>";
 						} else {
-							echo "<script>alert('Iruzkina ondo gehitu da');</script>";
+							echo "<script>alert('Iragarkia ondo gehitu da');</script>";
 						}
 					}
 				}
