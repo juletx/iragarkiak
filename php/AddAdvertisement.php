@@ -40,7 +40,7 @@
 					<br><br>
 					<label for="text">Testua(*):</label>
 					<br>
-					<textarea id="text" name="text" cols="40" rows="5" minlength="10" maxlength="1000" required></textarea>
+					<textarea id="text" name="text" cols="40" rows="5" minlength="10" maxlength="10000" required></textarea>
 					<br><br>
 					<label for="price">Prezioa(*):</label>
 					<input type="number" id="price" name="price" min="0" required>
@@ -77,8 +77,8 @@
 				else if (strlen($text) < 10) {
 					echo "<script>alert('Testuak gutxienez 10 karaktere izan behar ditu'); history.go(-1);</script>";
 				}
-				else if (strlen($text) > 1000) {
-					echo "<script>alert('Testuak gehienez 1000 karaktere izan ditzake'); history.go(-1);</script>";
+				else if (strlen($text) > 10000) {
+					echo "<script>alert('Testuak gehienez 10000 karaktere izan ditzake'); history.go(-1);</script>";
 				}
 				else if ($price < 0) {
 					echo "<script>alert('Prezioak ezin du negatiboa izan'); history.go(-1);</script>";
@@ -143,9 +143,9 @@
 						mysqli_close($link);
 
 						if (!$emaitza) {
-							echo "<script>alert('Iruzkina ez da ondo gorde datu-basean'); history.go(-1);</script>";
+							echo "<script>alert('Iragarkia ez da ondo gorde datu-basean'); history.go(-1);</script>";
 						} else {
-							echo "<script>alert('Iruzkina ondo gehitu da');</script>";
+							echo "<script>alert('Iragarkia ondo gehitu da');</script>";
 						}
 					}
 				}

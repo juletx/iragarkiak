@@ -10,13 +10,11 @@
 <body>
 	<?php include '../php/Menus.php' ?>
 	<div class="main">
-		<span class="sarrera">
+		<div class="sarrera">
 			<h3>Ongi etorri 100 Iragarki-ra</h3>
             <h4>Zure erakusleiho digitala</h4>
-		</span><br>
-		<div class="home-title">
-			<h1>Zer bilatu nahi duzu duzu?</h1>
-		</div>
+            <h1>Zer bilatu nahi duzu duzu?</h1>
+		</div><br>
 		<div class="home">
 			<form id="filtroak" name="filtroak">
 				<fieldset>

@@ -42,7 +42,7 @@ th,
 td {
 	border: 2px solid black;
 	border-collapse: collapse;
-    margin: 0px auto;
+	margin: 0px auto;
 }
 
 th,
@@ -112,6 +112,11 @@ div#erabiltzaileKop {
 	width: 150px;
 }
 
+.div-center {
+	display: inline-block;
+	text-align: center;
+}
+
 /*.navbar a {
 	margin-top: 1%;
 	margin-right: 1%;
@@ -163,7 +168,6 @@ div#erabiltzaileKop {
 }
 
 .home-title {
-	padding: 20px;
 	display: inline-block;
 }
 
@@ -199,13 +203,15 @@ div#erabiltzaileKop {
 }
 
 .home-anuntzio-detail-irudi {
-	width: 30%;
-  opacity: 1;
-  transition: 0.3s;
+	width: 300px;
+	opacity: 1;
+	transition: 0.3s;
 	display: inline-block;
+
 }
-.home-anuntzio-detail-irudi:hover{
-  opacity: 0.6;
+
+.home-anuntzio-detail-irudi:hover {
+	opacity: 0.6;
 }
 
 .home-anuntzio-detail-irudi-txiki {
@@ -213,8 +219,8 @@ div#erabiltzaileKop {
 	border-radius: 4px;
 	padding: 5px;
 	float: right;
-	height: 100%;
 	width: 100%;
+	max-height: 100%;
 }
 
 .prezioa {
@@ -305,7 +311,7 @@ div#erabiltzaileKop {
 .ad-big-header {
 	display: inline-block;
 	display: flex;
-  padding-bottom: 2%;
+	padding-bottom: 2%;
 }
 
 .avatar-small {
@@ -410,7 +416,7 @@ input[type="email"] {
 	font-weight: 400;
 	font-size: 15px;
 	transition: 0.2s ease;
-    display:inline-block;
+	display: inline-block;
 }
 
 input[type="text"]:focus,
@@ -481,33 +487,37 @@ input[type="reset"]:active {
 }*/
 
 figure.credits-image {
-	display:inline-block
+	display: inline-block
 }
 
-textarea{
-  resize: none;
+textarea {
+	resize: none;
 }
+
 .carousel .item {
-    height: 300px;
-  }
-  
+	height: 300px;
+}
+
 .item img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-height: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 300px;
 }
+
 #carousel-thumb img {
-    max-width: 400px;
-    height: 225px;
-    max-height: 225px;  
+	max-width: 400px;
+	height: 225px;
+	max-height: 225px;
 }
-#carousel-thumb{
-    max-width: 400px;
-    height: 225px;
-    max-height: 225px;
+
+#carousel-thumb {
+	max-width: 400px;
+	height: 225px;
+	max-height: 225px;
 }
-.badge-pill{
-    border: radius 4px;
-    padding:1px;
+
+.badge-pill {
+	border: radius 4px;
+	padding: 1px;
 }
