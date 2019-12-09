@@ -56,7 +56,7 @@ if (isset($_GET['order']) && !empty($order = trim($_GET['order']))) {
 
 $result_count = mysqli_query($link, $sql_count) or die("Errorea datu-baseko kontsultan");
 $row = mysqli_fetch_array($result_count, MYSQLI_ASSOC);
-echo "<div><h4>Aurkitutako iragarki kopurua: ".$row['COUNT(*)']."</h4><div>";
+echo "<div><h4>Aurkitutako iragarki kopurua: ".$row['COUNT(*)']."</h4></div>";
 
 $result = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
 
