@@ -19,7 +19,7 @@ if (!$emaitza) {
 }
 
 mysqli_free_result($emaitza);
-
+//Baneatuari kontrako balioa
 if ($banned) {
 	$banned = 0;
 	$erantzuna = "<span style='color:green'>Aktibatuta</span>";

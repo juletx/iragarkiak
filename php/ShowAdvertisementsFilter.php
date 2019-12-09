@@ -66,7 +66,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				<div class="home-anuntzio-head"></div>
 				<div class="home-anuntzio-detail">
 					<div class="home-anuntzio-detail-textu">
-						<a href="Ad.php?ad_id='.$row['ad_id'].'"><b>'.$row['title'].'</b></a><br>
+						<h4><a href="Ad.php?ad_id='.$row['ad_id'].'"><b>'.$row['title'].'</b></a></h4><br>
 						<a href="Layout.php?category='.$row['category'].'">
 						<i class="fa fa-list-alt" aria-hidden="true">'.$row['category'].'</i><a>
 						<div class="home-anuntzio-detail-textu-tokiordu">
