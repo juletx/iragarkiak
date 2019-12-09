@@ -15,7 +15,6 @@ body {
 	background-color: #21ce77;
 }
 
-
 section>div {
 	padding: 5px;
 
@@ -30,11 +29,6 @@ nav span {
 	margin: 0px 0px 0px 0px;
 	width: 100%;
 	display: inline-block;
-}
-
-#ErrorMsgs {
-	color: #f61;
-	font-size: smaller;
 }
 
 table,
@@ -76,24 +70,8 @@ div#form {
 	display: inline-block;
 }
 
-
 div#taula {
 	display: inline-block;
-}
-
-div#feedback {
-	display: inline-block;
-	border: 3px solid #999;
-}
-
-div#galderaKop {
-	display: inline-block;
-	border: 3px solid #999;
-}
-
-div#erabiltzaileKop {
-	display: inline-block;
-	border: 3px solid #999;
 }
 
 .navbar {
@@ -116,30 +94,6 @@ div#erabiltzaileKop {
 	display: inline-block;
 	text-align: center;
 }
-
-/*.navbar a {
-	margin-top: 1%;
-	margin-right: 1%;
-	background-color: #7892c2;
-	border-radius: 28px;
-	border: 1px solid #4e6096;
-	cursor: pointer;
-	color: #ffffff;
-	font-size: 17px;
-	padding: 13px 25px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #283966;
-	float: right;
-}
-
-.navbar a:hover {
-	background-color: #476e9e;
-}
-
-.navbar a:active {
-	position: relative;
-	top: 1px;
-}*/
 
 .sarrera {
 	display: inline-block;
@@ -194,7 +148,6 @@ div#erabiltzaileKop {
 	float: left;
 	width: 70%;
 }
-
 
 .home-anuntzio-detail-textu-title {
 	color: #6d98fc;
@@ -305,7 +258,6 @@ div#erabiltzaileKop {
 	box-shadow: 1px 1px 2px #fff inset,
 		-1px -1px 2px #fff inset;
 	border-radius: 3px/6px;
-
 }
 
 .ad-big-header {
@@ -376,8 +328,6 @@ div#erabiltzaileKop {
 	display: inline-block;
 }
 
-
-
 *:focus {
 	outline: none;
 }
@@ -391,7 +341,6 @@ div#erabiltzaileKop {
 	border-radius: 2px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
-
 
 h1 {
 	margin: 0 0 20px 0;
@@ -428,63 +377,6 @@ input[type="email"]:focus {
 	color: #16a085;
 	transition: 0.2s ease;
 }
-
-/*input[type="submit"] {
-	margin-top: 28px;
-	width: 150px;
-	height: 32px;
-	background: #16a085;
-	border: none;
-	border-radius: 2px;
-	color: #FFF;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
-	text-transform: uppercase;
-	transition: 0.1s ease;
-	cursor: pointer;
-}
-
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-	opacity: 0.8;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-	transition: 0.1s ease;
-}
-
-input[type="submit"]:active {
-	opacity: 1;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	transition: 0.1s ease;
-}*/
-
-
-/*input[type="reset"] {
-	margin-top: 10px;
-	width: 120px;
-	height: 32px;
-	background: red;
-	border: none;
-	border-radius: 2px;
-	color: #FFF;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
-	text-transform: uppercase;
-	transition: 0.1s ease;
-	cursor: pointer;
-}
-
-input[type="reset"]:hover,
-input[type="reset"]:focus {
-	opacity: 0.8;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-	transition: 0.1s ease;
-}
-
-input[type="reset"]:active {
-	opacity: 1;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	transition: 0.1s ease;
-}*/
 
 figure.credits-image {
 	display: inline-block
