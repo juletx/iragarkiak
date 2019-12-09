@@ -31,15 +31,18 @@
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$directory = "../images/ads/".$row['ad_id']."/";
 			$files = scandir($directory);
-			$firstFile = $directory . $files[2];// because [0] = "." [1] = ".." 
-			$images = glob("../images/users/".$row['email'].".*");
+            //direktorioko lehen argazkia aukeratu
+            $firstFile = $directory . $files[2];// because [0] = "." [1] = ".." 
+            //erabiltzaileak argazkirik ez badu, defektuzkoa erakutsi
+            $images = glob("../images/users/".$row['email'].".*");
 			if (empty($images)) {
 				$avatar = "../images/Anonimoa.png";
 			}
 			else {
 				$avatar = $images[0];
 			}
-			echo 	'<div class="ad-big">
+            //Carousela
+            echo 	'<div class="ad-big">
 						<div class="ad-big-header">
 							<img class="avatar-small" src="'.$avatar.'" alt="Avatar">
 							<a href="ShowAdvertisementsUser.php?email='.$row['email'].'"><p>'.$row['email'].'</p></a>
@@ -63,7 +66,8 @@
 							}
 							$i++;     
 						}
-						echo'</div>
+                        //Carouseleko kontralatzaileak
+                        echo'</div>
 						<!--/.Slides-->
 						<!--Controls-->
 						<a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
@@ -81,7 +85,8 @@
 							<div class="ad-big-footer-price">'.$row['price'].'€</div>
 							<div class="ad-big-footer-description">'.$row['text'].'</div>
 						</div>';
-						if (isset($_SESSION['email'])) {
+                        //Anuntzioaren autoreari edo adminari editatzeko, borratzeko aukera
+                        if (isset($_SESSION['email'])) {
 							$email_db = $row['email'];
 							$email_session = $_SESSION['email'];
 			
