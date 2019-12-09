@@ -10,9 +10,7 @@ $(document).ready(function () {
 			processData: false,
 			dataType: 'HTML',
 			success: function (data) {
-				
                 document.getElementById('alerta').style.display = 'block';
-				
 			},
 			error: function (data) {
 				document.getElementById('alerta').style.display = 'block';

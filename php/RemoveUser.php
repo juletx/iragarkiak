@@ -14,6 +14,7 @@ if (!$result) {
 	die();
 }
 else {
+	// erabiltzailearen argazkia ezabatu
 	$avatar = glob("../images/users/".$email.".*")[0];
 	unlink($avatar);
 }

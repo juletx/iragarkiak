@@ -21,10 +21,12 @@
 				$sql = "SELECT * FROM users";
 				$emaitza = mysqli_query($esteka, $sql) or die("Errorea datu-baseko kontsultan");
 
+				// taularen burukoa
 				echo '<table> <thead> <tr> <th> EPOSTA </th> <th> IZENA </th> 
 				<th> ABIZENA 1 </th> <th> ABIZENA 2 </th> <th> TELEFONOA </th> <th> MOTA </th>
 				<th> EGOERA </th> <th> EGOERA ALDATU </th> <th> EZABATU </th> </tr> </thead> <tbody>';
-				   
+				
+				// taularen gorputza
 				while ($row = mysqli_fetch_array($emaitza, MYSQLI_ASSOC)) {
 					echo '<tr> <td>'.$row['email'].'</td> <td>'.$row['name'].'</td> <td>'.$row['surname1'].'</td> 
 					<td>'.$row['surname2'].'</td> <td>'.$row['telephone'].'</td> <td>'.admin($row['admin']).'</td> 
@@ -45,12 +47,14 @@
 					return "<span style='color:green'>Aktibatuta</span>";
 				}
 
+				// adminaren egoera ezin da aldatu
 				function aldatuButton($admin) {
 					if ($admin)
 						return '<button class="aldatu btn btn-warning" disabled>Egoera aldatu</button>';
 					return '<button class="aldatu btn btn-warning">Egoera aldatu</button>';
 				}
 
+				// admina ezin da ezabatu
 				function ezabatuButton($admin) {
 					if ($admin)
 						return '<button class="ezabatu btn btn-danger" disabled>Ezabatu</button>';

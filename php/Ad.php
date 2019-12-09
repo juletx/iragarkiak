@@ -87,7 +87,7 @@
 							<div class="ad-big-footer-price">'.$row['price'].'€</div>
 							<div class="ad-big-footer-description">'.$row['text'].'</div>
 						</div>';
-                        //Anuntzioaren autoreari edo adminari editatzeko, borratzeko aukera
+                        // Iragarkiaren egileari edo adminari editatzeko eta borratzeko aukera
                         if (isset($_SESSION['email'])) {
 							$email_db = $row['email'];
 							$email_session = $_SESSION['email'];

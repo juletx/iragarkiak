@@ -83,9 +83,9 @@
 					}
 					
 					mysqli_free_result($emaitza);
-                    
+					
+					// erabiltzailearen argazkia gorde
                     $directory = '../images/users/';
-                
 					if ($_FILES['image']['size'] != 0) {
 						$image = $_FILES["image"]["name"];
 						$tmp = explode(".", $image);
@@ -97,6 +97,7 @@
 						}
 					}
 
+					// pasahitza-ri hash-a aplikatu
 					$password_hash = password_hash($password1, PASSWORD_DEFAULT);
 
 					$sql = "INSERT INTO users VALUES ('$email', '$password_hash', '$name', '$surname1', '$surname2', '$telephone', 0, 0)";

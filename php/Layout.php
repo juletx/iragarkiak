@@ -25,6 +25,7 @@
 					<select id="category" name="category">
 						<option value="">Guztiak</option>
 						<?php
+							// orria birkargatu aurretik zuen balioa mantentzeko
 							isset($_GET['category']) ? $category = $_GET['category'] : $category = "";
 						?>
 						<option value="Ibilgailuak" <?php if($category=='Ibilgailuak') echo 'selected'; ?>>
@@ -81,6 +82,7 @@
 					<select id="order" name="order">
 						<option value="Berrienak">Berrienak</option>
 						<?php
+							// orria birkargatu aurretik zuen balioa mantentzeko
 							isset($_GET['order']) ? $order = $_GET['order'] : $order = "Berrienak";
 						?>
 						<option value="Zaharrenak" <?php if($order=='Zaharrenak') echo 'selected'; ?>>

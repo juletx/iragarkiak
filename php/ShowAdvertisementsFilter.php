@@ -2,6 +2,7 @@
 include '../php/DbConfig.php';
 $link = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 
+// filtroak gordetzen dituen array-a
 $filters = array();
 
 if (isset($_GET['email']) && !empty($email = trim($_GET['email']))) {
@@ -29,11 +30,13 @@ if (isset($_GET['max_price']) && !empty($max_price = trim($_GET['max_price']))) 
 $sql = "SELECT * FROM ads NATURAL JOIN users";
 $sql_count = "SELECT COUNT(*) FROM ads NATURAL JOIN users";
 
+// filtro guztiak sql kontsultara gehitu
 if (count($filters) > 0) {
 	$sql .= " WHERE " . implode(' AND ', $filters);					
 	$sql_count .= " WHERE " . implode(' AND ', $filters);
 }
 
+// emaitzaren ordena zehaztu
 if (isset($_GET['order']) && !empty($order = trim($_GET['order']))) {
 	$sql .= " ORDER BY ";
 	switch ($order) {
@@ -54,12 +57,14 @@ if (isset($_GET['order']) && !empty($order = trim($_GET['order']))) {
 	$sql .= " ORDER BY date DESC";
 }
 
+// aurkitutako iragarki kopurua
 $result_count = mysqli_query($link, $sql_count) or die("Errorea datu-baseko kontsultan");
 $row = mysqli_fetch_array($result_count, MYSQLI_ASSOC);
 echo "<div><h4>Aurkitutako iragarki kopurua: ".$row['COUNT(*)']."</h4></div>";
 
 $result = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
 
+// datu-baseko tupla bakoitzeko iragarkia inprimatu
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 	echo '
 			<div class="home-anuntzio" id="home-anuntzio'.$row['ad_id'].'">
@@ -81,7 +86,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 							if(strlen($row['text'])>400){
 							echo '<a href=\'javascript:;\' onclick=\'GetFullDescription('. $row['ad_id'] .');\'> ... Gehiago erakutsi[+] </a>';
 							}
-							//Aukeratu anuntzioari dagokion irudien karpetatik lehenengo irudaren izena
+							//Aukeratu anuntzioari dagokion irudien karpetatik lehenengo irudiaren izena
 							$directory = "../images/ads/".$row['ad_id']."/";
 							$files = scandir ($directory);
 							$firstFile = $directory . $files[2];
@@ -96,6 +101,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     <h4><span class="badge badge-pill badge-info">&#9743;'.$row['telephone'].'</span></h4>    
                     <h4><span class="badge badge-pill badge-info">&#9993;'.$row['email'].'</span></h4> 
 				</div>';
+				// Iragarkiaren egileari edo adminari editatzeko eta borratzeko aukera
 				if (isset($_SESSION['email'])) {
 					$email_db = $row['email'];
 					$email_session = $_SESSION['email'];
@@ -112,7 +118,8 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 								</div>';
 					}
 				}
-				
+			
+			// argazkien bistaratzea bootstrapen modal eta carousel erabiliz
 			echo '</div>
 			<div class="modal fade" id="imageModal'.$row['ad_id'].'" tabindex="-1" role="dialog" aria-hidden="true">
 				<div class="modal-dialog" role="document">

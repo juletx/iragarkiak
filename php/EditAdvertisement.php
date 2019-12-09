@@ -137,10 +137,9 @@
 								//Get the temp file path
 								$tmpFilePath = $_FILES['images']['tmp_name'][$i];
 
-								//Make sure we have a file path
+								// Make sure we have a file path
 								if ($tmpFilePath != ""){
 									//Setup our new file path
-									//$newFilePath = $directory.$_FILES['images']['name'][$i];
 									$name = $_FILES["images"]["name"][$i];
 									$tmp = explode(".", $name);
 									$extension = end($tmp);

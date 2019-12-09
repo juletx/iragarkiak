@@ -17,6 +17,7 @@ if (!$result) {
 	die();
 }
 else {
+	// irudiak eta direktorioa ezabatu
 	$directory = '../images/ads/'.$ad_id.'/';
 	array_map('unlink', glob("$directory*.*"));
 	rmdir($directory);

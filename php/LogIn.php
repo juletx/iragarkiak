@@ -20,17 +20,13 @@
 				if ($row['banned']) {
 					echo "<script>alert('Erabiltzailea blokeatuta dago, jarri kontaktuan adminarekin'); history.go(-1);</script>";
 				} else {
+					// pasahitza zuzena dela egiaztatu
 					$password_hash = $row['password'];
 					if (!password_verify($password, $password_hash)) {
 						echo "<script>alert('Erabiltzaile edo pasahitz okerra'); history.go(-1);</script>";
-						$error = "Erabiltzaile edo pasahitz okerra";
 					} else {
 						$_SESSION["email"] = $email;
-						echo "<script>alert('Ongi etorri ".$email."');</script>";
-						if ($email == "admin@ehu.es") {
-							echo "<script>window.location.href = '../php/HandlingAccounts.php'</script>";
-						}
-						echo "<script>window.location.href = '../php/Layout.php'</script>";
+						echo "<script>alert('Ongi etorri ".$email."'); window.location.href = '../php/Layout.php';</script>";
 					}
 				}
 			}

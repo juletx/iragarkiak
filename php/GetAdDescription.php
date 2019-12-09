@@ -6,7 +6,8 @@
 		echo "<script>alert('Id-rik ez dago'); history.go(-1);</script>";
 		exit();
 	}
-	$sql = "SELECT * FROM ads NATURAL JOIN users WHERE ad_id=$ad_id";
+
+	$sql = "SELECT * FROM ads WHERE ad_id=$ad_id";
 	$result = mysqli_query($link, $sql) or die("Errorea datu-baseko kontsultan");
 	$lerroKopurua = mysqli_num_rows($result);
 	if ($lerroKopurua == 0) {

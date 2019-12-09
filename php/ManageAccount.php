@@ -34,8 +34,7 @@
 			<h1 style="text-align:center">Editatu profila</h1>
 			<hr>
 			<div class="row">
-				<!-- left column -->
-
+				<!-- Irudia -->
 				<div class="col-md-3">
 					<div class="text-center">
 						<?php 
@@ -52,7 +51,7 @@
 					</div>
 				</div>
 
-				<!-- edit form column -->
+				<!-- Formularioa -->
 				<div class="col-md-6 personal-info">
 					<div class="alert alert-info alert-dismissable" style="display: none;" id="alerta">
 						<a class="panel-close close" data-dismiss="alert">×</a>

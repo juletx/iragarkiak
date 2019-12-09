@@ -31,6 +31,7 @@
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			mysqli_close($link);
 		
+			// erabiltzaile arrunta edo administratzailea den begiratu
 			if ($row['admin']) { 
 			?>
 			<a class="nav-item nav-link" href="HandlingAccounts.php">Erabiltzaileak kudeatu</a>

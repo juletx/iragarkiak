@@ -97,6 +97,7 @@
 						include '../php/DbConfig.php';
 						$link = mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die("Errorea datu-baseko konexioan");
 					
+						// iragarki berriaren id-a lortu
 						$sql = "SELECT AUTO_INCREMENT
 						FROM information_schema.TABLES
 						WHERE TABLE_SCHEMA = '$db' AND TABLE_NAME = 'ads'";
@@ -132,6 +133,7 @@
 
 						$email = $_SESSION['email'];
 
+						// momentuko data eta ordua datu-basean gordetzeko formatuan
 						date_default_timezone_set('Europe/Madrid');
 						$date = date('Y-m-d H:i:s');
 

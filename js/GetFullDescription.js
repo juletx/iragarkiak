@@ -6,6 +6,6 @@ function GetFullDescription(id) {
 				this.responseText;
 		}
 	};
-	xhttp.open("GET", '/php/GetAdDescription.php?ad_id=' + id, true);
+	xhttp.open("GET", '../php/GetAdDescription.php?ad_id=' + id, true);
 	xhttp.send();
 }

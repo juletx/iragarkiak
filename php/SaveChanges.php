@@ -37,14 +37,15 @@
 		$sql = "UPDATE users SET name='$name', surname1='$surname1', surname2='$surname2', telephone='$telephone' WHERE email='$email'";
 		$emaitza = mysqli_query($esteka, $sql);
 
+		// pasahitza aldatu bada datu basean eguneratu
 		if($password1 != 123456) {
 			$password_hash = password_hash($password1, PASSWORD_DEFAULT);
 			$sql = "UPDATE users SET password='$password_hash' WHERE email='$email'"; 
 			$emaitza = mysqli_query($esteka, $sql);
 		}    
 
+		// irudia eguneratu
 		$directory = '../images/users/';
-	
 		if ($_FILES['image']['size'] != 0) {
 			$image = $_FILES["image"]["name"];
 			$tmp = explode(".", $image);

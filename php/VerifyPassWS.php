@@ -16,6 +16,7 @@ function verify($ticketa, $pasahitza) {
 	}
 	$file = fopen('../txt/toppasswords.txt', 'r');
 	while ($line = fgets($file)) {
+		// lerro amaierako karaktereak kendu
 		$filepass = preg_replace('/\s+/', '', $line);
 		if ($filepass == $pasahitza) {
 			return "BALIOGABEA";
