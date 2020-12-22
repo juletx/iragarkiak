@@ -6,6 +6,8 @@
 
 ## Fitxategiak
 
+- ```dokumentazioa.pdf```: Web aplikazioaren dokumentazioa. Erabilera-gida eta garapenaren azalpenak ditu.
+
 - ```index.php```: Proiektuaren erro-direktorioan dago, eta webgunea atzitzean lehenetsitako fitxategia da. ```Layout.php```-ra birbidalketa egiten du.
 
 - ```html```
@@ -24,7 +26,7 @@
     - ```RemoveUserAjax.js```: Erabiltzaileak kudeatzeko taulan erabiltzaileak ezabatzeaz arduratzen da. Sakonago azalduko da funtzionalitate gehigarrietan.
     - ```ShowActiveMenu.js```: Menuak momentuko orriaren esteka nabarmentzeko orriaren url-a begiratzen da eta kointziditzen duen estekan active klasea gehitzen da.
     - ```ShowImageInForm.js```: Erregistratzeko formularioan argazkia aukeratutakoan orrian bertan erakusten du, eta reset botoiari emandakoan ezabatu.
-    - ```UpdateAccountAjax.js```: Kontuko datuak datu-basean eguneratzen dituen ManageAccount.php-ri deitzeaz arduratzen da.
+    - ```UpdateAccountAjax.js```: Kontuko datuak datu-basean eguneratzen dituen ```ManageAccount.php```-ri deitzeaz arduratzen da.
     - ```VerifyPassAjax.js```: Erregistratzerakoan pasahitzak egiaztatzen dituen web zerbitzuari deitu eta emaitza pantailaratzeaz arduratzen da.
 
 - ```lib```: Pasahitzaren baliozkatzearen web zerbitzuaren bezeroa eta zerbitzaria garatzeko beharrezkoak diren SOAP liburutegiak dauzka.
@@ -35,7 +37,7 @@
     - ```ChangeState.php```: Erabiltzaile bati sarrera debekatu/baimentzeko. Administratzaileentzat bakarrik.
     - ```ClientGeolocation.php```: Erabiltzailearen bezeroari buruzko informazioa
     - ```ClienVerifyPass.php```: Erabiltzaile berri bat sortzerakoan sarturiko pasahitza
-    baliozkoa den ala ez zehazten du. Horretarako VerifyPassWS.php -taz baliatzen da.
+    baliozkoa den ala ez zehazten du. Horretarako ```VerifyPassWS.php```-taz baliatzen da.
     - ```Credits.php```: Proiektuaren egileak, babesleak eta zerbitzariari naiz bezeroari buruzko informazioa
     - ```DbConfig.php```: Datu-basearen konfigurazioako datuak gordetzen dituen fitxategia. Lokaleko eta 000webhost-eko datu-baseekin konektatzeko zerbitzaria, erabiltzailea, gakoa eta izena gordetzen dira. Datu-basea erabili behar denean include egiten ta eta aldagai horiek erabiltzen dira. Horrela aldaketak egitea errazten da, leku bakar batean aldatzea nahikoa baita.
     - ```DeleteAdvertisement.php```: Erabiltzaile jakin bat ezabatzeko. Administratzaileentzat  soilik.
@@ -48,7 +50,7 @@
     - ```ManageAccount.php```: Erabiltzaile bakoitzak norberaren datuak ikusi eta aldatzeko.
     - ```Menus.php```: Web-orrian zehar goian agertzen den nabigazio barra.
     - ```RemoveUser.php```: Erabiltzaile jakin bat eta bere iragarki guztiak datubasetik ezabatzeko. Administratzaileentzat bakarrik.
-    - ```SaveChanges.php```: Erabiltzaile batek “HandlingAccounts.php” orriaren bidez eginiko aldaketak egiaztatu eta datubasean eguneratzen ditu.
+    - ```SaveChanges.php```: Erabiltzaile batek ```HandlingAccounts.php``` orriaren bidez eginiko aldaketak egiaztatu eta datubasean eguneratzen ditu.
     - ```SecurityAdmin.php```: Sesioko emaila begiratuta hutsa ez dagoela eta administratzailearena dela egiaztatzen du, administratzaileari bakarrik sartzen uzteko.
     - ```SecurityLoggedIn.php```: Sesioko emaila hutsa ez dagoela egiaztatzen du, erabiltzaile kautotuei bakarrik sartzen uzteko.
     - ```SecurityLoggedOut.php```: Sesioko emaila hutsa dagoela egiaztatzen du erabiltzaile anonimoei bakarriksartzen uzteko.
@@ -56,7 +58,7 @@
     - ```ShowAdvertisementsFilter.php```: Iragazki bat aplikatu (prezioa, kategoria, izenburua, data...) eta dagozkion iragarkiak erakusten ditu.
     - ```ShowAdvertisementsUser.php```: Erabiltzaile jakin batek sortu dituen iragarkiak erakusten ditu.
     - ```SignUp.php```: Erabiltzaile berri bat sortu ahal izateko formularioa.
-    - ```VerifyPassWS.php```: Jasotzen dituen pasahitzak baliozkoak diren hala ez determinatzen du. Horretarako  txt/toppasswords.txt fitxategiaz baliatzen da. Bertan munduan zehar gehien erabiltzen edota asmatzeko errazegiak diren pasahitzak daude gordeta. Jasotako pasahitza textu dokumentuan badago, ez baliozkotzat joko da.
+    - ```VerifyPassWS.php```: Jasotzen dituen pasahitzak baliozkoak diren hala ez determinatzen du. Horretarako ```toppasswords.txt``` fitxategiaz baliatzen da. Bertan munduan zehar gehien erabiltzen edota asmatzeko errazegiak diren pasahitzak daude gordeta. Jasotako pasahitza textu dokumentuan badago, ez baliozkotzat joko da.
 
 - ```sql```
     - ```db.sql```: Erabili dugun datu-basea. Sakonago azalduko da datu-egituraren azalpena atalean.
